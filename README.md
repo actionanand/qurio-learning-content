@@ -4,27 +4,6 @@ Multilingual study notes, optional syllabi, and timed practice quiz content for 
 
 This repository is designed to be a **static content source**. Qurio can fetch these files directly from GitHub Raw, GitHub Pages, or any static CDN. Authentication and private user progress should live in the Qurio application/backend, not in this repository.
 
-## Repository name
-
-Recommended GitHub repository name:
-
-```text
-qurio-learning-content
-```
-
-Recommended GitHub description:
-
-> Multilingual study notes, syllabi, and practice quiz content for Qurio.
-
-Why this name:
-
-- clearly belongs to **Qurio**
-- says exactly what the repository contains
-- does not tie the content to one school board, grade, or language
-- can scale later to more grades, subjects, curricula, and languages
-
----
-
 ## Demo coverage
 
 This starter repository contains working sample content for:
