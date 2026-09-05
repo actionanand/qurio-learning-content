@@ -1,0 +1,17 @@
+{
+  "home": {
+    "title": "Qurio",
+    "studyNotes": "Study Notes",
+    "practiceQuiz": "Practice Quiz",
+    "progress": "Progress"
+  },
+  "quiz": {
+    "start": "Start Quiz",
+    "hint": "Hint",
+    "submit": "Submit Quiz",
+    "correct": "Correct",
+    "incorrect": "Incorrect",
+    "correctAnswer": "Correct Answer",
+    "explanation": "Explanation"
+  }
+}

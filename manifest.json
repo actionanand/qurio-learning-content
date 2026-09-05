@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.09.05-demo.1",
+  "generatedAt": "2026-09-05T00:00:00Z",
+  "defaultLanguage": "en",
+  "fallbackLanguage": "en",
+  "supportedLanguages": [
+    {
+      "id": "en",
+      "name": "English",
+      "nativeName": "English"
+    },
+    {
+      "id": "ta",
+      "name": "Tamil",
+      "nativeName": "தமிழ்"
+    },
+    {
+      "id": "hi",
+      "name": "Hindi",
+      "nativeName": "हिन्दी"
+    }
+  ],
+  "curricula": [
+    {
+      "id": "general",
+      "name": "General",
+      "isDefault": true
+    }
+  ],
+  "grades": [
+    {
+      "id": 5,
+      "label": {
+        "en": "Grade 5",
+        "ta": "5ஆம் வகுப்பு",
+        "hi": "कक्षा 5"
+      }
+    }
+  ],
+  "subjects": [
+    {
+      "id": "mathematics",
+      "label": {
+        "en": "Mathematics",
+        "ta": "கணிதம்",
+        "hi": "गणित"
+      },
+      "gradeScoped": true
+    },
+    {
+      "id": "science",
+      "label": {
+        "en": "Science",
+        "ta": "அறிவியல்",
+        "hi": "विज्ञान"
+      },
+      "gradeScoped": true
+    },
+    {
+      "id": "english",
+      "label": {
+        "en": "English",
+        "ta": "ஆங்கிலம்",
+        "hi": "अंग्रेज़ी"
+      },
+      "gradeScoped": true
+    },
+    {
+      "id": "social-studies",
+      "label": {
+        "en": "Social Studies",
+        "ta": "சமூக அறிவியல்",
+        "hi": "सामाजिक अध्ययन"
+      },
+      "gradeScoped": true
+    },
+    {
+      "id": "intelligence",
+      "label": {
+        "en": "Intelligence",
+        "ta": "நுண்ணறிவு",
+        "hi": "तार्किक क्षमता"
+      },
+      "gradeScoped": true
+    }
+  ],
+  "items": [
+    {
+      "id": "syllabus-general-05-mathematics",
+      "type": "syllabus",
+      "path": "grade-05/mathematics/syllabus.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "optional": true
+    },
+    {
+      "id": "math-05-equivalent-fractions",
+      "type": "note",
+      "path": "grade-05/mathematics/notes/fractions/equivalent-fractions.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ]
+    },
+    {
+      "id": "math-05-equivalent-fractions-01",
+      "type": "quiz",
+      "path": "grade-05/mathematics/quizzes/equivalent-fractions-01.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ]
+    },
+    {
+      "id": "syllabus-general-05-science",
+      "type": "syllabus",
+      "path": "grade-05/science/syllabus.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "optional": true
+    },
+    {
+      "id": "sci-05-photosynthesis",
+      "type": "note",
+      "path": "grade-05/science/notes/plants/photosynthesis.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ]
+    },
+    {
+      "id": "sci-05-photosynthesis-01",
+      "type": "quiz",
+      "path": "grade-05/science/quizzes/photosynthesis-01.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ]
+    },
+    {
+      "id": "syllabus-general-05-english",
+      "type": "syllabus",
+      "path": "grade-05/english/syllabus.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "optional": true
+    },
+    {
+      "id": "eng-05-nouns",
+      "type": "note",
+      "path": "grade-05/english/notes/grammar/nouns.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ]
+    },
+    {
+      "id": "eng-05-nouns-01",
+      "type": "quiz",
+      "path": "grade-05/english/quizzes/nouns-01.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ]
+    },
+    {
+      "id": "syllabus-general-05-social-studies",
+      "type": "syllabus",
+      "path": "grade-05/social-studies/syllabus.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "optional": true
+    },
+    {
+      "id": "sst-05-directions-and-maps",
+      "type": "note",
+      "path": "grade-05/social-studies/notes/geography/directions-and-maps.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ]
+    },
+    {
+      "id": "sst-05-directions-and-maps-01",
+      "type": "quiz",
+      "path": "grade-05/social-studies/quizzes/directions-and-maps-01.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ]
+    },
+    {
+      "id": "syllabus-general-05-intelligence",
+      "type": "syllabus",
+      "path": "grade-05/intelligence/syllabus.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "optional": true
+    },
+    {
+      "id": "int-05-number-patterns",
+      "type": "note",
+      "path": "grade-05/intelligence/notes/patterns/number-patterns.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ]
+    },
+    {
+      "id": "int-05-number-patterns-01",
+      "type": "quiz",
+      "path": "grade-05/intelligence/quizzes/number-patterns-01.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ]
+    }
+  ]
+}

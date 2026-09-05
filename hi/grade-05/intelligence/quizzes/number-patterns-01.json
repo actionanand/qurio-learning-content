@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "id": "int-05-number-patterns-01",
+  "type": "quiz",
+  "language": "hi",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "intelligence",
+  "chapter": "patterns",
+  "topic": "number-patterns",
+  "title": "संख्या पैटर्न — अभ्यास",
+  "description": "संकेत और उत्तर व्याख्या के साथ छोटा समयबद्ध अभ्यास क्विज़.",
+  "difficulty": "beginner",
+  "timeLimitSeconds": 180,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "int-05-number-patterns"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-05",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "अगली संख्या क्या है: 2, 4, 6, 8, ?",
+      "hint": "लगातार संख्याओं का अंतर देखें.",
+      "options": [
+        {
+          "id": "A",
+          "text": "9",
+          "feedback": "क्रम 1 नहीं, 2 से बढ़ता है."
+        },
+        {
+          "id": "B",
+          "text": "10",
+          "feedback": "सही। 2 जोड़ें."
+        },
+        {
+          "id": "C",
+          "text": "12",
+          "feedback": "यह एक पद छोड़ देता है."
+        },
+        {
+          "id": "D",
+          "text": "16",
+          "feedback": "यह अलग नियम है."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "नियम +2 है, इसलिए 8 + 2 = 10."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "अगली संख्या क्या है: 3, 6, 12, 24, ?",
+      "hint": "देखें कि हर पद किससे गुणा हो रहा है.",
+      "options": [
+        {
+          "id": "A",
+          "text": "27",
+          "feedback": "3 जोड़ना पैटर्न नहीं है."
+        },
+        {
+          "id": "B",
+          "text": "30",
+          "feedback": "6 जोड़ना लगातार लागू नहीं होता."
+        },
+        {
+          "id": "C",
+          "text": "36",
+          "feedback": "यह सही गुणन नियम नहीं है."
+        },
+        {
+          "id": "D",
+          "text": "48",
+          "feedback": "सही। हर पद ×2 है."
+        }
+      ],
+      "correctOption": "D",
+      "explanation": "हर संख्या पिछली संख्या की दोगुनी है, इसलिए 24×2 = 48."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "5, 10, 15, 20 के लिए कौन-सा नियम सही है?",
+      "hint": "लगातार पदों की तुलना करें.",
+      "options": [
+        {
+          "id": "A",
+          "text": "+5",
+          "feedback": "सही."
+        },
+        {
+          "id": "B",
+          "text": "×2",
+          "feedback": "5×2=10, लेकिन 10×2=20, 15 नहीं."
+        },
+        {
+          "id": "C",
+          "text": "-5",
+          "feedback": "संख्याएँ बढ़ रही हैं."
+        },
+        {
+          "id": "D",
+          "text": "+10",
+          "feedback": "इससे 5, 15, 25... मिलता."
+        }
+      ],
+      "correctOption": "A",
+      "explanation": "हर पद में 5 जोड़ा गया है."
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "id": "int-05-number-patterns-01",
+  "type": "quiz",
+  "language": "ta",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "intelligence",
+  "chapter": "patterns",
+  "topic": "number-patterns",
+  "title": "எண் வடிவமைப்புகள் — பயிற்சி",
+  "description": "குறிப்புகள் மற்றும் விடை விளக்கங்களுடன் கூடிய குறுகிய நேரமிட்ட பயிற்சி வினாடி வினா.",
+  "difficulty": "beginner",
+  "timeLimitSeconds": 180,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "int-05-number-patterns"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-05",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "அடுத்து வரும் எண் எது: 2, 4, 6, 8, ?",
+      "hint": "அடுத்தடுத்த எண்களுக்கு இடையிலான வேறுபாட்டைப் பாருங்கள்.",
+      "options": [
+        {
+          "id": "A",
+          "text": "9",
+          "feedback": "தொடர் 1 அல்ல, 2-ஆல் அதிகரிக்கிறது."
+        },
+        {
+          "id": "B",
+          "text": "10",
+          "feedback": "சரி. 2-ஐ கூட்டவும்."
+        },
+        {
+          "id": "C",
+          "text": "12",
+          "feedback": "இது ஒரு எண்ணைத் தாண்டுகிறது."
+        },
+        {
+          "id": "D",
+          "text": "16",
+          "feedback": "இது வேறு விதி."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "விதி +2. ஆகவே 8 + 2 = 10."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "அடுத்து வரும் எண் எது: 3, 6, 12, 24, ?",
+      "hint": "ஒவ்வொரு எண்ணும் பெருக்கப்படுகிறதா பாருங்கள்.",
+      "options": [
+        {
+          "id": "A",
+          "text": "27",
+          "feedback": "3-ஐ கூட்டுவது pattern அல்ல."
+        },
+        {
+          "id": "B",
+          "text": "30",
+          "feedback": "6-ஐ கூட்டுவது தொடர்ந்து பொருந்தாது."
+        },
+        {
+          "id": "C",
+          "text": "36",
+          "feedback": "இது விதி அல்ல."
+        },
+        {
+          "id": "D",
+          "text": "48",
+          "feedback": "சரி. ஒவ்வொரு எண்ணும் ×2."
+        }
+      ],
+      "correctOption": "D",
+      "explanation": "ஒவ்வொரு எண்ணும் முந்தைய எண்ணின் இருமடங்கு; 24×2 = 48."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "5, 10, 15, 20 தொடரின் விதி எது?",
+      "hint": "அடுத்தடுத்த எண்களை ஒப்பிடுங்கள்.",
+      "options": [
+        {
+          "id": "A",
+          "text": "+5",
+          "feedback": "சரி."
+        },
+        {
+          "id": "B",
+          "text": "×2",
+          "feedback": "5×2=10; ஆனால் 10×2=20, 15 அல்ல."
+        },
+        {
+          "id": "C",
+          "text": "-5",
+          "feedback": "எண்கள் அதிகரிக்கின்றன."
+        },
+        {
+          "id": "D",
+          "text": "+10",
+          "feedback": "அப்படியானால் 5, 15, 25... கிடைக்கும்."
+        }
+      ],
+      "correctOption": "A",
+      "explanation": "ஒவ்வொரு முறையும் 5 கூட்டப்படுகிறது."
+    }
+  ]
+}

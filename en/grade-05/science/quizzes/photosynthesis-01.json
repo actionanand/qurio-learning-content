@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "id": "sci-05-photosynthesis-01",
+  "type": "quiz",
+  "language": "en",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "science",
+  "chapter": "plants",
+  "topic": "photosynthesis",
+  "title": "Photosynthesis — Practice",
+  "description": "A short timed practice quiz with hints and answer explanations.",
+  "difficulty": "beginner",
+  "timeLimitSeconds": 180,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "sci-05-photosynthesis"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-05",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "What does a green plant mainly need for photosynthesis?",
+      "hint": "Think about what enters the process.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sunlight, water and carbon dioxide",
+          "feedback": "Correct. These are the main inputs."
+        },
+        {
+          "id": "B",
+          "text": "Oxygen and soil only",
+          "feedback": "Oxygen is mainly a product of photosynthesis."
+        },
+        {
+          "id": "C",
+          "text": "Moonlight and oxygen",
+          "feedback": "Photosynthesis depends on light energy, normally sunlight, and carbon dioxide."
+        },
+        {
+          "id": "D",
+          "text": "Glucose and oxygen",
+          "feedback": "These are products, not the main inputs."
+        }
+      ],
+      "correctOption": "A",
+      "explanation": "Photosynthesis uses light energy, water and carbon dioxide to make glucose and release oxygen."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "Which gas is released during photosynthesis?",
+      "hint": "Look at the products of the equation.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Carbon dioxide",
+          "feedback": "Carbon dioxide is used by the plant."
+        },
+        {
+          "id": "B",
+          "text": "Nitrogen",
+          "feedback": "Nitrogen is not the gas produced in this process."
+        },
+        {
+          "id": "C",
+          "text": "Oxygen",
+          "feedback": "Correct. Oxygen is released."
+        },
+        {
+          "id": "D",
+          "text": "Hydrogen",
+          "feedback": "Hydrogen gas is not released in the basic photosynthesis process."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "Oxygen is one of the products of photosynthesis."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "What is the role of chlorophyll?",
+      "hint": "It is the green pigment in leaves.",
+      "options": [
+        {
+          "id": "A",
+          "text": "It absorbs light energy",
+          "feedback": "Correct."
+        },
+        {
+          "id": "B",
+          "text": "It pumps water from soil",
+          "feedback": "Roots and transport tissues move water."
+        },
+        {
+          "id": "C",
+          "text": "It produces soil",
+          "feedback": "Plants do not produce soil through chlorophyll."
+        },
+        {
+          "id": "D",
+          "text": "It stores oxygen underground",
+          "feedback": "That is not chlorophyll's role."
+        }
+      ],
+      "correctOption": "A",
+      "explanation": "Chlorophyll absorbs light energy that helps drive photosynthesis."
+    }
+  ]
+}

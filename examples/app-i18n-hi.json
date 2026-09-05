@@ -1,0 +1,17 @@
+{
+  "home": {
+    "title": "Qurio",
+    "studyNotes": "अध्ययन नोट्स",
+    "practiceQuiz": "अभ्यास क्विज़",
+    "progress": "प्रगति"
+  },
+  "quiz": {
+    "start": "क्विज़ शुरू करें",
+    "hint": "संकेत",
+    "submit": "जमा करें",
+    "correct": "सही",
+    "incorrect": "गलत",
+    "correctAnswer": "सही उत्तर",
+    "explanation": "व्याख्या"
+  }
+}

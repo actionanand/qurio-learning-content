@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "id": "eng-05-nouns-01",
+  "type": "quiz",
+  "language": "en",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "english",
+  "chapter": "grammar",
+  "topic": "nouns",
+  "title": "Nouns — Practice",
+  "description": "A short timed practice quiz with hints and answer explanations.",
+  "difficulty": "beginner",
+  "timeLimitSeconds": 180,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "eng-05-nouns"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-05",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "Which word is a proper noun?",
+      "hint": "A proper noun names a specific person or place.",
+      "options": [
+        {
+          "id": "A",
+          "text": "city",
+          "feedback": "This is a common noun."
+        },
+        {
+          "id": "B",
+          "text": "river",
+          "feedback": "This is a common noun."
+        },
+        {
+          "id": "C",
+          "text": "Chennai",
+          "feedback": "Correct. Chennai is the specific name of a city."
+        },
+        {
+          "id": "D",
+          "text": "teacher",
+          "feedback": "This is a common noun."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "Chennai is a specific place name, so it is a proper noun."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "In 'The girl opened the book', which word is a common noun for a thing?",
+      "hint": "Look for the object being opened.",
+      "options": [
+        {
+          "id": "A",
+          "text": "girl",
+          "feedback": "Girl is a common noun for a person."
+        },
+        {
+          "id": "B",
+          "text": "opened",
+          "feedback": "Opened is a verb."
+        },
+        {
+          "id": "C",
+          "text": "the",
+          "feedback": "The is an article."
+        },
+        {
+          "id": "D",
+          "text": "book",
+          "feedback": "Correct. Book names a thing."
+        }
+      ],
+      "correctOption": "D",
+      "explanation": "Book is a common noun that names a thing."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "Which statement is true?",
+      "hint": "Recall the difference between common and proper nouns.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Proper nouns usually begin with a capital letter in English.",
+          "feedback": "Correct."
+        },
+        {
+          "id": "B",
+          "text": "Every noun is a verb.",
+          "feedback": "Nouns and verbs have different roles."
+        },
+        {
+          "id": "C",
+          "text": "A common noun always names one specific person.",
+          "feedback": "That describes a proper noun more closely."
+        },
+        {
+          "id": "D",
+          "text": "Nouns cannot name ideas.",
+          "feedback": "Nouns can name ideas such as kindness."
+        }
+      ],
+      "correctOption": "A",
+      "explanation": "Proper nouns identify specific names and normally begin with a capital letter in English."
+    }
+  ]
+}

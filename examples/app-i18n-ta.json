@@ -1,0 +1,17 @@
+{
+  "home": {
+    "title": "Qurio",
+    "studyNotes": "படிப்புக் குறிப்புகள்",
+    "practiceQuiz": "பயிற்சி வினாடி வினா",
+    "progress": "முன்னேற்றம்"
+  },
+  "quiz": {
+    "start": "வினாடி வினாவை தொடங்கு",
+    "hint": "குறிப்பு",
+    "submit": "சமர்ப்பி",
+    "correct": "சரி",
+    "incorrect": "தவறு",
+    "correctAnswer": "சரியான விடை",
+    "explanation": "விளக்கம்"
+  }
+}
