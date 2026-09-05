@@ -3,6 +3,7 @@ import path from 'node:path';
 import { config } from '../config.js';
 import { loadManifest } from './catalog.js';
 import { ensureDirForFile, readJson, safeRepoPath, writeJson } from './utils.js';
+import { supportedLanguageIds } from './catalog-management.js';
 
 export function listExamPlans() {
   const manifest = loadManifest();
@@ -48,7 +49,7 @@ export function loadExamPlanBundle(planId, language) {
 export function saveExamPlanBundle(planId, language, payload) {
   const planRef = getExamPlanRef(planId);
   if (!planRef) throw new Error(`Unknown exam plan: ${planId}`);
-  if (!config.languages.includes(language)) throw new Error(`Unsupported language: ${language}`);
+  if (!supportedLanguageIds().includes(language)) throw new Error(`Unsupported language: ${language}. Add it from Catalog Setup first.`);
   let plan;
   try { plan = JSON.parse(payload.planJson); }
   catch { throw new Error('Plan JSON is invalid.'); }

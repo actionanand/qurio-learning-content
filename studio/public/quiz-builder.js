@@ -94,20 +94,21 @@
   });
 
   async function updatePreview() {
+    const curriculum = document.getElementById('quizCurriculum')?.value || 'general';
     const grade = document.getElementById('quizGrade')?.value;
     const subject = document.getElementById('quizSubject')?.value;
     const topic = document.getElementById('quizTopic')?.value;
     const setNumber = document.getElementById('quizSetNumber')?.value;
     if (!grade || !subject || !topic) return;
     try {
-      const params = new URLSearchParams({grade, subject, topic, setNumber});
+      const params = new URLSearchParams({curriculum, grade, subject, topic, setNumber});
       const data = await fetch(`/api/id-preview?${params}`).then(r => r.json());
       document.getElementById('idPreview').innerHTML = `<div><small>Note ID</small><code>${data.noteId}</code></div><div><small>Quiz ID</small><code>${data.quizId}</code></div><div><small>Series</small><code>${data.seriesId}</code></div>`;
       const series = document.getElementById('quizSeriesId');
       if (series && !series.value) series.placeholder = data.seriesId;
     } catch {}
   }
-  ['quizGrade','quizSubject','quizTopic','quizSetNumber'].forEach(id => document.getElementById(id)?.addEventListener('input', updatePreview));
+  ['quizCurriculum','quizGrade','quizSubject','quizTopic','quizSetNumber'].forEach(id => document.getElementById(id)?.addEventListener('input', updatePreview));
   render();
   updatePreview();
 })();

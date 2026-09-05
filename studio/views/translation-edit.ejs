@@ -1,4 +1,5 @@
-<%- include('partials/header', { title: `Translate ${item.type}`, subtitle: `${item.id} · English → ${targetLanguage === 'ta' ? 'Tamil' : 'Hindi'}` }) %>
+<% const targetDef = languages.find(l => l.id === targetLanguage) || { id: targetLanguage, name: targetLanguage.toUpperCase(), nativeName: targetLanguage.toUpperCase() }; const sourceDef = languages.find(l => l.id === defaultLanguage) || { name: defaultLanguage.toUpperCase() }; %>
+<%- include('partials/header', { title: `Translate ${item.type}`, subtitle: `${item.id} · ${sourceDef.name} → ${targetDef.name}` }) %>
 <div class="translation-banner"><span class="lock-icon">⌁</span><div><strong>Identity is locked.</strong><p>Studio preserves content ID, path, grade, subject, chapter/topic, quiz series, question/option IDs and correct answers from English.</p></div></div>
 <% if (item.type === 'quiz') { const sourceQuiz = source.data; const targetQuiz = target?.data || sourceQuiz; %>
 <form method="post" action="/translations/quiz" id="quizTranslationForm" class="stack">
@@ -13,7 +14,7 @@
     <label>Description<textarea id="trDescription" class="short-textarea"><%= targetQuiz.description || '' %></textarea></label>
   </section>
   <section class="card">
-    <div class="card-head"><div><span class="eyebrow">QUESTIONS</span><h2>Translate question text and feedback</h2><small>The correct answer stays locked to the English source.</small></div></div>
+    <div class="card-head"><div><span class="eyebrow">QUESTIONS</span><h2>Translate question text and feedback</h2><small>The correct answer stays locked to the canonical source.</small></div></div>
     <div id="translationQuestions" class="translation-questions"></div>
   </section>
   <div class="sticky-actions"><a class="btn ghost" href="/translations">Cancel</a><button class="btn primary" type="submit">Save <%= targetLanguage.toUpperCase() %> translation</button></div>
@@ -31,8 +32,8 @@
   </section>
   <section class="card">
     <div class="translation-grid">
-      <div class="editor-pane source-pane"><div class="pane-head"><strong>English source</strong><span>Read only</span></div><textarea class="code-editor" readonly><%= sourceMd.body %></textarea></div>
-      <div class="editor-pane"><div class="pane-head"><strong><%= targetLanguage === 'ta' ? 'Tamil' : 'Hindi' %> translation</strong><button class="btn ghost tiny" type="button" data-preview-button>Preview</button></div><textarea class="code-editor" name="body" data-markdown-source required><%= targetMd.body || '' %></textarea></div>
+      <div class="editor-pane source-pane"><div class="pane-head"><strong><%= sourceDef.name %> source</strong><span>Read only</span></div><textarea class="code-editor" readonly><%= sourceMd.body %></textarea></div>
+      <div class="editor-pane"><div class="pane-head"><strong><%= targetDef.name %> translation</strong><button class="btn ghost tiny" type="button" data-preview-button>Preview</button></div><textarea class="code-editor" name="body" data-markdown-source required><%= targetMd.body || '' %></textarea></div>
     </div>
     <div class="preview-full"><div class="pane-head"><strong>Translation preview</strong></div><div class="markdown-preview" data-markdown-preview><p class="muted">Preview will appear here.</p></div></div>
   </section>

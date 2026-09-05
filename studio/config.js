@@ -9,7 +9,6 @@ export const config = {
   rootDir: path.resolve(process.env.QURIO_CONTENT_ROOT || defaultRoot),
   host: process.env.HOST || '127.0.0.1',
   port: Number(process.env.PORT || 4310),
-  languages: ['en', 'ta', 'hi'],
   defaultLanguage: 'en',
   fallbackLanguage: 'en'
 };

@@ -1,12 +1,19 @@
 import fs from 'node:fs';
 import { config } from '../config.js';
-import { getItemById, localizedPath, readLocalizedItem } from './catalog.js';
+import { getItemById, loadManifest, localizedPath, readLocalizedItem } from './catalog.js';
 import { stringifyFrontmatter } from './frontmatter.js';
 import { ensureDirForFile, todayIso, writeJson } from './utils.js';
+import { supportedLanguageIds } from './catalog-management.js';
+
+function canonicalLanguage() {
+  return loadManifest().defaultLanguage || config.defaultLanguage;
+}
 
 function assertTarget(targetLanguage) {
-  if (!config.languages.includes(targetLanguage) || targetLanguage === 'en') {
-    throw new Error('Target language must be Tamil or Hindi.');
+  const ids = supportedLanguageIds();
+  const defaultLanguage = canonicalLanguage();
+  if (!ids.includes(targetLanguage) || targetLanguage === defaultLanguage) {
+    throw new Error(`Target language must be a supported non-canonical language. Add languages from Catalog Setup first.`);
   }
 }
 
@@ -14,8 +21,8 @@ export function getTranslationEditorData(id, targetLanguage) {
   assertTarget(targetLanguage);
   const item = getItemById(id);
   if (!item) throw new Error(`Unknown content ID: ${id}`);
-  const source = readLocalizedItem(item, 'en');
-  if (!source) throw new Error(`English canonical source is missing for ${id}.`);
+  const source = readLocalizedItem(item, canonicalLanguage());
+  if (!source) throw new Error(`Canonical source is missing for ${id}.`);
   const target = readLocalizedItem(item, targetLanguage);
   return { item, source, target, targetLanguage };
 }
@@ -24,8 +31,8 @@ export function saveMarkdownTranslation({ id, targetLanguage, title, body }) {
   assertTarget(targetLanguage);
   const item = getItemById(id);
   if (!item || !['note', 'syllabus'].includes(item.type)) throw new Error('This item is not translatable Markdown content.');
-  const source = readLocalizedItem(item, 'en');
-  if (!source) throw new Error('English source is missing.');
+  const source = readLocalizedItem(item, canonicalLanguage());
+  if (!source) throw new Error('Canonical source is missing.');
   const attrs = {
     ...source.attributes,
     title: String(title || source.attributes.title).trim(),
@@ -40,7 +47,7 @@ export function saveMarkdownTranslation({ id, targetLanguage, title, body }) {
 
 function assertAlignedQuiz(sourceQuiz, translatedQuiz) {
   if (!translatedQuiz || !Array.isArray(translatedQuiz.questions)) throw new Error('Translated quiz questions are missing.');
-  if (translatedQuiz.questions.length !== sourceQuiz.questions.length) throw new Error('Translation must keep the same question count as English.');
+  if (translatedQuiz.questions.length !== sourceQuiz.questions.length) throw new Error('Translation must keep the same question count as the canonical source.');
   for (let index = 0; index < sourceQuiz.questions.length; index++) {
     const sourceQ = sourceQuiz.questions[index];
     const targetQ = translatedQuiz.questions[index];
@@ -56,8 +63,8 @@ export function saveQuizTranslation({ id, targetLanguage, translated }) {
   assertTarget(targetLanguage);
   const item = getItemById(id);
   if (!item || item.type !== 'quiz') throw new Error('This item is not a quiz.');
-  const source = readLocalizedItem(item, 'en');
-  if (!source) throw new Error('English quiz source is missing.');
+  const source = readLocalizedItem(item, canonicalLanguage());
+  if (!source) throw new Error('Canonical quiz source is missing.');
   assertAlignedQuiz(source.data, translated);
 
   const questions = source.data.questions.map((sourceQ, index) => {

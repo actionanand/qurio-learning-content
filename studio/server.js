@@ -11,7 +11,8 @@ import { renderMarkdown } from './lib/markdown-preview.js';
 import { validateRepository } from './lib/validation-service.js';
 import { getGitStatus } from './lib/git-status.js';
 import { listCalendarFiles, listExamPlans, loadCalendar, loadExamPlanBundle, saveCalendar, saveExamPlanBundle } from './lib/exam-service.js';
-import { pad2, subjectShort } from './lib/utils.js';
+import { pad2, slugify } from './lib/utils.js';
+import { deleteCurriculum, deleteGrade, deleteLanguage, deleteSubject, getCatalogData, getSubjectCode, saveCurriculum, saveGrade, saveLanguage, saveSubject, supportedLanguages } from './lib/catalog-management.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -25,11 +26,9 @@ app.use('/vendor/mermaid', express.static(path.join(config.rootDir, 'node_module
 
 app.use((req, res, next) => {
   res.locals.currentPath = req.path;
-  res.locals.languages = [
-    { id: 'en', name: 'English' },
-    { id: 'ta', name: 'Tamil' },
-    { id: 'hi', name: 'Hindi' }
-  ];
+  const manifest = loadManifest();
+  res.locals.languages = supportedLanguages(manifest);
+  res.locals.defaultLanguage = manifest.defaultLanguage || 'en';
   res.locals.queryMessage = req.query.message || null;
   next();
 });
@@ -39,8 +38,9 @@ function render(res, view, data = {}) {
 }
 
 function redirectWithMessage(res, target, message) {
-  const sep = target.includes('?') ? '&' : '?';
-  res.redirect(`${target}${sep}message=${encodeURIComponent(message)}`);
+  const [base, hash = ''] = target.split('#', 2);
+  const sep = base.includes('?') ? '&' : '?';
+  res.redirect(`${base}${sep}message=${encodeURIComponent(message)}${hash ? `#${hash}` : ''}`);
 }
 
 function formCatalog() {
@@ -50,16 +50,53 @@ function formCatalog() {
 
 app.get('/', (req, res) => render(res, 'dashboard', { stats: listDashboardStats(), git: getGitStatus() }));
 
+
+app.get('/catalog', (req, res) => render(res, 'catalog', getCatalogData()));
+app.post('/catalog/languages/save', (req, res, next) => {
+  try { const value = saveLanguage(req.body); redirectWithMessage(res, '/catalog#languages', `Saved language ${value.name} (${value.id}).`); }
+  catch (error) { next(error); }
+});
+app.post('/catalog/languages/delete', (req, res, next) => {
+  try { deleteLanguage(req.body.id); redirectWithMessage(res, '/catalog#languages', `Removed language ${req.body.id}.`); }
+  catch (error) { next(error); }
+});
+app.post('/catalog/curricula/save', (req, res, next) => {
+  try { const value = saveCurriculum(req.body); redirectWithMessage(res, '/catalog#curricula', `Saved curriculum ${value.name}.`); }
+  catch (error) { next(error); }
+});
+app.post('/catalog/curricula/delete', (req, res, next) => {
+  try { deleteCurriculum(req.body.id); redirectWithMessage(res, '/catalog#curricula', `Removed curriculum ${req.body.id}.`); }
+  catch (error) { next(error); }
+});
+app.post('/catalog/grades/save', (req, res, next) => {
+  try { const value = saveGrade(req.body); redirectWithMessage(res, '/catalog#grades', `Saved Grade ${value.id}.`); }
+  catch (error) { next(error); }
+});
+app.post('/catalog/grades/delete', (req, res, next) => {
+  try { deleteGrade(req.body.id); redirectWithMessage(res, '/catalog#grades', `Removed Grade ${req.body.id}.`); }
+  catch (error) { next(error); }
+});
+app.post('/catalog/subjects/save', (req, res, next) => {
+  try { const value = saveSubject(req.body); redirectWithMessage(res, '/catalog#subjects', `Saved subject ${value.label?.en || value.id}.`); }
+  catch (error) { next(error); }
+});
+app.post('/catalog/subjects/delete', (req, res, next) => {
+  try { deleteSubject(req.body.id); redirectWithMessage(res, '/catalog#subjects', `Removed subject ${req.body.id}.`); }
+  catch (error) { next(error); }
+});
+
 app.get('/content', (req, res) => {
   const manifest = loadManifest();
   const type = req.query.type || '';
+  const curriculum = req.query.curriculum || '';
   const grade = req.query.grade || '';
   const subject = req.query.subject || '';
   let items = manifest.items || [];
   if (type) items = items.filter((i) => i.type === type);
+  if (curriculum) items = items.filter((i) => (i.curriculum || 'general') === curriculum);
   if (grade) items = items.filter((i) => Number(i.grade) === Number(grade));
   if (subject) items = items.filter((i) => i.subject === subject);
-  render(res, 'content-list', { manifest, items, filters: { type, grade, subject } });
+  render(res, 'content-list', { manifest, items, filters: { type, curriculum, grade, subject } });
 });
 
 app.get('/notes/new', (req, res) => render(res, 'note-form', { ...formCatalog(), mode: 'new', note: null }));
@@ -191,9 +228,11 @@ app.post('/exam-plans/calendar/save', (req, res, next) => {
 app.get('/api/id-preview', (req, res) => {
   const grade = Number(req.query.grade || 0);
   const subject = String(req.query.subject || '');
+  const curriculum = slugify(String(req.query.curriculum || 'general')) || 'general';
   const topic = String(req.query.topic || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const setNumber = Number(req.query.setNumber || 1);
-  const base = `${subjectShort(subject)}-${pad2(grade)}-${topic}`;
+  const core = `${getSubjectCode(subject)}-${pad2(grade)}-${topic}`;
+  const base = curriculum === 'general' ? core : `${curriculum}-${core}`;
   res.json({ noteId: base, quizId: `${base}-${pad2(setNumber)}`, seriesId: `${base}-practice` });
 });
 
