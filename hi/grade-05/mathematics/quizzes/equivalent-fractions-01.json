@@ -8,6 +8,9 @@
   "subject": "mathematics",
   "chapter": "fractions",
   "topic": "equivalent-fractions",
+  "seriesId": "math-05-equivalent-fractions-practice",
+  "setNumber": 1,
+  "setLabel": "अभ्यास सेट 1",
   "title": "समतुल्य भिन्न — अभ्यास",
   "description": "संकेत और उत्तर व्याख्या के साथ छोटा समयबद्ध अभ्यास क्विज़.",
   "difficulty": "beginner",
@@ -18,7 +21,7 @@
   "sourceNoteIds": [
     "math-05-equivalent-fractions"
   ],
-  "version": 1,
+  "version": 2,
   "updatedAt": "2026-09-05",
   "questions": [
     {

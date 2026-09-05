@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "jnvst-2027-class-06-demo",
+  "type": "exam-plan",
+  "examId": "jnvst",
+  "language": "hi",
+  "title": "JNVST 2027 — तैयारी योजना",
+  "subtitle": "कक्षा 6 प्रवेश · बहुभाषी डेमो योजना",
+  "entryClass": 6,
+  "examYear": 2027,
+  "demo": true,
+  "officialSchedule": false,
+  "planStartDate": "2026-04-01",
+  "planEndDate": "2027-01-31",
+  "targetDate": "2027-01-31",
+  "contentRefs": {
+    "overview": "overview.md",
+    "syllabus": "syllabus.md",
+    "strategy": "strategy.md"
+  },
+  "phases": [
+    {
+      "id": "phase-1",
+      "order": 1,
+      "name": "आधार निर्माण",
+      "startDate": "2026-04-01",
+      "endDate": "2026-05-31"
+    },
+    {
+      "id": "phase-2",
+      "order": 2,
+      "name": "मुख्य दक्षता",
+      "startDate": "2026-06-01",
+      "endDate": "2026-07-31"
+    },
+    {
+      "id": "phase-3",
+      "order": 3,
+      "name": "उन्नत विषय",
+      "startDate": "2026-08-01",
+      "endDate": "2026-10-31"
+    },
+    {
+      "id": "phase-4",
+      "order": 4,
+      "name": "पुनरावृत्ति और मॉक टेस्ट",
+      "startDate": "2026-11-01",
+      "endDate": "2027-01-31"
+    }
+  ],
+  "calendarFiles": [
+    "calendar/2026-09.json"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-05"
+}

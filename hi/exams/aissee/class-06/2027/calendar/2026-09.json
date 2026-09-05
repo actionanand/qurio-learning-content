@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "planId": "aissee-2027-class-06-demo",
+  "language": "hi",
+  "month": "2026-09",
+  "days": [
+    {
+      "date": "2026-09-04",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-1",
+          "subjectId": "science",
+          "title": "पारिस्थितिकी तंत्र और खाद्य शृंखला",
+          "activityType": "new-learning",
+          "details": "नई अवधारणा + उदाहरण + अभ्यास",
+          "contentId": "sci-05-photosynthesis"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-1",
+          "subjectId": "mathematics",
+          "title": "क्षेत्रमिति",
+          "activityType": "spaced-recall",
+          "details": "5 त्वरित पुनरावृत्ति प्रश्न"
+        }
+      ],
+      "practiceQuizIds": [
+        "sci-05-photosynthesis-01"
+      ],
+      "studyMaterialIds": [
+        "sci-05-photosynthesis"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "सुबह दौड़ + व्यायाम"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "पठन / भाषा प्रवाह"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "मुख्य अध्ययन समय"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-1",
+          "subjectId": "science",
+          "title": "पारिस्थितिकी तंत्र और खाद्य शृंखला",
+          "activityType": "new-learning",
+          "details": "नई अवधारणा + उदाहरण + अभ्यास",
+          "contentId": "sci-05-photosynthesis"
+        },
+        {
+          "id": "topic-2",
+          "subjectId": "general-knowledge",
+          "title": "खेल-कूद",
+          "activityType": "new-learning",
+          "details": "पढ़ें + आरेख + नोट्स"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-1",
+          "subjectId": "mathematics",
+          "title": "क्षेत्रमिति",
+          "activityType": "spaced-recall",
+          "details": "5 त्वरित पुनरावृत्ति प्रश्न"
+        },
+        {
+          "id": "revision-2",
+          "subjectId": "english",
+          "title": "निबंध लेखन",
+          "activityType": "spaced-recall",
+          "details": "5 त्वरित पुनरावृत्ति प्रश्न"
+        },
+        {
+          "id": "revision-3",
+          "subjectId": "mathematics",
+          "title": "आयतन और पृष्ठीय क्षेत्रफल",
+          "activityType": "spaced-recall",
+          "details": "5 त्वरित पुनरावृत्ति प्रश्न"
+        }
+      ],
+      "practiceQuizIds": [
+        "sci-05-photosynthesis-01"
+      ],
+      "studyMaterialIds": [
+        "sci-05-photosynthesis"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "सुबह दौड़ + व्यायाम"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "पठन / भाषा प्रवाह"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "मुख्य अध्ययन समय"
+        },
+        {
+          "id": "time-4",
+          "startTime": "19:00",
+          "endTime": "19:20",
+          "title": "अभ्यास क्विज़ + समीक्षा"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-2",
+          "subjectId": "general-knowledge",
+          "title": "खेल-कूद",
+          "activityType": "new-learning",
+          "details": "पढ़ें + आरेख + नोट्स"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-3",
+          "subjectId": "mathematics",
+          "title": "आयतन और पृष्ठीय क्षेत्रफल",
+          "activityType": "spaced-recall",
+          "details": "5 त्वरित पुनरावृत्ति प्रश्न"
+        }
+      ],
+      "practiceQuizIds": [
+        "sci-05-photosynthesis-01"
+      ],
+      "studyMaterialIds": [
+        "sci-05-photosynthesis"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "सुबह दौड़ + व्यायाम"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "पठन / भाषा प्रवाह"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "मुख्य अध्ययन समय"
+        }
+      ]
+    }
+  ]
+}

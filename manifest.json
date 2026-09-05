@@ -1,7 +1,7 @@
 {
-  "schemaVersion": 1,
-  "contentVersion": "2026.09.05-demo.1",
-  "generatedAt": "2026-09-05T00:00:00Z",
+  "schemaVersion": 2,
+  "contentVersion": "2026.09.05-demo.2",
+  "generatedAt": "2026-09-05T16:00:00Z",
   "defaultLanguage": "en",
   "fallbackLanguage": "en",
   "supportedLanguages": [
@@ -83,6 +83,106 @@
         "hi": "तार्किक क्षमता"
       },
       "gradeScoped": true
+    },
+    {
+      "id": "general-knowledge",
+      "label": {
+        "en": "General Knowledge",
+        "ta": "பொது அறிவு",
+        "hi": "सामान्य ज्ञान"
+      },
+      "gradeScoped": true
+    }
+  ],
+  "exams": [
+    {
+      "id": "aissee",
+      "shortName": "AISSEE",
+      "label": {
+        "en": "Sainik School Entrance",
+        "ta": "சைனிக் பள்ளி நுழைவுத் தேர்வு",
+        "hi": "सैनिक स्कूल प्रवेश परीक्षा"
+      },
+      "fullName": {
+        "en": "All India Sainik Schools Entrance Examination",
+        "ta": "அகில இந்திய சைனிக் பள்ளிகள் நுழைவுத் தேர்வு",
+        "hi": "अखिल भारतीय सैनिक स्कूल प्रवेश परीक्षा"
+      },
+      "category": "school-entrance",
+      "officialInfoUrl": "https://exams.nta.ac.in/AISSEE/"
+    },
+    {
+      "id": "jnvst",
+      "shortName": "JNVST",
+      "label": {
+        "en": "Navodaya Selection Test",
+        "ta": "நவோதயா தேர்வுத் தேர்ச்சி",
+        "hi": "नवोदय चयन परीक्षा"
+      },
+      "fullName": {
+        "en": "Jawahar Navodaya Vidyalaya Selection Test",
+        "ta": "ஜவஹர் நவோதயா வித்யாலயா தேர்வு",
+        "hi": "जवाहर नवोदय विद्यालय चयन परीक्षा"
+      },
+      "category": "school-entrance",
+      "officialInfoUrl": "https://navodaya.gov.in/"
+    },
+    {
+      "id": "rms-cet",
+      "shortName": "RMS CET",
+      "label": {
+        "en": "Rashtriya Military School CET",
+        "ta": "ராஷ்ட்ரிய மிலிட்டரி பள்ளி CET",
+        "hi": "राष्ट्रीय मिलिट्री स्कूल CET"
+      },
+      "fullName": {
+        "en": "Rashtriya Military Schools Common Entrance Test",
+        "ta": "ராஷ்ட்ரிய மிலிட்டரி பள்ளிகள் பொது நுழைவுத் தேர்வு",
+        "hi": "राष्ट्रीय मिलिट्री स्कूल्स कॉमन एंट्रेंस टेस्ट"
+      },
+      "category": "school-entrance",
+      "officialInfoUrl": "https://www.rashtriyamilitaryschools.edu.in/"
+    }
+  ],
+  "examPlans": [
+    {
+      "id": "aissee-2027-class-06-demo",
+      "examId": "aissee",
+      "entryClass": 6,
+      "examYear": 2027,
+      "path": "exams/aissee/class-06/2027/plan.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "demo": true
+    },
+    {
+      "id": "jnvst-2027-class-06-demo",
+      "examId": "jnvst",
+      "entryClass": 6,
+      "examYear": 2027,
+      "path": "exams/jnvst/class-06/2027/plan.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "demo": true
+    },
+    {
+      "id": "rms-cet-2027-class-06-demo",
+      "examId": "rms-cet",
+      "entryClass": 6,
+      "examYear": 2027,
+      "path": "exams/rms-cet/class-06/2027/plan.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "demo": true
     }
   ],
   "items": [
@@ -95,7 +195,10 @@
         "ta",
         "hi"
       ],
-      "optional": true
+      "optional": true,
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics"
     },
     {
       "id": "math-05-equivalent-fractions",
@@ -105,7 +208,12 @@
         "en",
         "ta",
         "hi"
-      ]
+      ],
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "fractions",
+      "topic": "equivalent-fractions"
     },
     {
       "id": "math-05-equivalent-fractions-01",
@@ -115,6 +223,16 @@
         "en",
         "ta",
         "hi"
+      ],
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "fractions",
+      "topic": "equivalent-fractions",
+      "seriesId": "math-05-equivalent-fractions-practice",
+      "setNumber": 1,
+      "sourceNoteIds": [
+        "math-05-equivalent-fractions"
       ]
     },
     {
@@ -126,7 +244,10 @@
         "ta",
         "hi"
       ],
-      "optional": true
+      "optional": true,
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "science"
     },
     {
       "id": "sci-05-photosynthesis",
@@ -136,7 +257,12 @@
         "en",
         "ta",
         "hi"
-      ]
+      ],
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "science",
+      "chapter": "plants",
+      "topic": "photosynthesis"
     },
     {
       "id": "sci-05-photosynthesis-01",
@@ -146,6 +272,16 @@
         "en",
         "ta",
         "hi"
+      ],
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "science",
+      "chapter": "plants",
+      "topic": "photosynthesis",
+      "seriesId": "sci-05-photosynthesis-practice",
+      "setNumber": 1,
+      "sourceNoteIds": [
+        "sci-05-photosynthesis"
       ]
     },
     {
@@ -157,7 +293,10 @@
         "ta",
         "hi"
       ],
-      "optional": true
+      "optional": true,
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "english"
     },
     {
       "id": "eng-05-nouns",
@@ -167,7 +306,12 @@
         "en",
         "ta",
         "hi"
-      ]
+      ],
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "english",
+      "chapter": "grammar",
+      "topic": "nouns"
     },
     {
       "id": "eng-05-nouns-01",
@@ -177,6 +321,16 @@
         "en",
         "ta",
         "hi"
+      ],
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "english",
+      "chapter": "grammar",
+      "topic": "nouns",
+      "seriesId": "eng-05-nouns-practice",
+      "setNumber": 1,
+      "sourceNoteIds": [
+        "eng-05-nouns"
       ]
     },
     {
@@ -188,7 +342,10 @@
         "ta",
         "hi"
       ],
-      "optional": true
+      "optional": true,
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "social-studies"
     },
     {
       "id": "sst-05-directions-and-maps",
@@ -198,7 +355,12 @@
         "en",
         "ta",
         "hi"
-      ]
+      ],
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "social-studies",
+      "chapter": "geography",
+      "topic": "directions-and-maps"
     },
     {
       "id": "sst-05-directions-and-maps-01",
@@ -208,6 +370,16 @@
         "en",
         "ta",
         "hi"
+      ],
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "social-studies",
+      "chapter": "geography",
+      "topic": "directions-and-maps",
+      "seriesId": "sst-05-directions-and-maps-practice",
+      "setNumber": 1,
+      "sourceNoteIds": [
+        "sst-05-directions-and-maps"
       ]
     },
     {
@@ -219,7 +391,10 @@
         "ta",
         "hi"
       ],
-      "optional": true
+      "optional": true,
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "intelligence"
     },
     {
       "id": "int-05-number-patterns",
@@ -229,7 +404,12 @@
         "en",
         "ta",
         "hi"
-      ]
+      ],
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "intelligence",
+      "chapter": "patterns",
+      "topic": "number-patterns"
     },
     {
       "id": "int-05-number-patterns-01",
@@ -239,6 +419,56 @@
         "en",
         "ta",
         "hi"
+      ],
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "intelligence",
+      "chapter": "patterns",
+      "topic": "number-patterns",
+      "seriesId": "int-05-number-patterns-practice",
+      "setNumber": 1,
+      "sourceNoteIds": [
+        "int-05-number-patterns"
+      ]
+    },
+    {
+      "id": "math-05-equivalent-fractions-02",
+      "type": "quiz",
+      "path": "grade-05/mathematics/quizzes/equivalent-fractions-02.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "fractions",
+      "topic": "equivalent-fractions",
+      "seriesId": "math-05-equivalent-fractions-practice",
+      "setNumber": 2,
+      "sourceNoteIds": [
+        "math-05-equivalent-fractions"
+      ]
+    },
+    {
+      "id": "math-05-equivalent-fractions-03",
+      "type": "quiz",
+      "path": "grade-05/mathematics/quizzes/equivalent-fractions-03.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "fractions",
+      "topic": "equivalent-fractions",
+      "seriesId": "math-05-equivalent-fractions-practice",
+      "setNumber": 3,
+      "sourceNoteIds": [
+        "math-05-equivalent-fractions"
       ]
     }
   ]

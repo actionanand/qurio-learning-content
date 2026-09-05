@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Qurio Exam Plan",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "type",
+    "examId",
+    "language",
+    "title",
+    "entryClass",
+    "examYear",
+    "planStartDate",
+    "planEndDate",
+    "contentRefs",
+    "phases",
+    "calendarFiles"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "id": {
+      "type": "string"
+    },
+    "type": {
+      "const": "exam-plan"
+    },
+    "examId": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "entryClass": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "examYear": {
+      "type": "integer"
+    },
+    "demo": {
+      "type": "boolean"
+    },
+    "officialSchedule": {
+      "type": "boolean"
+    },
+    "planStartDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "planEndDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "targetDate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "contentRefs": {
+      "type": "object",
+      "required": [
+        "overview",
+        "syllabus",
+        "strategy"
+      ]
+    },
+    "phases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "order",
+          "name",
+          "startDate",
+          "endDate"
+        ]
+      }
+    },
+    "calendarFiles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

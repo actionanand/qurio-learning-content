@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "rms-cet-2027-class-06-demo",
+  "type": "exam-plan",
+  "examId": "rms-cet",
+  "language": "ta",
+  "title": "RMS CET 2027 — தயாரிப்பு திட்டம்",
+  "subtitle": "6ஆம் வகுப்பு நுழைவு · பன்மொழி மாதிரி திட்டம்",
+  "entryClass": 6,
+  "examYear": 2027,
+  "demo": true,
+  "officialSchedule": false,
+  "planStartDate": "2026-04-01",
+  "planEndDate": "2027-01-31",
+  "targetDate": "2027-01-31",
+  "contentRefs": {
+    "overview": "overview.md",
+    "syllabus": "syllabus.md",
+    "strategy": "strategy.md"
+  },
+  "phases": [
+    {
+      "id": "phase-1",
+      "order": 1,
+      "name": "அடித்தளம்",
+      "startDate": "2026-04-01",
+      "endDate": "2026-05-31"
+    },
+    {
+      "id": "phase-2",
+      "order": 2,
+      "name": "முக்கிய திறன் வளர்ப்பு",
+      "startDate": "2026-06-01",
+      "endDate": "2026-07-31"
+    },
+    {
+      "id": "phase-3",
+      "order": 3,
+      "name": "மேம்பட்ட தலைப்புகள்",
+      "startDate": "2026-08-01",
+      "endDate": "2026-10-31"
+    },
+    {
+      "id": "phase-4",
+      "order": 4,
+      "name": "மீள்பார்வை & மாதிரி தேர்வுகள்",
+      "startDate": "2026-11-01",
+      "endDate": "2027-01-31"
+    }
+  ],
+  "calendarFiles": [
+    "calendar/2026-09.json"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-05"
+}

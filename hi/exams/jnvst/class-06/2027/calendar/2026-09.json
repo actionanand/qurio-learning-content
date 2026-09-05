@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "planId": "jnvst-2027-class-06-demo",
+  "language": "hi",
+  "month": "2026-09",
+  "days": [
+    {
+      "date": "2026-09-04",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-1",
+          "subjectId": "intelligence",
+          "title": "आकृति और संख्या पैटर्न",
+          "activityType": "new-learning",
+          "details": "पैटर्न पहचान अभ्यास",
+          "contentId": "int-05-number-patterns"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-1",
+          "subjectId": "english",
+          "title": "पठन-बोध",
+          "activityType": "spaced-recall",
+          "details": "लघु अनुच्छेद पुनरावृत्ति"
+        }
+      ],
+      "practiceQuizIds": [
+        "math-05-equivalent-fractions-01"
+      ],
+      "studyMaterialIds": [
+        "int-05-number-patterns"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "सुबह दौड़ + व्यायाम"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "पठन / भाषा प्रवाह"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "मुख्य अध्ययन समय"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-1",
+          "subjectId": "intelligence",
+          "title": "आकृति और संख्या पैटर्न",
+          "activityType": "new-learning",
+          "details": "पैटर्न पहचान अभ्यास",
+          "contentId": "int-05-number-patterns"
+        },
+        {
+          "id": "topic-2",
+          "subjectId": "mathematics",
+          "title": "भिन्न और संख्या-बोध",
+          "activityType": "new-learning",
+          "details": "अवधारणा + हल किए उदाहरण",
+          "contentId": "math-05-equivalent-fractions"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-1",
+          "subjectId": "english",
+          "title": "पठन-बोध",
+          "activityType": "spaced-recall",
+          "details": "लघु अनुच्छेद पुनरावृत्ति"
+        },
+        {
+          "id": "revision-2",
+          "subjectId": "intelligence",
+          "title": "सादृश्य",
+          "activityType": "spaced-recall",
+          "details": "5 त्वरित प्रश्न"
+        }
+      ],
+      "practiceQuizIds": [
+        "math-05-equivalent-fractions-01",
+        "math-05-equivalent-fractions-02"
+      ],
+      "studyMaterialIds": [
+        "int-05-number-patterns",
+        "math-05-equivalent-fractions"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "सुबह दौड़ + व्यायाम"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "पठन / भाषा प्रवाह"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "मुख्य अध्ययन समय"
+        },
+        {
+          "id": "time-4",
+          "startTime": "19:00",
+          "endTime": "19:20",
+          "title": "अभ्यास क्विज़ + समीक्षा"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-2",
+          "subjectId": "mathematics",
+          "title": "भिन्न और संख्या-बोध",
+          "activityType": "new-learning",
+          "details": "अवधारणा + हल किए उदाहरण",
+          "contentId": "math-05-equivalent-fractions"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-2",
+          "subjectId": "intelligence",
+          "title": "सादृश्य",
+          "activityType": "spaced-recall",
+          "details": "5 त्वरित प्रश्न"
+        }
+      ],
+      "practiceQuizIds": [
+        "math-05-equivalent-fractions-02"
+      ],
+      "studyMaterialIds": [
+        "math-05-equivalent-fractions"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "सुबह दौड़ + व्यायाम"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "पठन / भाषा प्रवाह"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "मुख्य अध्ययन समय"
+        }
+      ]
+    }
+  ]
+}

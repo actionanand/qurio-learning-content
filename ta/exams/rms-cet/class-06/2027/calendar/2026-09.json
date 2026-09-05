@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "planId": "rms-cet-2027-class-06-demo",
+  "language": "ta",
+  "month": "2026-09",
+  "days": [
+    {
+      "date": "2026-09-04",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-1",
+          "subjectId": "mathematics",
+          "title": "பின்னங்கள் & கணிதச் செயல்கள்",
+          "activityType": "new-learning",
+          "details": "கருத்து + நேரக்கட்டுப்பாட்டுப் பயிற்சி",
+          "contentId": "math-05-equivalent-fractions"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-1",
+          "subjectId": "english",
+          "title": "இலக்கண மீள்பார்வை",
+          "activityType": "spaced-recall",
+          "details": "5 விரைவு கேள்விகள்"
+        }
+      ],
+      "practiceQuizIds": [
+        "math-05-equivalent-fractions-02"
+      ],
+      "studyMaterialIds": [
+        "math-05-equivalent-fractions"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "காலை ஓட்டம் + உடற்பயிற்சி"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "வாசிப்பு / மொழித் திறன்"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "முக்கிய படிப்பு நேரம்"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-1",
+          "subjectId": "mathematics",
+          "title": "பின்னங்கள் & கணிதச் செயல்கள்",
+          "activityType": "new-learning",
+          "details": "கருத்து + நேரக்கட்டுப்பாட்டுப் பயிற்சி",
+          "contentId": "math-05-equivalent-fractions"
+        },
+        {
+          "id": "topic-2",
+          "subjectId": "general-knowledge",
+          "title": "இந்தியா & பொதுஅறிவு",
+          "activityType": "new-learning",
+          "details": "வாசிப்பு + நினைவூட்டல் அட்டைகள்"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-1",
+          "subjectId": "english",
+          "title": "இலக்கண மீள்பார்வை",
+          "activityType": "spaced-recall",
+          "details": "5 விரைவு கேள்விகள்"
+        },
+        {
+          "id": "revision-2",
+          "subjectId": "intelligence",
+          "title": "எண் தொடர்கள்",
+          "activityType": "spaced-recall",
+          "details": "5 விரைவு கேள்விகள்"
+        }
+      ],
+      "practiceQuizIds": [
+        "math-05-equivalent-fractions-02",
+        "math-05-equivalent-fractions-03"
+      ],
+      "studyMaterialIds": [
+        "math-05-equivalent-fractions"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "காலை ஓட்டம் + உடற்பயிற்சி"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "வாசிப்பு / மொழித் திறன்"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "முக்கிய படிப்பு நேரம்"
+        },
+        {
+          "id": "time-4",
+          "startTime": "19:00",
+          "endTime": "19:20",
+          "title": "பயிற்சி வினாடி வினா + மீள்பார்வை"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-2",
+          "subjectId": "general-knowledge",
+          "title": "இந்தியா & பொதுஅறிவு",
+          "activityType": "new-learning",
+          "details": "வாசிப்பு + நினைவூட்டல் அட்டைகள்"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-2",
+          "subjectId": "intelligence",
+          "title": "எண் தொடர்கள்",
+          "activityType": "spaced-recall",
+          "details": "5 விரைவு கேள்விகள்"
+        }
+      ],
+      "practiceQuizIds": [
+        "math-05-equivalent-fractions-03"
+      ],
+      "studyMaterialIds": [
+        "math-05-equivalent-fractions"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "காலை ஓட்டம் + உடற்பயிற்சி"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "வாசிப்பு / மொழித் திறன்"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "முக்கிய படிப்பு நேரம்"
+        }
+      ]
+    }
+  ]
+}

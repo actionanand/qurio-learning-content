@@ -111,5 +111,8 @@
       "correctOption": "C",
       "explanation": "At this scale, 4 cm represents 20 km."
     }
-  ]
+  ],
+  "seriesId": "sst-05-directions-and-maps-practice",
+  "setNumber": 1,
+  "setLabel": "Practice Set 1"
 }
