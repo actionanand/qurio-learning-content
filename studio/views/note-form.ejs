@@ -3,10 +3,10 @@
   <input type="hidden" name="mode" value="<%= mode %>">
   <% if (note?.id) { %><input type="hidden" name="id" value="<%= note.id %>"><% } %>
   <section class="card">
-    <div class="card-head"><div><span class="eyebrow">METADATA</span><h2>Lesson details</h2></div><% if(note?.id){ %><span class="id-chip"><%= note.id %></span><% } %></div>
+    <div class="card-head"><div><span class="eyebrow">METADATA</span><h2>Lesson details</h2></div><a class="btn ghost small" href="/catalog">Manage catalog</a><% if(note?.id){ %><span class="id-chip"><%= note.id %></span><% } %></div>
     <div class="form-grid four">
       <label>Language<select name="language" required><% languages.forEach(l => { %><option value="<%= l.id %>" <%= (note?.language || 'en')===l.id?'selected':'' %>><%= l.name %></option><% }) %></select></label>
-      <label>Curriculum<select name="curriculum"><% curricula.forEach(c => { %><option value="<%= c.id %>" <%= (note?.curriculum || 'general')===c.id?'selected':'' %>><%= c.name || c.id %></option><% }) %></select></label>
+      <label>Curriculum<select name="curriculum"><% curricula.forEach(c => { %><option value="<%= c.id %>" <%= (note?.curriculum || curricula.find(x => x.isDefault)?.id || curricula[0]?.id)===c.id?'selected':'' %>><%= c.name || c.id %></option><% }) %></select></label>
       <label>Grade<select name="grade" required><% grades.forEach(g => { %><option value="<%= g.id %>" <%= Number(note?.grade || grades[0]?.id)===Number(g.id)?'selected':'' %>><%= g.label.en %></option><% }) %></select></label>
       <label>Subject<select name="subject" required><% subjects.forEach(s => { %><option value="<%= s.id %>" <%= (note?.subject || subjects[0]?.id)===s.id?'selected':'' %>><%= s.label.en %></option><% }) %></select></label>
     </div>

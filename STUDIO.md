@@ -29,6 +29,36 @@ The server binds to `127.0.0.1` by default so it is available only on your compu
 
 ## What Studio currently handles
 
+### Catalog Setup
+
+Use **Catalog Setup** in the sidebar before authoring content to manage the selectable metadata used everywhere else in Studio. You can add or edit:
+
+- languages (`en`, `ta`, `hi`, `kn`, `ml`, etc.) with English and native names
+- curricula/boards (`general`, `ncert`, `cbse`, `icse`, state boards, etc.)
+- grades/classes with localized labels for every configured language
+- subjects with localized labels, an optional short code for generated content IDs, and grade-scoped behavior
+
+New entries are written directly to `manifest.json` and immediately appear in Note, Quiz, Syllabus and Translation screens. You do not need to restart Studio.
+
+The canonical/default language remains English in the current Qurio design. Adding a language makes it available as a translation target and backfills safe display-label fallbacks for existing grades/subjects; you can then correct those localized labels from Catalog Setup.
+
+`general` content keeps the existing path structure:
+
+```text
+en/grade-05/mathematics/...
+```
+
+Additional curricula are isolated so two boards cannot overwrite the same topic path:
+
+```text
+en/curricula/ncert/grade-05/mathematics/...
+en/curricula/cbse/grade-05/mathematics/...
+```
+
+Non-General content IDs also include the curriculum prefix to avoid cross-board collisions.
+
+Deletion is intentionally guarded: a catalog entry cannot be removed while learning content or exam-plan content still references it.
+
 ### Dashboard
 
 Shows:
@@ -36,7 +66,7 @@ Shows:
 - number of notes
 - number of quiz sets
 - number of syllabi
-- missing Tamil/Hindi translations
+- missing configured-language translations
 - exam-plan count
 - Git branch/change summary when the repository has `.git` metadata
 
@@ -134,7 +164,7 @@ The app generates syllabus frontmatter automatically.
 
 English remains canonical.
 
-The translation page shows coverage for English, Tamil and Hindi and allows missing translations to be created without copying machine metadata manually.
+The translation page shows coverage for every language configured in Catalog Setup and allows missing translations to be created without copying machine metadata manually.
 
 For Markdown content Studio locks/copies:
 
@@ -175,7 +205,7 @@ This protects Qurio's rule that progress remains language-independent.
 
 ### Manifest regeneration
 
-After creating/saving normal learning content or translations, Studio automatically rebuilds `manifest.json` from the English canonical files and checks which identical relative paths exist in Tamil/Hindi.
+After creating/saving normal learning content or translations, Studio automatically rebuilds `manifest.json` from the English canonical files and checks which identical relative paths exist in every configured language.
 
 The manifest generator:
 
@@ -214,10 +244,10 @@ Current checks include:
 - referenced quiz IDs exist
 - quiz JSON matches `schemas/quiz.schema.json`
 - each `correctOption` is a real option
-- Tamil/Hindi quiz IDs remain aligned with English
-- Tamil/Hindi question IDs remain aligned
-- Tamil/Hindi option IDs/order remain aligned
-- Tamil/Hindi correct answers cannot drift from English
+- translated quiz IDs remain aligned with English
+- translated question IDs remain aligned
+- translated option IDs/order remain aligned
+- translated correct answers cannot drift from English
 - exam-plan paths exist
 - legacy `examples/` folder warning
 
@@ -289,7 +319,7 @@ Copy `.env.example` to `.env` when you need overrides. The Studio loads `.env` a
 2. npm install        # first run / dependency changes only
 3. npm run studio
 4. create or edit English canonical content
-5. create Tamil/Hindi translations in Translation Workspace
+5. create the required translations in Translation Workspace
 6. open Validate and fix any errors
 7. review git diff
 8. git add .
@@ -310,9 +340,9 @@ review learning correctness
     ↓
 freeze IDs/question logic
     ↓
-Tamil translation
+target-language translations
     ↓
-Hindi translation
+validate every configured language
     ↓
 validate
     ↓
@@ -384,7 +414,6 @@ Good next additions are:
 
 - visual exam-plan/day editor instead of raw calendar JSON
 - add-new-exam wizard
-- add-new-grade/subject catalog UI
 - content search
 - duplicate/clone quiz set action
 - automatic next quiz set creation

@@ -1,20 +1,30 @@
-<%- include('partials/header', { title: 'Translations', subtitle: 'English is canonical; machine IDs and answer logic stay language-independent' }) %>
+<%- include('partials/header', { title: 'Translations', subtitle: 'Canonical content stays stable; machine IDs and answer logic remain language-independent' }) %>
 <div class="hero-panel compact-hero">
-  <div><span class="eyebrow">TRANSLATION WORKSPACE</span><h1>Translate the visible content, not the schema.</h1><p>Qurio Content Studio copies and locks IDs, paths, question IDs, option IDs and correct answers. You only translate learner-facing text.</p></div>
+  <div><span class="eyebrow">TRANSLATION WORKSPACE</span><h1>Translate the visible content, not the schema.</h1><p>Qurio Content Studio copies and locks IDs, paths, question IDs, option IDs and correct answers. Add more target languages any time from Catalog Setup.</p></div>
+  <div class="hero-actions"><a class="btn secondary" href="/catalog#languages">Manage languages</a></div>
 </div>
 <div class="toolbar card compact">
   <form method="get" class="filters"><label>Content type<select name="type"><option value="">All</option><option value="note" <%= type==='note'?'selected':'' %>>Notes</option><option value="quiz" <%= type==='quiz'?'selected':'' %>>Quizzes</option><option value="syllabus" <%= type==='syllabus'?'selected':'' %>>Syllabi</option></select></label><button class="btn secondary small">Apply</button></form>
 </div>
 <section class="card table-card">
-  <div class="card-head"><div><h2>Translation coverage</h2><small>Green means the localized file exists. Missing translations can be created from English.</small></div></div>
+  <div class="card-head"><div><h2>Translation coverage</h2><small>Green means the localized file exists. Missing translations are created from the canonical language.</small></div></div>
   <div class="table-wrap"><table>
-    <thead><tr><th>Content</th><th>Type</th><th>English</th><th>Tamil</th><th>Hindi</th></tr></thead>
+    <thead><tr><th>Content</th><th>Type</th><% languages.forEach(language => { %><th><%= language.name %></th><% }) %></tr></thead>
     <tbody>
       <% rows.forEach(row => { %><tr>
         <td><strong><%= row.id %></strong><small><%= row.subject %><%= row.topic ? ` / ${row.topic}` : '' %></small></td>
         <td><span class="type-pill <%= row.type %>"><%= row.type %></span></td>
-        <td><span class="coverage yes">✓ Canonical</span></td>
-        <% ['ta','hi'].forEach(lang => { %><td><% if(row.status[lang]){ %><a class="coverage yes" href="/translations/edit?id=<%= encodeURIComponent(row.id) %>&target=<%= lang %>">✓ Edit <%= lang.toUpperCase() %></a><% } else { %><a class="coverage no" href="/translations/edit?id=<%= encodeURIComponent(row.id) %>&target=<%= lang %>">+ Translate</a><% } %></td><% }) %>
+        <% languages.forEach(language => { const isCanonical = language.id === defaultLanguage; %>
+          <td>
+            <% if (isCanonical) { %>
+              <span class="coverage <%= row.status[language.id] ? 'yes' : 'no' %>"><%= row.status[language.id] ? '✓ Canonical' : 'Missing source' %></span>
+            <% } else if (row.status[language.id]) { %>
+              <a class="coverage yes" href="/translations/edit?id=<%= encodeURIComponent(row.id) %>&target=<%= encodeURIComponent(language.id) %>">✓ Edit <%= language.id.toUpperCase() %></a>
+            <% } else { %>
+              <a class="coverage no" href="/translations/edit?id=<%= encodeURIComponent(row.id) %>&target=<%= encodeURIComponent(language.id) %>">+ Translate</a>
+            <% } %>
+          </td>
+        <% }) %>
       </tr><% }) %>
     </tbody>
   </table></div>

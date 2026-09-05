@@ -17,6 +17,7 @@
     <nav>
       <a class="<%= currentPath === '/' ? 'active' : '' %>" href="/"><span>⌂</span> Dashboard</a>
       <a class="<%= currentPath.startsWith('/content') ? 'active' : '' %>" href="/content"><span>▤</span> Content</a>
+      <a class="<%= currentPath.startsWith('/catalog') ? 'active' : '' %>" href="/catalog"><span>⚙</span> Catalog Setup</a>
       <a class="<%= currentPath.startsWith('/notes') ? 'active' : '' %>" href="/notes/new"><span>✎</span> New Note</a>
       <a class="<%= currentPath.startsWith('/quizzes') ? 'active' : '' %>" href="/quizzes/new"><span>✓</span> New Quiz</a>
       <a class="<%= currentPath.startsWith('/syllabus') ? 'active' : '' %>" href="/syllabus/new"><span>≡</span> Syllabus</a>

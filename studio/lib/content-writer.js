@@ -2,10 +2,26 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { config } from '../config.js';
 import { stringifyFrontmatter } from './frontmatter.js';
-import { ensureDirForFile, pad2, safeRepoPath, slugify, splitList, subjectShort, todayIso, writeJson } from './utils.js';
+import { ensureDirForFile, pad2, safeRepoPath, slugify, splitList, todayIso, writeJson } from './utils.js';
+import { defaultCurriculumId, getSubjectCode, supportedLanguageIds } from './catalog-management.js';
 
 function assertLanguage(language) {
-  if (!config.languages.includes(language)) throw new Error(`Unsupported language: ${language}`);
+  if (!supportedLanguageIds().includes(language)) throw new Error(`Unsupported language: ${language}. Add it from Catalog Setup first.`);
+}
+
+function learningRoot(curriculum, grade, subject) {
+  const curriculumId = slugify(curriculum || defaultCurriculumId());
+  const gradePart = `grade-${pad2(grade)}`;
+  // Keep the existing General paths stable; additional curricula get their own namespace.
+  return curriculumId === 'general'
+    ? `${gradePart}/${subject}`
+    : `curricula/${curriculumId}/${gradePart}/${subject}`;
+}
+
+function logicalBaseId(curriculum, subject, grade, topic) {
+  const curriculumId = slugify(curriculum || defaultCurriculumId());
+  const base = `${getSubjectCode(subject)}-${pad2(grade)}-${topic}`;
+  return curriculumId === 'general' ? base : `${curriculumId}-${base}`;
 }
 
 function writeText(filePath, value) {
@@ -21,8 +37,9 @@ export function saveNote(input) {
   const chapter = slugify(input.chapter);
   const topic = slugify(input.topic || input.title);
   if (!grade || !subject || !chapter || !topic || !input.title) throw new Error('Grade, subject, chapter, topic and title are required.');
-  const id = input.id || `${subjectShort(subject)}-${pad2(grade)}-${topic}`;
-  const relative = `${language}/grade-${pad2(grade)}/${subject}/notes/${chapter}/${topic}.md`;
+  const curriculum = slugify(input.curriculum || defaultCurriculumId());
+  const id = input.id || logicalBaseId(curriculum, subject, grade, topic);
+  const relative = `${language}/${learningRoot(curriculum, grade, subject)}/notes/${chapter}/${topic}.md`;
   const filePath = safeRepoPath(config.rootDir, relative);
   if (fs.existsSync(filePath) && input.mode !== 'edit' && input.overwrite !== 'on') {
     throw new Error(`File already exists: ${relative}. Open it from Content Browser to edit, or enable overwrite.`);
@@ -32,7 +49,7 @@ export function saveNote(input) {
     type: 'note',
     title: String(input.title).trim(),
     language,
-    curriculum: input.curriculum || 'general',
+    curriculum,
     grade,
     subject,
     chapter,
@@ -55,8 +72,9 @@ export function saveSyllabus(input) {
   const grade = Number(input.grade);
   const subject = slugify(input.subject);
   if (!grade || !subject || !input.title) throw new Error('Grade, subject and title are required.');
-  const id = input.id || `syllabus-${input.curriculum || 'general'}-${pad2(grade)}-${subject}`;
-  const relative = `${language}/grade-${pad2(grade)}/${subject}/syllabus.md`;
+  const curriculum = slugify(input.curriculum || defaultCurriculumId());
+  const id = input.id || `syllabus-${curriculum}-${pad2(grade)}-${subject}`;
+  const relative = `${language}/${learningRoot(curriculum, grade, subject)}/syllabus.md`;
   const filePath = safeRepoPath(config.rootDir, relative);
   if (fs.existsSync(filePath) && input.mode !== 'edit' && input.overwrite !== 'on') {
     throw new Error(`File already exists: ${relative}. Open it from Content Browser to edit, or enable overwrite.`);
@@ -66,7 +84,7 @@ export function saveSyllabus(input) {
     type: 'syllabus',
     title: String(input.title).trim(),
     language,
-    curriculum: input.curriculum || 'general',
+    curriculum,
     grade,
     subject,
     optional: true,
@@ -92,11 +110,12 @@ export function saveQuiz(input) {
   try { questions = JSON.parse(input.questionsJson || '[]'); }
   catch { throw new Error('Quiz questions could not be parsed. Please check the question form.'); }
   if (!Array.isArray(questions) || questions.length === 0) throw new Error('Add at least one quiz question.');
-  const baseId = `${subjectShort(subject)}-${pad2(grade)}-${topic}`;
+  const curriculum = slugify(input.curriculum || defaultCurriculumId());
+  const baseId = logicalBaseId(curriculum, subject, grade, topic);
   const id = input.id || `${baseId}-${pad2(setNumber)}`;
   const seriesId = input.seriesId || `${baseId}-practice`;
   const filename = `${topic}-${pad2(setNumber)}.json`;
-  const relative = `${language}/grade-${pad2(grade)}/${subject}/quizzes/${filename}`;
+  const relative = `${language}/${learningRoot(curriculum, grade, subject)}/quizzes/${filename}`;
   const filePath = safeRepoPath(config.rootDir, relative);
   if (fs.existsSync(filePath) && input.mode !== 'edit' && input.overwrite !== 'on') {
     throw new Error(`File already exists: ${relative}. Open it from Content Browser to edit, or enable overwrite.`);
@@ -106,7 +125,7 @@ export function saveQuiz(input) {
     id,
     type: 'quiz',
     language,
-    curriculum: input.curriculum || 'general',
+    curriculum,
     grade,
     subject,
     chapter,

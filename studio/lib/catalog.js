@@ -3,6 +3,7 @@ import path from 'node:path';
 import { config } from '../config.js';
 import { parseFrontmatter } from './frontmatter.js';
 import { readJson, safeRepoPath } from './utils.js';
+import { supportedLanguageIds } from './catalog-management.js';
 
 export function loadManifest() {
   return readJson(safeRepoPath(config.rootDir, 'manifest.json'));
@@ -34,7 +35,7 @@ export function listTranslationRows() {
   const manifest = loadManifest();
   return manifest.items.map((item) => ({
     ...item,
-    status: Object.fromEntries(config.languages.map((lang) => [lang, item.languages?.includes(lang) || false]))
+    status: Object.fromEntries(supportedLanguageIds(manifest).map((lang) => [lang, item.languages?.includes(lang) || false]))
   }));
 }
 
@@ -47,7 +48,7 @@ export function listDashboardStats() {
     if (item.type === 'syllabus') counts.syllabi++;
   }
   const missingTranslations = manifest.items.reduce((sum, item) => {
-    return sum + config.languages.filter((lang) => !item.languages?.includes(lang)).length;
+    return sum + supportedLanguageIds(manifest).filter((lang) => lang !== manifest.defaultLanguage && !item.languages?.includes(lang)).length;
   }, 0);
   return {
     manifest,

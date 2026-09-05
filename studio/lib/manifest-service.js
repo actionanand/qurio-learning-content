@@ -3,6 +3,7 @@ import path from 'node:path';
 import { config } from '../config.js';
 import { parseFrontmatter } from './frontmatter.js';
 import { contentVersionNow, readJson, safeRepoPath, titleCaseFromSlug, unique, writeJson } from './utils.js';
+import { supportedLanguageIds } from './catalog-management.js';
 
 function walkFiles(dir) {
   if (!fs.existsSync(dir)) return [];
@@ -21,11 +22,11 @@ function relativeWithoutLanguage(filePath) {
   return { lang, path: rest.join('/') };
 }
 
-function detectLanguages(relativePath) {
-  return config.languages.filter((lang) => fs.existsSync(safeRepoPath(config.rootDir, lang, relativePath)));
+function detectLanguages(relativePath, languages) {
+  return languages.filter((lang) => fs.existsSync(safeRepoPath(config.rootDir, lang, relativePath)));
 }
 
-function itemFromMarkdown(filePath) {
+function itemFromMarkdown(filePath, languages) {
   const raw = fs.readFileSync(filePath, 'utf8');
   const { attributes } = parseFrontmatter(raw);
   const { path: relativePath } = relativeWithoutLanguage(filePath);
@@ -34,7 +35,7 @@ function itemFromMarkdown(filePath) {
     id: attributes.id,
     type: attributes.type,
     path: relativePath,
-    languages: detectLanguages(relativePath),
+    languages: detectLanguages(relativePath, languages),
     curriculum: attributes.curriculum || 'general',
     grade: Number(attributes.grade),
     subject: attributes.subject
@@ -48,7 +49,7 @@ function itemFromMarkdown(filePath) {
   return base;
 }
 
-function itemFromQuiz(filePath) {
+function itemFromQuiz(filePath, languages) {
   const quiz = readJson(filePath);
   const { path: relativePath } = relativeWithoutLanguage(filePath);
   if (!quiz.id || quiz.type !== 'quiz') return null;
@@ -56,7 +57,7 @@ function itemFromQuiz(filePath) {
     id: quiz.id,
     type: 'quiz',
     path: relativePath,
-    languages: detectLanguages(relativePath),
+    languages: detectLanguages(relativePath, languages),
     curriculum: quiz.curriculum || 'general',
     grade: Number(quiz.grade),
     subject: quiz.subject,
@@ -85,10 +86,9 @@ function ensureGrades(manifest, items) {
   const existing = new Map((manifest.grades || []).map((g) => [Number(g.id), g]));
   for (const grade of unique(items.map((i) => Number(i.grade)).filter(Boolean))) {
     if (!existing.has(grade)) {
-      existing.set(grade, {
-        id: grade,
-        label: { en: `Grade ${grade}`, ta: `${grade}ஆம் வகுப்பு`, hi: `कक्षा ${grade}` }
-      });
+      const labels = Object.fromEntries(supportedLanguageIds(manifest).map((lang) => [lang, `Grade ${grade}`]));
+      labels.en = `Grade ${grade}`;
+      existing.set(grade, { id: grade, label: labels });
     }
   }
   return [...existing.values()].sort((a, b) => Number(a.id) - Number(b.id));
@@ -101,7 +101,7 @@ function ensureSubjects(manifest, items) {
     const label = titleCaseFromSlug(subjectId);
     existing.set(subjectId, {
       id: subjectId,
-      label: { en: label, ta: label, hi: label },
+      label: Object.fromEntries(supportedLanguageIds(manifest).map((lang) => [lang, label])),
       gradeScoped: true
     });
   }
@@ -111,15 +111,17 @@ function ensureSubjects(manifest, items) {
 export function rebuildManifest() {
   const manifestPath = safeRepoPath(config.rootDir, 'manifest.json');
   const current = readJson(manifestPath);
-  const englishRoot = safeRepoPath(config.rootDir, 'en');
-  const files = walkFiles(englishRoot).filter((file) => file.includes(`${path.sep}grade-`));
+  const canonicalLanguage = current.defaultLanguage || config.defaultLanguage;
+  const languages = supportedLanguageIds(current);
+  const canonicalRoot = safeRepoPath(config.rootDir, canonicalLanguage);
+  const files = walkFiles(canonicalRoot).filter((file) => file.includes(`${path.sep}grade-`));
   const items = [];
   for (const file of files) {
     if (file.endsWith('.md')) {
-      const item = itemFromMarkdown(file);
+      const item = itemFromMarkdown(file, languages);
       if (item && ['note', 'syllabus'].includes(item.type)) items.push(item);
     } else if (file.endsWith('.json') && file.includes(`${path.sep}quizzes${path.sep}`)) {
-      const item = itemFromQuiz(file);
+      const item = itemFromQuiz(file, languages);
       if (item) items.push(item);
     }
   }

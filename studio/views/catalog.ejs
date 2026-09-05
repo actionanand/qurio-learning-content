@@ -1,0 +1,125 @@
+<%- include('partials/header', { title: 'Catalog Setup', subtitle: 'Manage languages, curricula, grades and subjects used by all authoring forms' }) %>
+
+<div class="hero-panel compact-hero">
+  <div>
+    <span class="eyebrow">CONTENT CATALOG</span>
+    <h1>Grow Qurio without editing manifest.json by hand.</h1>
+    <p>Add a language, curriculum, grade or subject here. Studio updates the manifest immediately, and every note, syllabus, quiz and translation form picks up the new options automatically.</p>
+  </div>
+</div>
+
+<div class="catalog-jump card compact">
+  <a href="#languages">Languages <strong><%= languages.length %></strong></a>
+  <a href="#curricula">Curricula <strong><%= curricula.length %></strong></a>
+  <a href="#grades">Grades <strong><%= grades.length %></strong></a>
+  <a href="#subjects">Subjects <strong><%= subjects.length %></strong></a>
+</div>
+
+<section class="card catalog-section" id="languages">
+  <div class="card-head"><div><span class="eyebrow">LANGUAGES</span><h2>Supported languages</h2><small>The default language remains the canonical authoring source. New languages automatically appear in the Translation workspace.</small></div></div>
+  <form method="post" action="/catalog/languages/save" class="catalog-create">
+    <div class="form-grid three">
+      <label>Language code<input name="id" placeholder="kn" pattern="[a-z][a-z0-9-]{1,20}" required><small>Examples: kn, ml, te, bn, pt-br</small></label>
+      <label>English name<input name="name" placeholder="Kannada" required></label>
+      <label>Native name<input name="nativeName" placeholder="ಕನ್ನಡ" required></label>
+    </div>
+    <div class="catalog-create-actions"><button class="btn primary" type="submit">+ Add language</button></div>
+  </form>
+  <div class="catalog-list">
+    <% languages.forEach(language => { const count = usage.language[language.id] || 0; %>
+      <form method="post" action="/catalog/languages/save" class="catalog-row">
+        <input type="hidden" name="id" value="<%= language.id %>">
+        <div class="catalog-key"><span class="catalog-icon">文</span><div><strong><%= language.id.toUpperCase() %></strong><small><%= count %> content/plan reference(s)</small></div></div>
+        <label>Name<input name="name" value="<%= language.name %>" required></label>
+        <label>Native name<input name="nativeName" value="<%= language.nativeName || language.name %>" required></label>
+        <div class="catalog-actions"><button class="btn secondary small" type="submit">Save</button></div>
+      </form>
+      <% if (language.id !== manifest.defaultLanguage && language.id !== manifest.fallbackLanguage) { %>
+        <form method="post" action="/catalog/languages/delete" class="catalog-delete" onsubmit="return confirm('Remove <%= language.id %> from the catalog? This is allowed only when it is unused.');"><input type="hidden" name="id" value="<%= language.id %>"><button class="text-danger" type="submit" <%= count ? 'disabled' : '' %>>Remove <%= language.id.toUpperCase() %></button></form>
+      <% } %>
+    <% }) %>
+  </div>
+</section>
+
+<section class="card catalog-section" id="curricula">
+  <div class="card-head"><div><span class="eyebrow">CURRICULA</span><h2>Curriculum / board catalog</h2><small>General content keeps the existing path. Additional curricula are stored under <code>curricula/{id}/...</code> so content does not collide.</small></div></div>
+  <form method="post" action="/catalog/curricula/save" class="catalog-create">
+    <div class="form-grid three">
+      <label>Curriculum ID<input name="id" placeholder="ncert" required><small>Lowercase machine ID, e.g. ncert, cbse, icse, tn-state-board</small></label>
+      <label>Display name<input name="name" placeholder="NCERT" required></label>
+      <label class="check catalog-check"><input type="checkbox" name="isDefault"> Make default for new content</label>
+    </div>
+    <div class="catalog-create-actions"><button class="btn primary" type="submit">+ Add curriculum</button></div>
+  </form>
+  <div class="catalog-list">
+    <% curricula.forEach(curriculum => { const count = usage.curriculum[curriculum.id] || 0; %>
+      <div class="catalog-existing-block">
+        <form method="post" action="/catalog/curricula/save" class="catalog-row">
+          <input type="hidden" name="id" value="<%= curriculum.id %>">
+          <div class="catalog-key"><span class="catalog-icon">≋</span><div><strong><%= curriculum.id %></strong><small><%= count %> content item(s)</small></div></div>
+          <label>Name<input name="name" value="<%= curriculum.name || curriculum.id %>" required></label>
+          <label class="check catalog-check"><input type="checkbox" name="isDefault" <%= curriculum.isDefault ? 'checked' : '' %>> Default curriculum</label>
+          <div class="catalog-actions"><button class="btn secondary small" type="submit">Save</button></div>
+        </form>
+        <% if (!curriculum.isDefault) { %><form method="post" action="/catalog/curricula/delete" class="catalog-delete" onsubmit="return confirm('Remove curriculum <%= curriculum.id %>? This is allowed only when it is unused.');"><input type="hidden" name="id" value="<%= curriculum.id %>"><button class="text-danger" type="submit" <%= count ? 'disabled' : '' %>>Remove</button></form><% } %>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<section class="card catalog-section" id="grades">
+  <div class="card-head"><div><span class="eyebrow">GRADES</span><h2>Class / grade catalog</h2><small>Add any school grade needed by Qurio. Labels can be localized for every configured language.</small></div></div>
+  <form method="post" action="/catalog/grades/save" class="catalog-create">
+    <div class="form-grid catalog-label-grid">
+      <label>Grade number<input type="number" min="1" max="99" name="id" placeholder="6" required></label>
+      <% languages.forEach(language => { %><label><%= language.name %> label<input name="label_<%= language.id %>" placeholder="<%= language.id === 'en' ? 'Grade 6' : language.nativeName %>"></label><% }) %>
+    </div>
+    <div class="catalog-create-actions"><button class="btn primary" type="submit">+ Add grade</button></div>
+  </form>
+  <div class="catalog-list">
+    <% grades.forEach(grade => { const count = usage.grade[String(grade.id)] || 0; %>
+      <div class="catalog-existing-block">
+        <form method="post" action="/catalog/grades/save" class="catalog-row catalog-row-wide">
+          <input type="hidden" name="id" value="<%= grade.id %>">
+          <div class="catalog-key"><span class="catalog-icon"><%= grade.id %></span><div><strong>Grade <%= grade.id %></strong><small><%= count %> content item(s)</small></div></div>
+          <div class="catalog-inline-labels"><% languages.forEach(language => { %><label><%= language.id.toUpperCase() %><input name="label_<%= language.id %>" value="<%= grade.label?.[language.id] || grade.label?.en || `Grade ${grade.id}` %>"></label><% }) %></div>
+          <div class="catalog-actions"><button class="btn secondary small" type="submit">Save labels</button></div>
+        </form>
+        <form method="post" action="/catalog/grades/delete" class="catalog-delete" onsubmit="return confirm('Remove Grade <%= grade.id %>? This is allowed only when it has no learning content.');"><input type="hidden" name="id" value="<%= grade.id %>"><button class="text-danger" type="submit" <%= count ? 'disabled' : '' %>>Remove</button></form>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<section class="card catalog-section" id="subjects">
+  <div class="card-head"><div><span class="eyebrow">SUBJECTS</span><h2>Subject catalog</h2><small>Subject IDs remain stable machine values. The short code is used when Studio generates new note/quiz IDs.</small></div></div>
+  <form method="post" action="/catalog/subjects/save" class="catalog-create">
+    <div class="form-grid four">
+      <label>Subject ID<input name="id" placeholder="computer-science" required></label>
+      <label>Short code<input name="shortCode" placeholder="cs"><small>2–8 letters/numbers; optional</small></label>
+      <label class="check catalog-check"><input type="checkbox" name="gradeScoped" checked> Grade-scoped subject</label>
+      <span></span>
+    </div>
+    <div class="form-grid catalog-label-grid"><% languages.forEach(language => { %><label><%= language.name %> label<input name="label_<%= language.id %>" placeholder="<%= language.id === 'en' ? 'Computer Science' : language.nativeName %>"></label><% }) %></div>
+    <div class="catalog-create-actions"><button class="btn primary" type="submit">+ Add subject</button></div>
+  </form>
+  <div class="catalog-list">
+    <% subjects.forEach(subject => { const count = usage.subject[subject.id] || 0; %>
+      <div class="catalog-existing-block">
+        <form method="post" action="/catalog/subjects/save" class="catalog-subject-form">
+          <input type="hidden" name="id" value="<%= subject.id %>">
+          <div class="catalog-subject-head">
+            <div class="catalog-key"><span class="catalog-icon">§</span><div><strong><%= subject.id %></strong><small><%= count %> learning/exam reference(s)</small></div></div>
+            <label class="short-code-field">Short code<input name="shortCode" value="<%= subject.shortCode || '' %>" placeholder="auto"></label>
+            <label class="check catalog-check"><input type="checkbox" name="gradeScoped" <%= subject.gradeScoped !== false ? 'checked' : '' %>> Grade scoped</label>
+            <button class="btn secondary small" type="submit">Save</button>
+          </div>
+          <div class="catalog-inline-labels"><% languages.forEach(language => { %><label><%= language.id.toUpperCase() %><input name="label_<%= language.id %>" value="<%= subject.label?.[language.id] || subject.label?.en || subject.id %>"></label><% }) %></div>
+        </form>
+        <form method="post" action="/catalog/subjects/delete" class="catalog-delete" onsubmit="return confirm('Remove subject <%= subject.id %>? This is allowed only when it is unused.');"><input type="hidden" name="id" value="<%= subject.id %>"><button class="text-danger" type="submit" <%= count ? 'disabled' : '' %>>Remove</button></form>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

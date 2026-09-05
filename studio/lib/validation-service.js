@@ -5,6 +5,7 @@ import addFormats from 'ajv-formats';
 import { config } from '../config.js';
 import { parseFrontmatter } from './frontmatter.js';
 import { readJson, safeRepoPath } from './utils.js';
+import { supportedLanguageIds } from './catalog-management.js';
 
 function walkFiles(dir) {
   if (!fs.existsSync(dir)) return [];
@@ -22,12 +23,12 @@ function issue(level, code, message, file = null) {
 }
 
 function validateQuizAlignment(source, target, language, file, issues) {
-  if (source.id !== target.id) issues.push(issue('error', 'QUIZ_ID_MISMATCH', `${language} quiz ID differs from English.`, file));
+  if (source.id !== target.id) issues.push(issue('error', 'QUIZ_ID_MISMATCH', `${language} quiz ID differs from the canonical source.`, file));
   if (source.correctOption !== target.correctOption && source.correctOption) {
     // quiz-level correctOption is uncommon; question-level checked below
   }
   if (source.questions.length !== target.questions.length) {
-    issues.push(issue('error', 'QUESTION_COUNT_MISMATCH', `${language} question count differs from English.`, file));
+    issues.push(issue('error', 'QUESTION_COUNT_MISMATCH', `${language} question count differs from the canonical source.`, file));
     return;
   }
   source.questions.forEach((sourceQ, index) => {
@@ -36,7 +37,7 @@ function validateQuizAlignment(source, target, language, file, issues) {
     if (sourceQ.correctOption !== targetQ.correctOption) issues.push(issue('error', 'CORRECT_OPTION_MISMATCH', `${language} question ${sourceQ.id} changed correctOption.`, file));
     const sourceIds = sourceQ.options.map((o) => o.id).join('|');
     const targetIds = targetQ.options.map((o) => o.id).join('|');
-    if (sourceIds !== targetIds) issues.push(issue('error', 'OPTION_ID_MISMATCH', `${language} question ${sourceQ.id} option IDs/order differ from English.`, file));
+    if (sourceIds !== targetIds) issues.push(issue('error', 'OPTION_ID_MISMATCH', `${language} question ${sourceQ.id} option IDs/order differ from the canonical source.`, file));
   });
 }
 
@@ -48,23 +49,47 @@ export function validateRepository() {
   catch (error) { return { issues: [issue('error', 'MANIFEST_PARSE', error.message, 'manifest.json')], summary: { errors: 1, warnings: 0 } }; }
   if (manifest.schemaVersion !== 2) issues.push(issue('error', 'MANIFEST_SCHEMA', `Expected manifest schemaVersion 2, found ${manifest.schemaVersion}.`, 'manifest.json'));
 
+  const duplicateValues = (values) => values.filter((value, index) => values.indexOf(value) !== index);
+  const languageIds = supportedLanguageIds(manifest);
+  for (const id of new Set(duplicateValues(languageIds))) issues.push(issue('error', 'DUPLICATE_LANGUAGE', `Duplicate language ID: ${id}`, 'manifest.json'));
+  if (!languageIds.includes(manifest.defaultLanguage)) issues.push(issue('error', 'DEFAULT_LANGUAGE', `defaultLanguage ${manifest.defaultLanguage} is not in supportedLanguages.`, 'manifest.json'));
+  if (!languageIds.includes(manifest.fallbackLanguage)) issues.push(issue('error', 'FALLBACK_LANGUAGE', `fallbackLanguage ${manifest.fallbackLanguage} is not in supportedLanguages.`, 'manifest.json'));
+
+  const curriculumIds = (manifest.curricula || []).map((value) => value.id);
+  for (const id of new Set(duplicateValues(curriculumIds))) issues.push(issue('error', 'DUPLICATE_CURRICULUM', `Duplicate curriculum ID: ${id}`, 'manifest.json'));
+  const gradeIds = (manifest.grades || []).map((value) => String(value.id));
+  for (const id of new Set(duplicateValues(gradeIds))) issues.push(issue('error', 'DUPLICATE_GRADE', `Duplicate grade ID: ${id}`, 'manifest.json'));
+  const subjectIds = (manifest.subjects || []).map((value) => value.id);
+  for (const id of new Set(duplicateValues(subjectIds))) issues.push(issue('error', 'DUPLICATE_SUBJECT', `Duplicate subject ID: ${id}`, 'manifest.json'));
+  for (const grade of manifest.grades || []) {
+    if (!grade.label?.[manifest.defaultLanguage]) issues.push(issue('warning', 'GRADE_LABEL', `Grade ${grade.id} has no ${manifest.defaultLanguage} label.`, 'manifest.json'));
+  }
+  for (const subject of manifest.subjects || []) {
+    if (!subject.label?.[manifest.defaultLanguage]) issues.push(issue('warning', 'SUBJECT_LABEL', `Subject ${subject.id} has no ${manifest.defaultLanguage} label.`, 'manifest.json'));
+  }
+
   const ids = new Set();
   for (const item of manifest.items || []) {
     if (ids.has(item.id)) issues.push(issue('error', 'DUPLICATE_ID', `Duplicate manifest ID: ${item.id}`, 'manifest.json'));
     ids.add(item.id);
+    if (item.curriculum && !curriculumIds.includes(item.curriculum)) issues.push(issue('error', 'UNKNOWN_CURRICULUM', `${item.id} uses unknown curriculum ${item.curriculum}.`, 'manifest.json'));
+    if (item.grade != null && !gradeIds.includes(String(item.grade))) issues.push(issue('error', 'UNKNOWN_GRADE', `${item.id} uses unknown grade ${item.grade}.`, 'manifest.json'));
+    if (item.subject && !subjectIds.includes(item.subject)) issues.push(issue('error', 'UNKNOWN_SUBJECT', `${item.id} uses unknown subject ${item.subject}.`, 'manifest.json'));
     for (const lang of item.languages || []) {
+      if (!languageIds.includes(lang)) issues.push(issue('error', 'UNKNOWN_LANGUAGE', `${item.id} declares unsupported language ${lang}.`, 'manifest.json'));
       const relative = `${lang}/${item.path}`;
       const full = safeRepoPath(config.rootDir, relative);
       if (!fs.existsSync(full)) issues.push(issue('error', 'MISSING_FILE', `Manifest points to missing file: ${relative}`, relative));
     }
     if (item.type === 'note') {
-      const en = safeRepoPath(config.rootDir, 'en', item.path);
+      const canonicalLanguage = manifest.defaultLanguage || config.defaultLanguage;
+      const en = safeRepoPath(config.rootDir, canonicalLanguage, item.path);
       if (fs.existsSync(en)) {
         try {
           const { attributes } = parseFrontmatter(fs.readFileSync(en, 'utf8'));
-          if (attributes.id !== item.id) issues.push(issue('error', 'FRONTMATTER_ID', `Frontmatter ID ${attributes.id} does not match manifest ${item.id}.`, `en/${item.path}`));
-          for (const quizId of attributes.quizIds || []) if (!ids.has(quizId) && !(manifest.items || []).some((i) => i.id === quizId)) issues.push(issue('warning', 'UNKNOWN_QUIZ_REF', `${item.id} references missing quiz ${quizId}.`, `en/${item.path}`));
-        } catch (error) { issues.push(issue('error', 'FRONTMATTER_PARSE', error.message, `en/${item.path}`)); }
+          if (attributes.id !== item.id) issues.push(issue('error', 'FRONTMATTER_ID', `Frontmatter ID ${attributes.id} does not match manifest ${item.id}.`, `${manifest.defaultLanguage || config.defaultLanguage}/${item.path}`));
+          for (const quizId of attributes.quizIds || []) if (!ids.has(quizId) && !(manifest.items || []).some((i) => i.id === quizId)) issues.push(issue('warning', 'UNKNOWN_QUIZ_REF', `${item.id} references missing quiz ${quizId}.`, `${manifest.defaultLanguage || config.defaultLanguage}/${item.path}`));
+        } catch (error) { issues.push(issue('error', 'FRONTMATTER_PARSE', error.message, `${manifest.defaultLanguage || config.defaultLanguage}/${item.path}`)); }
       }
     }
   }
@@ -74,18 +99,19 @@ export function validateRepository() {
   let quizValidator = null;
   try { quizValidator = ajv.compile(readJson(safeRepoPath(config.rootDir, 'schemas/quiz.schema.json'))); } catch {}
   for (const item of (manifest.items || []).filter((i) => i.type === 'quiz')) {
-    const englishFile = safeRepoPath(config.rootDir, 'en', item.path);
+    const canonicalLanguage = manifest.defaultLanguage || config.defaultLanguage;
+    const englishFile = safeRepoPath(config.rootDir, canonicalLanguage, item.path);
     if (!fs.existsSync(englishFile)) continue;
     let english;
-    try { english = readJson(englishFile); } catch (error) { issues.push(issue('error', 'QUIZ_PARSE', error.message, `en/${item.path}`)); continue; }
+    try { english = readJson(englishFile); } catch (error) { issues.push(issue('error', 'QUIZ_PARSE', error.message, `${manifest.defaultLanguage || config.defaultLanguage}/${item.path}`)); continue; }
     if (quizValidator && !quizValidator(english)) {
-      issues.push(issue('error', 'QUIZ_SCHEMA', ajv.errorsText(quizValidator.errors, { separator: '; ' }), `en/${item.path}`));
+      issues.push(issue('error', 'QUIZ_SCHEMA', ajv.errorsText(quizValidator.errors, { separator: '; ' }), `${manifest.defaultLanguage || config.defaultLanguage}/${item.path}`));
     }
     for (const question of english.questions || []) {
       const idsForQuestion = new Set((question.options || []).map((o) => o.id));
-      if (!idsForQuestion.has(question.correctOption)) issues.push(issue('error', 'INVALID_CORRECT_OPTION', `${question.id}: correctOption ${question.correctOption} is not an option ID.`, `en/${item.path}`));
+      if (!idsForQuestion.has(question.correctOption)) issues.push(issue('error', 'INVALID_CORRECT_OPTION', `${question.id}: correctOption ${question.correctOption} is not an option ID.`, `${manifest.defaultLanguage || config.defaultLanguage}/${item.path}`));
     }
-    for (const lang of config.languages.filter((l) => l !== 'en' && item.languages?.includes(l))) {
+    for (const lang of supportedLanguageIds(manifest).filter((l) => l !== canonicalLanguage && item.languages?.includes(l))) {
       const targetFile = safeRepoPath(config.rootDir, lang, item.path);
       try { validateQuizAlignment(english, readJson(targetFile), lang, `${lang}/${item.path}`, issues); }
       catch (error) { issues.push(issue('error', 'QUIZ_PARSE', error.message, `${lang}/${item.path}`)); }
