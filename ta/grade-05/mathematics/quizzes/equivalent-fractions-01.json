@@ -8,6 +8,9 @@
   "subject": "mathematics",
   "chapter": "fractions",
   "topic": "equivalent-fractions",
+  "seriesId": "math-05-equivalent-fractions-practice",
+  "setNumber": 1,
+  "setLabel": "பயிற்சி தொகுப்பு 1",
   "title": "சமமான பின்னங்கள் — பயிற்சி",
   "description": "குறிப்புகள் மற்றும் விடை விளக்கங்களுடன் கூடிய குறுகிய நேரமிட்ட பயிற்சி வினாடி வினா.",
   "difficulty": "beginner",
@@ -18,7 +21,7 @@
   "sourceNoteIds": [
     "math-05-equivalent-fractions"
   ],
-  "version": 1,
+  "version": 2,
   "updatedAt": "2026-09-05",
   "questions": [
     {

@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 2,
+  "id": "math-05-equivalent-fractions-03",
+  "type": "quiz",
+  "language": "en",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "mathematics",
+  "chapter": "fractions",
+  "topic": "equivalent-fractions",
+  "seriesId": "math-05-equivalent-fractions-practice",
+  "setNumber": 3,
+  "setLabel": "Challenge Set 3",
+  "title": "Equivalent Fractions — Challenge Set 3",
+  "description": "A more challenging timed set using unknowns, comparisons, and multi-step equivalence.",
+  "difficulty": "advanced",
+  "timeLimitSeconds": 360,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "math-05-equivalent-fractions"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-05",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "Find x: 5/8 = x/40",
+      "hint": "Find the multiplier from 8 to 40 and apply it to 5.",
+      "options": [
+        {
+          "id": "A",
+          "text": "20",
+          "feedback": "20/40 simplifies to 1/2, not 5/8."
+        },
+        {
+          "id": "B",
+          "text": "24",
+          "feedback": "24/40 simplifies to 3/5, not 5/8."
+        },
+        {
+          "id": "C",
+          "text": "25",
+          "feedback": "8×5 = 40, so 5×5 = 25."
+        },
+        {
+          "id": "D",
+          "text": "30",
+          "feedback": "30/40 simplifies to 3/4, not 5/8."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "The denominator is multiplied by 5, so x = 5×5 = 25."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "Which statement about 6/9 and 14/21 is true?",
+      "hint": "Simplify both fractions before comparing them.",
+      "options": [
+        {
+          "id": "A",
+          "text": "6/9 is greater",
+          "feedback": "Both simplify to 2/3, so 6/9 is not greater."
+        },
+        {
+          "id": "B",
+          "text": "14/21 is greater",
+          "feedback": "Both simplify to 2/3, so 14/21 is not greater."
+        },
+        {
+          "id": "C",
+          "text": "They are equal",
+          "feedback": "6/9 = 2/3 and 14/21 = 2/3."
+        },
+        {
+          "id": "D",
+          "text": "They cannot be compared",
+          "feedback": "Both can be simplified to the same value, so they can be compared."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "Both fractions simplify to 2/3, so they are equal."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "Write 7/10 with denominator 50.",
+      "hint": "Determine how many times 10 must be multiplied to become 50.",
+      "options": [
+        {
+          "id": "A",
+          "text": "14/50",
+          "feedback": "14/50 simplifies to 7/25, not 7/10."
+        },
+        {
+          "id": "B",
+          "text": "28/50",
+          "feedback": "28/50 simplifies to 14/25, not 7/10."
+        },
+        {
+          "id": "C",
+          "text": "35/50",
+          "feedback": "10×5 = 50 and 7×5 = 35."
+        },
+        {
+          "id": "D",
+          "text": "40/50",
+          "feedback": "40/50 simplifies to 4/5, not 7/10."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "Multiply numerator and denominator of 7/10 by 5 to get 35/50."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "question": "Complete: 3/4 = 21/?",
+      "hint": "Use the same multiplier that changes 3 into 21.",
+      "options": [
+        {
+          "id": "A",
+          "text": "24",
+          "feedback": "3 is multiplied by 7, so the denominator must be 4×7 = 28, not 24."
+        },
+        {
+          "id": "B",
+          "text": "28",
+          "feedback": "3×7 = 21 and 4×7 = 28."
+        },
+        {
+          "id": "C",
+          "text": "32",
+          "feedback": "21/32 is not equivalent to 3/4; cross-products are 84 and 96."
+        },
+        {
+          "id": "D",
+          "text": "36",
+          "feedback": "21/36 simplifies to 7/12, not 3/4."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "The multiplier is 7, so 4×7 = 28."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "question": "A learner says 8/12 and 10/15 are different values. Which conclusion is correct?",
+      "hint": "Reduce both fractions to simplest form.",
+      "options": [
+        {
+          "id": "A",
+          "text": "The learner is correct because 8 and 10 are different",
+          "feedback": "Different numerators do not mean different fraction values."
+        },
+        {
+          "id": "B",
+          "text": "The learner is correct because 12 and 15 are different",
+          "feedback": "Different denominators can still represent the same fraction value."
+        },
+        {
+          "id": "C",
+          "text": "The learner is incorrect because both simplify to 2/3",
+          "feedback": "8/12 ÷4 = 2/3 and 10/15 ÷5 = 2/3."
+        },
+        {
+          "id": "D",
+          "text": "The learner is incorrect because both simplify to 3/4",
+          "feedback": "8/12 and 10/15 both simplify to 2/3, not 3/4."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "Both fractions reduce to 2/3, so they represent the same value."
+    }
+  ]
+}

@@ -13,10 +13,12 @@ difficulty: beginner
 estimatedMinutes: 10
 quizIds:
 - math-05-equivalent-fractions-01
+- math-05-equivalent-fractions-02
+- math-05-equivalent-fractions-03
 tags:
 - fractions
 - equivalent-fractions
-version: 1
+version: 2
 updatedAt: '2026-09-05'
 ---
 

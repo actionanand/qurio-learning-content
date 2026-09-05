@@ -8,6 +8,9 @@
   "subject": "mathematics",
   "chapter": "fractions",
   "topic": "equivalent-fractions",
+  "seriesId": "math-05-equivalent-fractions-practice",
+  "setNumber": 1,
+  "setLabel": "Practice Set 1",
   "title": "Equivalent Fractions — Practice",
   "description": "A short timed practice quiz with hints and answer explanations.",
   "difficulty": "beginner",
@@ -18,7 +21,7 @@
   "sourceNoteIds": [
     "math-05-equivalent-fractions"
   ],
-  "version": 1,
+  "version": 2,
   "updatedAt": "2026-09-05",
   "questions": [
     {

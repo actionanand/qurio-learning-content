@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "aissee-2027-class-06-demo",
+  "type": "exam-plan",
+  "examId": "aissee",
+  "language": "en",
+  "title": "AISSEE 2027 — Daily Battle Plan",
+  "subtitle": "Class 6 entry · multilingual demo plan",
+  "entryClass": 6,
+  "examYear": 2027,
+  "demo": true,
+  "officialSchedule": false,
+  "planStartDate": "2026-04-01",
+  "planEndDate": "2027-01-31",
+  "targetDate": "2027-01-31",
+  "contentRefs": {
+    "overview": "overview.md",
+    "syllabus": "syllabus.md",
+    "strategy": "strategy.md"
+  },
+  "phases": [
+    {
+      "id": "phase-1",
+      "order": 1,
+      "name": "Foundation",
+      "startDate": "2026-04-01",
+      "endDate": "2026-05-31"
+    },
+    {
+      "id": "phase-2",
+      "order": 2,
+      "name": "Core Mastery",
+      "startDate": "2026-06-01",
+      "endDate": "2026-07-31"
+    },
+    {
+      "id": "phase-3",
+      "order": 3,
+      "name": "Advanced Topics",
+      "startDate": "2026-08-01",
+      "endDate": "2026-10-31"
+    },
+    {
+      "id": "phase-4",
+      "order": 4,
+      "name": "Revision & Mocks",
+      "startDate": "2026-11-01",
+      "endDate": "2027-01-31"
+    }
+  ],
+  "calendarFiles": [
+    "calendar/2026-09.json"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-05"
+}

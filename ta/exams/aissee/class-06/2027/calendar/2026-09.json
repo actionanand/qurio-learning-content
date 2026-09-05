@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "planId": "aissee-2027-class-06-demo",
+  "language": "ta",
+  "month": "2026-09",
+  "days": [
+    {
+      "date": "2026-09-04",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-1",
+          "subjectId": "science",
+          "title": "சூழலியல் & உணவுச் சங்கிலி",
+          "activityType": "new-learning",
+          "details": "புதிய கருத்து + எடுத்துக்காட்டுகள் + பயிற்சி",
+          "contentId": "sci-05-photosynthesis"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-1",
+          "subjectId": "mathematics",
+          "title": "அளவையியல்",
+          "activityType": "spaced-recall",
+          "details": "5 விரைவு நினைவூட்டல் கேள்விகள்"
+        }
+      ],
+      "practiceQuizIds": [
+        "sci-05-photosynthesis-01"
+      ],
+      "studyMaterialIds": [
+        "sci-05-photosynthesis"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "காலை ஓட்டம் + உடற்பயிற்சி"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "வாசிப்பு / மொழித் திறன்"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "முக்கிய படிப்பு நேரம்"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-1",
+          "subjectId": "science",
+          "title": "சூழலியல் & உணவுச் சங்கிலி",
+          "activityType": "new-learning",
+          "details": "புதிய கருத்து + எடுத்துக்காட்டுகள் + பயிற்சி",
+          "contentId": "sci-05-photosynthesis"
+        },
+        {
+          "id": "topic-2",
+          "subjectId": "general-knowledge",
+          "title": "விளையாட்டுகள்",
+          "activityType": "new-learning",
+          "details": "வாசிப்பு + வரைபடம் + குறிப்புகள்"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-1",
+          "subjectId": "mathematics",
+          "title": "அளவையியல்",
+          "activityType": "spaced-recall",
+          "details": "5 விரைவு நினைவூட்டல் கேள்விகள்"
+        },
+        {
+          "id": "revision-2",
+          "subjectId": "english",
+          "title": "கட்டுரை எழுதுதல்",
+          "activityType": "spaced-recall",
+          "details": "5 விரைவு நினைவூட்டல் கேள்விகள்"
+        },
+        {
+          "id": "revision-3",
+          "subjectId": "mathematics",
+          "title": "கனஅளவு & மேற்பரப்பு",
+          "activityType": "spaced-recall",
+          "details": "5 விரைவு நினைவூட்டல் கேள்விகள்"
+        }
+      ],
+      "practiceQuizIds": [
+        "sci-05-photosynthesis-01"
+      ],
+      "studyMaterialIds": [
+        "sci-05-photosynthesis"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "காலை ஓட்டம் + உடற்பயிற்சி"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "வாசிப்பு / மொழித் திறன்"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "முக்கிய படிப்பு நேரம்"
+        },
+        {
+          "id": "time-4",
+          "startTime": "19:00",
+          "endTime": "19:20",
+          "title": "பயிற்சி வினாடி வினா + மீள்பார்வை"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-2",
+          "subjectId": "general-knowledge",
+          "title": "விளையாட்டுகள்",
+          "activityType": "new-learning",
+          "details": "வாசிப்பு + வரைபடம் + குறிப்புகள்"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-3",
+          "subjectId": "mathematics",
+          "title": "கனஅளவு & மேற்பரப்பு",
+          "activityType": "spaced-recall",
+          "details": "5 விரைவு நினைவூட்டல் கேள்விகள்"
+        }
+      ],
+      "practiceQuizIds": [
+        "sci-05-photosynthesis-01"
+      ],
+      "studyMaterialIds": [
+        "sci-05-photosynthesis"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "காலை ஓட்டம் + உடற்பயிற்சி"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "வாசிப்பு / மொழித் திறன்"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "முக்கிய படிப்பு நேரம்"
+        }
+      ]
+    }
+  ]
+}

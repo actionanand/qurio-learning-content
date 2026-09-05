@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "planId": "jnvst-2027-class-06-demo",
+  "language": "en",
+  "month": "2026-09",
+  "days": [
+    {
+      "date": "2026-09-04",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-1",
+          "subjectId": "intelligence",
+          "title": "Figure & Number Patterns",
+          "activityType": "new-learning",
+          "details": "Pattern recognition drills",
+          "contentId": "int-05-number-patterns"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-1",
+          "subjectId": "english",
+          "title": "Reading Comprehension",
+          "activityType": "spaced-recall",
+          "details": "Short passage recall"
+        }
+      ],
+      "practiceQuizIds": [
+        "math-05-equivalent-fractions-01"
+      ],
+      "studyMaterialIds": [
+        "int-05-number-patterns"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "Morning run + exercise"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "Reading / language fluency"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "Main study block"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-1",
+          "subjectId": "intelligence",
+          "title": "Figure & Number Patterns",
+          "activityType": "new-learning",
+          "details": "Pattern recognition drills",
+          "contentId": "int-05-number-patterns"
+        },
+        {
+          "id": "topic-2",
+          "subjectId": "mathematics",
+          "title": "Fractions & Number Sense",
+          "activityType": "new-learning",
+          "details": "Concept + worked examples",
+          "contentId": "math-05-equivalent-fractions"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-1",
+          "subjectId": "english",
+          "title": "Reading Comprehension",
+          "activityType": "spaced-recall",
+          "details": "Short passage recall"
+        },
+        {
+          "id": "revision-2",
+          "subjectId": "intelligence",
+          "title": "Analogy",
+          "activityType": "spaced-recall",
+          "details": "5 quick questions"
+        }
+      ],
+      "practiceQuizIds": [
+        "math-05-equivalent-fractions-01",
+        "math-05-equivalent-fractions-02"
+      ],
+      "studyMaterialIds": [
+        "int-05-number-patterns",
+        "math-05-equivalent-fractions"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "Morning run + exercise"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "Reading / language fluency"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "Main study block"
+        },
+        {
+          "id": "time-4",
+          "startTime": "19:00",
+          "endTime": "19:20",
+          "title": "Practice quiz + review"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-2",
+          "subjectId": "mathematics",
+          "title": "Fractions & Number Sense",
+          "activityType": "new-learning",
+          "details": "Concept + worked examples",
+          "contentId": "math-05-equivalent-fractions"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-2",
+          "subjectId": "intelligence",
+          "title": "Analogy",
+          "activityType": "spaced-recall",
+          "details": "5 quick questions"
+        }
+      ],
+      "practiceQuizIds": [
+        "math-05-equivalent-fractions-02"
+      ],
+      "studyMaterialIds": [
+        "math-05-equivalent-fractions"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "Morning run + exercise"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "Reading / language fluency"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "Main study block"
+        }
+      ]
+    }
+  ]
+}

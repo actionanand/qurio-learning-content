@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "planId": "rms-cet-2027-class-06-demo",
+  "language": "hi",
+  "month": "2026-09",
+  "days": [
+    {
+      "date": "2026-09-04",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-1",
+          "subjectId": "mathematics",
+          "title": "भिन्न और अंकगणित",
+          "activityType": "new-learning",
+          "details": "अवधारणा + समयबद्ध अभ्यास",
+          "contentId": "math-05-equivalent-fractions"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-1",
+          "subjectId": "english",
+          "title": "व्याकरण पुनरावृत्ति",
+          "activityType": "spaced-recall",
+          "details": "5 त्वरित प्रश्न"
+        }
+      ],
+      "practiceQuizIds": [
+        "math-05-equivalent-fractions-02"
+      ],
+      "studyMaterialIds": [
+        "math-05-equivalent-fractions"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "सुबह दौड़ + व्यायाम"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "पठन / भाषा प्रवाह"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "मुख्य अध्ययन समय"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-1",
+          "subjectId": "mathematics",
+          "title": "भिन्न और अंकगणित",
+          "activityType": "new-learning",
+          "details": "अवधारणा + समयबद्ध अभ्यास",
+          "contentId": "math-05-equivalent-fractions"
+        },
+        {
+          "id": "topic-2",
+          "subjectId": "general-knowledge",
+          "title": "भारत और सामान्य ज्ञान",
+          "activityType": "new-learning",
+          "details": "पढ़ें + रिकॉल कार्ड"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-1",
+          "subjectId": "english",
+          "title": "व्याकरण पुनरावृत्ति",
+          "activityType": "spaced-recall",
+          "details": "5 त्वरित प्रश्न"
+        },
+        {
+          "id": "revision-2",
+          "subjectId": "intelligence",
+          "title": "संख्या श्रेणी",
+          "activityType": "spaced-recall",
+          "details": "5 त्वरित प्रश्न"
+        }
+      ],
+      "practiceQuizIds": [
+        "math-05-equivalent-fractions-02",
+        "math-05-equivalent-fractions-03"
+      ],
+      "studyMaterialIds": [
+        "math-05-equivalent-fractions"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "सुबह दौड़ + व्यायाम"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "पठन / भाषा प्रवाह"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "मुख्य अध्ययन समय"
+        },
+        {
+          "id": "time-4",
+          "startTime": "19:00",
+          "endTime": "19:20",
+          "title": "अभ्यास क्विज़ + समीक्षा"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-2",
+          "subjectId": "general-knowledge",
+          "title": "भारत और सामान्य ज्ञान",
+          "activityType": "new-learning",
+          "details": "पढ़ें + रिकॉल कार्ड"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-2",
+          "subjectId": "intelligence",
+          "title": "संख्या श्रेणी",
+          "activityType": "spaced-recall",
+          "details": "5 त्वरित प्रश्न"
+        }
+      ],
+      "practiceQuizIds": [
+        "math-05-equivalent-fractions-03"
+      ],
+      "studyMaterialIds": [
+        "math-05-equivalent-fractions"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "सुबह दौड़ + व्यायाम"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "पठन / भाषा प्रवाह"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "मुख्य अध्ययन समय"
+        }
+      ]
+    }
+  ]
+}

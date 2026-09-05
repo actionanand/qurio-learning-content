@@ -111,5 +111,8 @@
       "correctOption": "A",
       "explanation": "Each term increases by 5."
     }
-  ]
+  ],
+  "seriesId": "int-05-number-patterns-practice",
+  "setNumber": 1,
+  "setLabel": "Practice Set 1"
 }

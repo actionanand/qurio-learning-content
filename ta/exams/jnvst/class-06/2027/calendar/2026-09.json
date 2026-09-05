@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "planId": "jnvst-2027-class-06-demo",
+  "language": "ta",
+  "month": "2026-09",
+  "days": [
+    {
+      "date": "2026-09-04",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-1",
+          "subjectId": "intelligence",
+          "title": "வடிவ & எண் முறைகள்",
+          "activityType": "new-learning",
+          "details": "முறை கண்டறிதல் பயிற்சிகள்",
+          "contentId": "int-05-number-patterns"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-1",
+          "subjectId": "english",
+          "title": "வாசிப்பு புரிதல்",
+          "activityType": "spaced-recall",
+          "details": "குறுகிய பகுதி மீள்பார்வை"
+        }
+      ],
+      "practiceQuizIds": [
+        "math-05-equivalent-fractions-01"
+      ],
+      "studyMaterialIds": [
+        "int-05-number-patterns"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "காலை ஓட்டம் + உடற்பயிற்சி"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "வாசிப்பு / மொழித் திறன்"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "முக்கிய படிப்பு நேரம்"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-1",
+          "subjectId": "intelligence",
+          "title": "வடிவ & எண் முறைகள்",
+          "activityType": "new-learning",
+          "details": "முறை கண்டறிதல் பயிற்சிகள்",
+          "contentId": "int-05-number-patterns"
+        },
+        {
+          "id": "topic-2",
+          "subjectId": "mathematics",
+          "title": "பின்னங்கள் & எண் உணர்வு",
+          "activityType": "new-learning",
+          "details": "கருத்து + தீர்க்கப்பட்ட எடுத்துக்காட்டுகள்",
+          "contentId": "math-05-equivalent-fractions"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-1",
+          "subjectId": "english",
+          "title": "வாசிப்பு புரிதல்",
+          "activityType": "spaced-recall",
+          "details": "குறுகிய பகுதி மீள்பார்வை"
+        },
+        {
+          "id": "revision-2",
+          "subjectId": "intelligence",
+          "title": "ஒப்புமை",
+          "activityType": "spaced-recall",
+          "details": "5 விரைவு கேள்விகள்"
+        }
+      ],
+      "practiceQuizIds": [
+        "math-05-equivalent-fractions-01",
+        "math-05-equivalent-fractions-02"
+      ],
+      "studyMaterialIds": [
+        "int-05-number-patterns",
+        "math-05-equivalent-fractions"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "காலை ஓட்டம் + உடற்பயிற்சி"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "வாசிப்பு / மொழித் திறன்"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "முக்கிய படிப்பு நேரம்"
+        },
+        {
+          "id": "time-4",
+          "startTime": "19:00",
+          "endTime": "19:20",
+          "title": "பயிற்சி வினாடி வினா + மீள்பார்வை"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "phaseId": "phase-3",
+      "weekNumber": 22,
+      "topics": [
+        {
+          "id": "topic-2",
+          "subjectId": "mathematics",
+          "title": "பின்னங்கள் & எண் உணர்வு",
+          "activityType": "new-learning",
+          "details": "கருத்து + தீர்க்கப்பட்ட எடுத்துக்காட்டுகள்",
+          "contentId": "math-05-equivalent-fractions"
+        }
+      ],
+      "revision": [
+        {
+          "id": "revision-2",
+          "subjectId": "intelligence",
+          "title": "ஒப்புமை",
+          "activityType": "spaced-recall",
+          "details": "5 விரைவு கேள்விகள்"
+        }
+      ],
+      "practiceQuizIds": [
+        "math-05-equivalent-fractions-02"
+      ],
+      "studyMaterialIds": [
+        "math-05-equivalent-fractions"
+      ],
+      "timetable": [
+        {
+          "id": "time-1",
+          "startTime": "06:00",
+          "endTime": "06:30",
+          "title": "காலை ஓட்டம் + உடற்பயிற்சி"
+        },
+        {
+          "id": "time-2",
+          "startTime": "06:30",
+          "endTime": "07:00",
+          "title": "வாசிப்பு / மொழித் திறன்"
+        },
+        {
+          "id": "time-3",
+          "startTime": "18:00",
+          "endTime": "18:45",
+          "title": "முக்கிய படிப்பு நேரம்"
+        }
+      ]
+    }
+  ]
+}
