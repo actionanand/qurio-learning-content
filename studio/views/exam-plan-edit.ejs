@@ -1,0 +1,14 @@
+<%- include('partials/header', { title: 'Edit Exam Plan', subtitle: `${bundle.planRef.id} · ${bundle.language.toUpperCase()}` }) %>
+<div class="translation-banner"><span class="lock-icon">◎</span><div><strong>Existing plan editor</strong><p>Plan identity and relative file structure stay intact. JSON is validated for parseability before save.</p></div></div>
+<form method="post" action="/exam-plans/save" class="stack">
+  <input type="hidden" name="id" value="<%= bundle.planRef.id %>"><input type="hidden" name="language" value="<%= bundle.language %>">
+  <section class="card"><div class="card-head"><div><span class="eyebrow">PLAN</span><h2><%= bundle.plan.title %></h2></div><span class="id-chip"><%= bundle.language.toUpperCase() %></span></div><label>plan.json<textarea class="code-editor json-editor" name="planJson" required><%= JSON.stringify(bundle.plan, null, 2) %></textarea></label></section>
+  <div class="grid two">
+    <section class="card"><div class="card-head"><h2>Overview Markdown</h2></div><textarea class="code-editor medium" name="overview"><%= bundle.overview %></textarea></section>
+    <section class="card"><div class="card-head"><h2>Strategy Markdown</h2></div><textarea class="code-editor medium" name="strategy"><%= bundle.strategy %></textarea></section>
+  </div>
+  <section class="card"><div class="card-head"><h2>Full syllabus Markdown</h2></div><textarea class="code-editor medium" name="syllabus"><%= bundle.syllabus %></textarea></section>
+  <section class="card"><div class="card-head"><div><span class="eyebrow">CALENDAR</span><h2>Monthly plan files</h2></div></div><div class="calendar-links"><% calendars.forEach(c => { %><a href="/exam-plans/calendar?id=<%= encodeURIComponent(bundle.planRef.id) %>&lang=<%= bundle.language %>&month=<%= c.month %>"><span>▦</span><div><strong><%= c.month %></strong><small><%= c.relative %></small></div><span>→</span></a><% }) %></div></section>
+  <div class="sticky-actions"><a class="btn ghost" href="/exam-plans">Back</a><button class="btn primary">Save plan files</button></div>
+</form>
+<%- include('partials/footer') %>

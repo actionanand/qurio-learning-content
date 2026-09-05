@@ -1,0 +1,29 @@
+<%- include('partials/header', { title: 'Content Browser', subtitle: 'Manifest-driven view of notes, quizzes and syllabi' }) %>
+<div class="toolbar card compact">
+  <form method="get" class="filters">
+    <label>Type<select name="type"><option value="">All</option><option value="note" <%= filters.type==='note'?'selected':'' %>>Notes</option><option value="quiz" <%= filters.type==='quiz'?'selected':'' %>>Quizzes</option><option value="syllabus" <%= filters.type==='syllabus'?'selected':'' %>>Syllabi</option></select></label>
+    <label>Grade<select name="grade"><option value="">All</option><% manifest.grades.forEach(g => { %><option value="<%= g.id %>" <%= String(filters.grade)===String(g.id)?'selected':'' %>><%= g.label.en %></option><% }) %></select></label>
+    <label>Subject<select name="subject"><option value="">All</option><% manifest.subjects.forEach(s => { %><option value="<%= s.id %>" <%= filters.subject===s.id?'selected':'' %>><%= s.label.en %></option><% }) %></select></label>
+    <button class="btn secondary small">Apply</button>
+  </form>
+  <div class="toolbar-actions"><a class="btn primary small" href="/notes/new">+ Note</a><a class="btn primary small" href="/quizzes/new">+ Quiz</a></div>
+</div>
+<section class="card table-card">
+  <div class="card-head"><div><h2><%= items.length %> content items</h2><small>Click a language to edit that localized file.</small></div></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Content</th><th>Grade</th><th>Subject / Topic</th><th>Type</th><th>Translations</th><th></th></tr></thead>
+    <tbody>
+    <% items.forEach(item => { const editBase = item.type==='note'?'/notes/edit':item.type==='quiz'?'/quizzes/edit':'/syllabus/edit'; %>
+      <tr>
+        <td><strong><%= item.id %></strong><small class="mono"><%= item.path %></small><% if(item.seriesId){ %><small>Series: <%= item.seriesId %> · Set <%= item.setNumber || 1 %></small><% } %></td>
+        <td><span class="badge">G<%= item.grade %></span></td>
+        <td><strong><%= item.subject %></strong><small><%= [item.chapter,item.topic].filter(Boolean).join(' / ') || '—' %></small></td>
+        <td><span class="type-pill <%= item.type %>"><%= item.type %></span></td>
+        <td><div class="lang-pills"><% languages.forEach(lang => { %><% if(item.languages.includes(lang.id)){ %><a class="lang yes" href="<%= editBase %>?id=<%= encodeURIComponent(item.id) %>&lang=<%= lang.id %>"><%= lang.id.toUpperCase() %></a><% } else if (lang.id !== 'en') { %><a class="lang no" title="Create translation" href="/translations/edit?id=<%= encodeURIComponent(item.id) %>&target=<%= lang.id %>">+ <%= lang.id.toUpperCase() %></a><% } %><% }) %></div></td>
+        <td><a class="text-link" href="<%= editBase %>?id=<%= encodeURIComponent(item.id) %>&lang=en">Edit →</a></td>
+      </tr>
+    <% }) %>
+    </tbody>
+  </table></div>
+</section>
+<%- include('partials/footer') %>

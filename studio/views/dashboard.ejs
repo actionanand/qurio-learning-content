@@ -1,0 +1,46 @@
+<%- include('partials/header', { title: 'Dashboard', subtitle: 'Author, translate and validate Qurio learning content' }) %>
+<div class="hero-panel">
+  <div>
+    <span class="eyebrow">LOCAL CONTENT CMS</span>
+    <h1>Build Qurio content without hand-editing schemas.</h1>
+    <p>Create notes, quiz sets and syllabi, manage translations, edit exam plans, regenerate the manifest, and validate the repository before you commit.</p>
+  </div>
+  <div class="hero-actions">
+    <a class="btn primary" href="/notes/new">Create study note</a>
+    <a class="btn secondary" href="/quizzes/new">Create quiz set</a>
+  </div>
+</div>
+
+<div class="stats-grid">
+  <div class="stat-card"><span class="stat-icon">▤</span><div><strong><%= stats.counts.notes %></strong><small>Study notes</small></div></div>
+  <div class="stat-card"><span class="stat-icon">✓</span><div><strong><%= stats.counts.quizzes %></strong><small>Quiz sets</small></div></div>
+  <div class="stat-card"><span class="stat-icon">≡</span><div><strong><%= stats.counts.syllabi %></strong><small>Syllabi</small></div></div>
+  <div class="stat-card"><span class="stat-icon">文</span><div><strong><%= stats.missingTranslations %></strong><small>Missing translations</small></div></div>
+  <div class="stat-card"><span class="stat-icon">◎</span><div><strong><%= stats.examPlans %></strong><small>Exam plans</small></div></div>
+</div>
+
+<div class="grid two">
+  <section class="card">
+    <div class="card-head"><div><span class="eyebrow">QUICK CREATE</span><h2>Learning content</h2></div></div>
+    <div class="action-list">
+      <a href="/notes/new"><span class="action-icon">✎</span><div><strong>Study note</strong><small>Frontmatter, correct folder and manifest entry are generated.</small></div><span>→</span></a>
+      <a href="/quizzes/new"><span class="action-icon">✓</span><div><strong>Quiz set</strong><small>Build MCQs without writing JSON manually.</small></div><span>→</span></a>
+      <a href="/syllabus/new"><span class="action-icon">≡</span><div><strong>Subject syllabus</strong><small>Create the optional syllabus Markdown file.</small></div><span>→</span></a>
+      <a href="/translations"><span class="action-icon">文</span><div><strong>Translation workspace</strong><small>Keep IDs and answer logic locked while translating.</small></div><span>→</span></a>
+    </div>
+  </section>
+  <section class="card">
+    <div class="card-head"><div><span class="eyebrow">REPOSITORY</span><h2>Health & Git</h2></div><a href="/validate" class="text-link">Run validation →</a></div>
+    <dl class="detail-list">
+      <div><dt>Schema</dt><dd>v<%= stats.manifest.schemaVersion %></dd></div>
+      <div><dt>Languages</dt><dd><%= stats.manifest.supportedLanguages.map(l => l.id.toUpperCase()).join(' · ') %></dd></div>
+      <div><dt>Grades</dt><dd><%= stats.manifest.grades.map(g => g.id).join(', ') %></dd></div>
+      <div><dt>Exams</dt><dd><%= stats.exams %></dd></div>
+      <div><dt>Git</dt><dd><%= git.available ? `${git.changes.length} changed file(s)` : 'Run inside your cloned repository' %></dd></div>
+    </dl>
+    <% if (git.available && git.changes.length) { %>
+      <div class="git-changes"><% git.changes.slice(0,8).forEach(line => { %><code><%= line %></code><% }) %><% if (git.changes.length > 8) { %><small>+ <%= git.changes.length - 8 %> more</small><% } %></div>
+    <% } %>
+  </section>
+</div>
+<%- include('partials/footer') %>

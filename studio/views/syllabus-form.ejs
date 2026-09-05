@@ -1,0 +1,22 @@
+<%- include('partials/header', { title: mode === 'edit' ? 'Edit Syllabus' : 'Create Syllabus', subtitle: 'One optional syllabus Markdown file per subject' }) %>
+<form method="post" action="/syllabus/save" class="stack">
+  <input type="hidden" name="mode" value="<%= mode %>">
+  <% if (syllabus?.id) { %><input type="hidden" name="id" value="<%= syllabus.id %>"><% } %>
+  <section class="card">
+    <div class="card-head"><div><span class="eyebrow">METADATA</span><h2>Syllabus details</h2></div><% if(syllabus?.id){ %><span class="id-chip"><%= syllabus.id %></span><% } %></div>
+    <div class="form-grid four">
+      <label>Language<select name="language"><% languages.forEach(l => { %><option value="<%= l.id %>" <%= (syllabus?.language || 'en')===l.id?'selected':'' %>><%= l.name %></option><% }) %></select></label>
+      <label>Curriculum<select name="curriculum"><% curricula.forEach(c => { %><option value="<%= c.id %>" <%= (syllabus?.curriculum || 'general')===c.id?'selected':'' %>><%= c.name || c.id %></option><% }) %></select></label>
+      <label>Grade<select name="grade"><% grades.forEach(g => { %><option value="<%= g.id %>" <%= Number(syllabus?.grade || grades[0]?.id)===Number(g.id)?'selected':'' %>><%= g.label.en %></option><% }) %></select></label>
+      <label>Subject<select name="subject"><% subjects.forEach(s => { %><option value="<%= s.id %>" <%= (syllabus?.subject || subjects[0]?.id)===s.id?'selected':'' %>><%= s.label.en %></option><% }) %></select></label>
+    </div>
+    <div class="form-grid two">
+      <label>Title<input name="title" value="<%= syllabus?.title || '' %>" placeholder="Mathematics — Grade 5 Syllabus" required></label>
+      <label>Version<input type="number" min="1" name="version" value="<%= syllabus?.version || 1 %>"></label>
+    </div>
+    <% if (mode === 'new') { %><label class="check"><input type="checkbox" name="overwrite"> Allow overwrite if this subject already has a syllabus in this language</label><% } %>
+  </section>
+  <section class="card"><div class="card-head"><div><span class="eyebrow">CONTENT</span><h2>Syllabus Markdown</h2></div></div><%- include('partials/markdown-editor', { value: syllabus?.body || '' }) %></section>
+  <div class="sticky-actions"><a class="btn ghost" href="/content?type=syllabus">Cancel</a><button class="btn primary" type="submit"><%= mode==='edit' ? 'Save syllabus' : 'Create syllabus' %></button></div>
+</form>
+<%- include('partials/footer') %>

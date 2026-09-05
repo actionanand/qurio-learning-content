@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= title ? `${title} · Qurio Content Studio` : 'Qurio Content Studio' %></title>
+  <link rel="stylesheet" href="/vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="/studio-assets/styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="/">
+      <span class="brand-mark">Q</span>
+      <span><strong>Qurio</strong><small>Content Studio</small></span>
+    </a>
+    <nav>
+      <a class="<%= currentPath === '/' ? 'active' : '' %>" href="/"><span>⌂</span> Dashboard</a>
+      <a class="<%= currentPath.startsWith('/content') ? 'active' : '' %>" href="/content"><span>▤</span> Content</a>
+      <a class="<%= currentPath.startsWith('/notes') ? 'active' : '' %>" href="/notes/new"><span>✎</span> New Note</a>
+      <a class="<%= currentPath.startsWith('/quizzes') ? 'active' : '' %>" href="/quizzes/new"><span>✓</span> New Quiz</a>
+      <a class="<%= currentPath.startsWith('/syllabus') ? 'active' : '' %>" href="/syllabus/new"><span>≡</span> Syllabus</a>
+      <a class="<%= currentPath.startsWith('/translations') ? 'active' : '' %>" href="/translations"><span>文</span> Translations</a>
+      <a class="<%= currentPath.startsWith('/exam-plans') ? 'active' : '' %>" href="/exam-plans"><span>◎</span> Exam Plans</a>
+      <a class="<%= currentPath.startsWith('/validate') ? 'active' : '' %>" href="/validate"><span>◇</span> Validate</a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="repo-pill"><span class="dot"></span> local repository</div>
+      <% if (git?.available) { %><small>Git branch: <strong><%= git.branch %></strong></small><% } else { %><small>Git metadata unavailable in this copy</small><% } %>
+    </div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <button class="menu-button" type="button" data-menu-toggle>☰</button>
+      <div>
+        <strong><%= title || 'Qurio Content Studio' %></strong>
+        <% if (subtitle) { %><small><%= subtitle %></small><% } %>
+      </div>
+      <div class="topbar-actions">
+        <span class="version-chip">Content <%= manifest?.contentVersion || 'unknown' %></span>
+      </div>
+    </header>
+    <section class="page">
+      <% if (queryMessage) { %><div class="flash success"><span>✓</span><%= queryMessage %></div><% } %>

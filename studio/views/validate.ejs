@@ -1,0 +1,13 @@
+<%- include('partials/header', { title: 'Repository Validation', subtitle: 'Catch broken IDs, files, quiz answers and translation drift before commit' }) %>
+<div class="validation-summary <%= validation.summary.errors ? 'bad' : 'good' %>">
+  <div class="validation-icon"><%= validation.summary.errors ? '!' : '✓' %></div>
+  <div><h1><%= validation.summary.errors ? 'Validation needs attention' : 'Repository looks healthy' %></h1><p><strong><%= validation.summary.errors %></strong> errors · <strong><%= validation.summary.warnings %></strong> warnings</p></div>
+  <form method="post" action="/manifest/rebuild"><button class="btn <%= validation.summary.errors ? 'secondary' : 'primary' %>" type="submit">Rebuild manifest</button></form>
+</div>
+<section class="card">
+  <div class="card-head"><div><span class="eyebrow">CHECKS</span><h2>Validation results</h2></div><a class="btn ghost small" href="/validate">Run again</a></div>
+  <% if (!validation.issues.length) { %><div class="empty-state"><span>✓</span><h3>No issues found</h3><p>Manifest, content files and quiz translations passed the current Studio checks.</p></div><% } else { %>
+  <div class="issue-list"><% validation.issues.forEach(i => { %><article class="issue <%= i.level %>"><span class="issue-level"><%= i.level === 'error' ? '!' : '△' %></span><div><div class="issue-title"><strong><%= i.code %></strong><span><%= i.level %></span></div><p><%= i.message %></p><% if(i.file){ %><code><%= i.file %></code><% } %></div></article><% }) %></div>
+  <% } %>
+</section>
+<%- include('partials/footer') %>

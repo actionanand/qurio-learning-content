@@ -1,0 +1,7 @@
+<%- include('partials/header', { title: 'Edit Exam Calendar', subtitle: `${bundle.planRef.id} · ${bundle.month} · ${bundle.language.toUpperCase()}` }) %>
+<form method="post" action="/exam-plans/calendar/save" class="stack">
+  <input type="hidden" name="id" value="<%= bundle.planRef.id %>"><input type="hidden" name="language" value="<%= bundle.language %>"><input type="hidden" name="month" value="<%= bundle.month %>">
+  <section class="card"><div class="card-head"><div><span class="eyebrow">MONTHLY DAILY PLAN</span><h2><%= bundle.month %></h2><small>This JSON contains daily topics, spaced recall, linked Qurio note/quiz IDs and timetable entries.</small></div></div><textarea class="code-editor calendar-json" name="calendarJson" required><%= JSON.stringify(bundle.calendar, null, 2) %></textarea></section>
+  <div class="sticky-actions"><a class="btn ghost" href="/exam-plans/edit?id=<%= encodeURIComponent(bundle.planRef.id) %>&lang=<%= bundle.language %>">Back to plan</a><button class="btn primary">Save calendar</button></div>
+</form>
+<%- include('partials/footer') %>

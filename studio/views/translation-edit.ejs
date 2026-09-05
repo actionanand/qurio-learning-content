@@ -1,0 +1,42 @@
+<%- include('partials/header', { title: `Translate ${item.type}`, subtitle: `${item.id} · English → ${targetLanguage === 'ta' ? 'Tamil' : 'Hindi'}` }) %>
+<div class="translation-banner"><span class="lock-icon">⌁</span><div><strong>Identity is locked.</strong><p>Studio preserves content ID, path, grade, subject, chapter/topic, quiz series, question/option IDs and correct answers from English.</p></div></div>
+<% if (item.type === 'quiz') { const sourceQuiz = source.data; const targetQuiz = target?.data || sourceQuiz; %>
+<form method="post" action="/translations/quiz" id="quizTranslationForm" class="stack">
+  <input type="hidden" name="id" value="<%= item.id %>"><input type="hidden" name="targetLanguage" value="<%= targetLanguage %>"><input type="hidden" name="translationJson" id="translationJson">
+  <section class="card">
+    <div class="card-head"><div><span class="eyebrow">QUIZ TRANSLATION</span><h2><%= sourceQuiz.title %></h2></div><span class="id-chip"><%= targetLanguage.toUpperCase() %></span></div>
+    <div class="form-grid three">
+      <label>Set label<input id="trSetLabel" value="<%= targetQuiz.setLabel || sourceQuiz.setLabel || '' %>"></label>
+      <label>Translated title<input id="trTitle" value="<%= targetQuiz.title || '' %>" required></label>
+      <label>Language<input value="<%= targetLanguage %>" disabled></label>
+    </div>
+    <label>Description<textarea id="trDescription" class="short-textarea"><%= targetQuiz.description || '' %></textarea></label>
+  </section>
+  <section class="card">
+    <div class="card-head"><div><span class="eyebrow">QUESTIONS</span><h2>Translate question text and feedback</h2><small>The correct answer stays locked to the English source.</small></div></div>
+    <div id="translationQuestions" class="translation-questions"></div>
+  </section>
+  <div class="sticky-actions"><a class="btn ghost" href="/translations">Cancel</a><button class="btn primary" type="submit">Save <%= targetLanguage.toUpperCase() %> translation</button></div>
+</form>
+<script type="application/json" id="sourceTranslationQuiz"><%- JSON.stringify(sourceQuiz).replace(/</g, '\\u003c') %></script>
+<script type="application/json" id="targetTranslationQuiz"><%- JSON.stringify(targetQuiz).replace(/</g, '\\u003c') %></script>
+<% const pageScript = '/studio-assets/translation-quiz.js'; %>
+<%- include('partials/footer', { pageScript }) %>
+<% } else { const sourceMd = source; const targetMd = target || { attributes: {...source.attributes, title: ''}, body: '' }; %>
+<form method="post" action="/translations/markdown" class="stack">
+  <input type="hidden" name="id" value="<%= item.id %>"><input type="hidden" name="targetLanguage" value="<%= targetLanguage %>">
+  <section class="card">
+    <div class="card-head"><div><span class="eyebrow">TRANSLATED TITLE</span><h2><%= sourceMd.attributes.title %></h2></div><span class="id-chip"><%= targetLanguage.toUpperCase() %></span></div>
+    <label>Translated title<input name="title" value="<%= targetMd.attributes?.title || '' %>" required></label>
+  </section>
+  <section class="card">
+    <div class="translation-grid">
+      <div class="editor-pane source-pane"><div class="pane-head"><strong>English source</strong><span>Read only</span></div><textarea class="code-editor" readonly><%= sourceMd.body %></textarea></div>
+      <div class="editor-pane"><div class="pane-head"><strong><%= targetLanguage === 'ta' ? 'Tamil' : 'Hindi' %> translation</strong><button class="btn ghost tiny" type="button" data-preview-button>Preview</button></div><textarea class="code-editor" name="body" data-markdown-source required><%= targetMd.body || '' %></textarea></div>
+    </div>
+    <div class="preview-full"><div class="pane-head"><strong>Translation preview</strong></div><div class="markdown-preview" data-markdown-preview><p class="muted">Preview will appear here.</p></div></div>
+  </section>
+  <div class="sticky-actions"><a class="btn ghost" href="/translations">Cancel</a><button class="btn primary" type="submit">Save <%= targetLanguage.toUpperCase() %> translation</button></div>
+</form>
+<%- include('partials/footer') %>
+<% } %>
