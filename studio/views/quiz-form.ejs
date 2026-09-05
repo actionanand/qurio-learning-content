@@ -1,0 +1,47 @@
+<%- include('partials/header', { title: mode === 'edit' ? 'Edit Quiz Set' : 'Create Quiz Set', subtitle: 'Build timed MCQs without writing JSON manually' }) %>
+<form method="post" action="/quizzes/save" class="stack" id="quizForm">
+  <input type="hidden" name="mode" value="<%= mode %>">
+  <% if (quiz?.id) { %><input type="hidden" name="id" value="<%= quiz.id %>"><% } %>
+  <input type="hidden" name="questionsJson" id="questionsJson">
+  <section class="card">
+    <div class="card-head"><div><span class="eyebrow">QUIZ METADATA</span><h2>Set details</h2></div><% if(quiz?.id){ %><span class="id-chip"><%= quiz.id %></span><% } %></div>
+    <div class="form-grid four">
+      <label>Language<select name="language"><% languages.forEach(l => { %><option value="<%= l.id %>" <%= (quiz?.language || 'en')===l.id?'selected':'' %>><%= l.name %></option><% }) %></select></label>
+      <label>Curriculum<select name="curriculum"><% curricula.forEach(c => { %><option value="<%= c.id %>" <%= (quiz?.curriculum || 'general')===c.id?'selected':'' %>><%= c.name || c.id %></option><% }) %></select></label>
+      <label>Grade<select name="grade" id="quizGrade"><% grades.forEach(g => { %><option value="<%= g.id %>" <%= Number(quiz?.grade || grades[0]?.id)===Number(g.id)?'selected':'' %>><%= g.label.en %></option><% }) %></select></label>
+      <label>Subject<select name="subject" id="quizSubject"><% subjects.forEach(s => { %><option value="<%= s.id %>" <%= (quiz?.subject || subjects[0]?.id)===s.id?'selected':'' %>><%= s.label.en %></option><% }) %></select></label>
+    </div>
+    <div class="form-grid four">
+      <label>Chapter ID<input name="chapter" value="<%= quiz?.chapter || '' %>" placeholder="fractions" required></label>
+      <label>Topic ID<input name="topic" id="quizTopic" value="<%= quiz?.topic || '' %>" placeholder="equivalent-fractions" required></label>
+      <label>Set number<input type="number" min="1" name="setNumber" id="quizSetNumber" value="<%= quiz?.setNumber || 1 %>" required></label>
+      <label>Set label<input name="setLabel" value="<%= quiz?.setLabel || '' %>" placeholder="Practice Set 1"></label>
+    </div>
+    <div class="form-grid two">
+      <label>Quiz title<input name="title" value="<%= quiz?.title || '' %>" placeholder="Equivalent Fractions — Practice Set 1" required></label>
+      <label>Series ID<input name="seriesId" id="quizSeriesId" value="<%= quiz?.seriesId || '' %>" placeholder="Auto-generated if blank"><small>Same series ID groups multiple sets for one topic.</small></label>
+    </div>
+    <label>Description<textarea name="description" class="short-textarea" placeholder="A short timed practice quiz..."><%= quiz?.description || '' %></textarea></label>
+    <div class="form-grid four">
+      <label>Difficulty<select name="difficulty"><% ['beginner','intermediate','advanced'].forEach(d => { %><option value="<%= d %>" <%= (quiz?.difficulty || 'beginner')===d?'selected':'' %>><%= d %></option><% }) %></select></label>
+      <label>Timer (seconds)<input type="number" min="30" step="30" name="timeLimitSeconds" value="<%= quiz?.timeLimitSeconds || 180 %>"></label>
+      <label>Passing %<input type="number" min="0" max="100" name="passingPercentage" value="<%= quiz?.passingPercentage ?? 70 %>"></label>
+      <label>Version<input type="number" min="1" name="version" value="<%= quiz?.version || 1 %>"></label>
+    </div>
+    <div class="form-grid two">
+      <label>Related study-note IDs<textarea name="sourceNoteIds" class="short-textarea" placeholder="one ID per line"><%= (quiz?.sourceNoteIds || []).join('\n') %></textarea></label>
+      <div class="checks-panel"><label class="check"><input type="checkbox" name="shuffleQuestions" <%= quiz?.shuffleQuestions !== false ? 'checked' : '' %>> Shuffle questions</label><label class="check"><input type="checkbox" name="shuffleOptions" <%= quiz?.shuffleOptions !== false ? 'checked' : '' %>> Shuffle options</label><% if (mode==='new') { %><label class="check"><input type="checkbox" name="overwrite"> Allow overwrite if generated file exists</label><% } %></div>
+    </div>
+    <div class="generated-preview" id="idPreview"><span>Generated IDs update as you edit grade, subject, topic and set number.</span></div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><div><span class="eyebrow">QUESTIONS</span><h2>Quiz questions</h2><small>Option IDs stay A–D. Correct answer is stored by ID, never by visual position.</small></div><button type="button" class="btn secondary small" id="addQuestion">+ Add question</button></div>
+    <div id="questionList" class="question-list"></div>
+    <div class="empty-builder" id="questionEmpty">No questions yet. Add the first question.</div>
+  </section>
+  <div class="sticky-actions"><a class="btn ghost" href="/content?type=quiz">Cancel</a><button class="btn primary" type="submit"><%= mode==='edit' ? 'Save quiz set' : 'Create quiz set' %></button></div>
+</form>
+<script type="application/json" id="initialQuestions"><%- JSON.stringify(quiz?.questions || []).replace(/</g, '\\u003c') %></script>
+<% const pageScript = '/studio-assets/quiz-builder.js'; %>
+<%- include('partials/footer', { pageScript }) %>

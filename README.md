@@ -6,6 +6,19 @@ This repository is the content/data source for the Qurio client. It contains cla
 
 The repository contains **public learning content only**. Authentication, admin approval, learner progress, quiz attempts, selected exams, and private user state belong in the Qurio app/backend (Supabase is planned separately).
 
+## Local Qurio Content Studio
+
+This repository now includes a **local Express + EJS content-authoring app**. After cloning, run:
+
+```bash
+npm install
+npm run studio
+```
+
+Then open `http://127.0.0.1:4310`. The Studio creates/edits study notes, quiz sets and syllabi, manages Tamil/Hindi translations, rebuilds `manifest.json`, validates content, and can edit the existing exam-plan files. See [`STUDIO.md`](STUDIO.md) for the complete workflow.
+
+The Studio runs locally and writes directly into this repository; it is not part of the Qurio learner client and should not be deployed publicly.
+
 ## Current demo coverage
 
 - Languages: English (`en`), Tamil (`ta`), Hindi (`hi`)

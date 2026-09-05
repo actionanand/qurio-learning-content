@@ -1,0 +1,36 @@
+<%- include('partials/header', { title: mode === 'edit' ? 'Edit Study Note' : 'Create Study Note', subtitle: 'Studio generates the folder, ID, YAML frontmatter and manifest entry' }) %>
+<form method="post" action="/notes/save" class="stack" data-content-form>
+  <input type="hidden" name="mode" value="<%= mode %>">
+  <% if (note?.id) { %><input type="hidden" name="id" value="<%= note.id %>"><% } %>
+  <section class="card">
+    <div class="card-head"><div><span class="eyebrow">METADATA</span><h2>Lesson details</h2></div><% if(note?.id){ %><span class="id-chip"><%= note.id %></span><% } %></div>
+    <div class="form-grid four">
+      <label>Language<select name="language" required><% languages.forEach(l => { %><option value="<%= l.id %>" <%= (note?.language || 'en')===l.id?'selected':'' %>><%= l.name %></option><% }) %></select></label>
+      <label>Curriculum<select name="curriculum"><% curricula.forEach(c => { %><option value="<%= c.id %>" <%= (note?.curriculum || 'general')===c.id?'selected':'' %>><%= c.name || c.id %></option><% }) %></select></label>
+      <label>Grade<select name="grade" required><% grades.forEach(g => { %><option value="<%= g.id %>" <%= Number(note?.grade || grades[0]?.id)===Number(g.id)?'selected':'' %>><%= g.label.en %></option><% }) %></select></label>
+      <label>Subject<select name="subject" required><% subjects.forEach(s => { %><option value="<%= s.id %>" <%= (note?.subject || subjects[0]?.id)===s.id?'selected':'' %>><%= s.label.en %></option><% }) %></select></label>
+    </div>
+    <div class="form-grid three">
+      <label>Chapter ID<input name="chapter" value="<%= note?.chapter || '' %>" placeholder="fractions" required><small>Machine ID, e.g. fractions</small></label>
+      <label>Topic ID<input name="topic" value="<%= note?.topic || '' %>" placeholder="equivalent-fractions" required><small>Used in path and stable content ID</small></label>
+      <label>Title<input name="title" value="<%= note?.title || '' %>" placeholder="Equivalent Fractions" required></label>
+    </div>
+    <div class="form-grid four">
+      <label>Order<input type="number" min="1" name="order" value="<%= note?.order || 1 %>"></label>
+      <label>Difficulty<select name="difficulty"><% ['beginner','intermediate','advanced'].forEach(d => { %><option value="<%= d %>" <%= (note?.difficulty || 'beginner')===d?'selected':'' %>><%= d %></option><% }) %></select></label>
+      <label>Estimated minutes<input type="number" min="1" name="estimatedMinutes" value="<%= note?.estimatedMinutes || 10 %>"></label>
+      <label>Version<input type="number" min="1" name="version" value="<%= note?.version || 1 %>"></label>
+    </div>
+    <div class="form-grid two">
+      <label>Related quiz IDs<textarea name="quizIds" class="short-textarea" placeholder="one ID per line"><%= (note?.quizIds || []).join('\n') %></textarea></label>
+      <label>Tags<textarea name="tags" class="short-textarea" placeholder="fractions, equivalent-fractions"><%= (note?.tags || []).join('\n') %></textarea></label>
+    </div>
+    <% if (mode === 'new') { %><label class="check"><input type="checkbox" name="overwrite"> Allow overwrite if the generated file already exists</label><% } %>
+  </section>
+  <section class="card">
+    <div class="card-head"><div><span class="eyebrow">CONTENT</span><h2>Study material</h2></div><span class="muted">Use <code>$$...$$</code> for display math and fenced <code>mermaid</code> blocks for diagrams.</span></div>
+    <%- include('partials/markdown-editor', { value: note?.body || '' }) %>
+  </section>
+  <div class="sticky-actions"><a class="btn ghost" href="/content">Cancel</a><button class="btn primary" type="submit"><%= mode==='edit' ? 'Save note' : 'Create note' %></button></div>
+</form>
+<%- include('partials/footer') %>
