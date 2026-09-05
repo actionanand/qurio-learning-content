@@ -15,7 +15,7 @@ npm install
 npm run studio
 ```
 
-Then open `http://127.0.0.1:4310`. The Studio creates/edits study notes, quiz sets and syllabi, manages translations for any configured language, provides **Catalog Setup** for languages/curricula/grades/subjects, rebuilds `manifest.json`, validates content, and can edit the existing exam-plan files. See [`STUDIO.md`](STUDIO.md) for the complete workflow.
+Then open `http://127.0.0.1:4310`. The Studio creates/edits study notes, quiz sets and syllabi, manages translations for any configured language, provides **Catalog Setup** for languages/curricula/grades/subjects, manages the **Exam Catalog**, creates and edits structured **Exam Plans**, manages plan translations and calendar months, rebuilds `manifest.json`, and validates the repository. See [`STUDIO.md`](STUDIO.md) for the complete workflow.
 
 The Studio runs locally and writes directly into this repository; it is not part of the Qurio learner client and should not be deployed publicly.
 

@@ -1,0 +1,32 @@
+<%- include('partials/header', { title: 'Exams', subtitle: 'Manage exam definitions used by preparation plans' }) %>
+<div class="hero-panel compact-hero">
+  <div>
+    <span class="eyebrow">EXAM CATALOG</span>
+    <h1>Add and maintain exams without editing manifest.json.</h1>
+    <p>Exam definitions contain the stable exam ID, short name, category, official information URL and localized names. Preparation plans are created separately and reference these exam IDs.</p>
+  </div>
+  <div class="hero-actions"><a class="btn primary" href="/exams/new">+ Add exam</a><a class="btn secondary" href="/exam-plans/new">+ New plan</a></div>
+</div>
+
+<section class="card">
+  <div class="card-head"><div><span class="eyebrow">AVAILABLE EXAMS</span><h2><%= exams.length %> exam<%= exams.length === 1 ? '' : 's' %></h2></div></div>
+  <% if (!exams.length) { %>
+    <div class="empty-state">No exams are configured yet. Add the first exam to create preparation plans.</div>
+  <% } else { %>
+    <div class="exam-grid">
+      <% exams.forEach(exam => { %>
+        <article class="exam-card">
+          <div class="exam-card-top"><span class="plan-badge"><%= exam.shortName || exam.id.toUpperCase() %></span><span class="muted"><%= exam.planCount %> plan<%= exam.planCount === 1 ? '' : 's' %></span></div>
+          <h2><%= exam.label?.en || exam.id %></h2>
+          <p><%= exam.fullName?.en || '' %></p>
+          <div class="meta-row"><span><%= exam.category || 'other' %></span><code><%= exam.id %></code></div>
+          <div class="card-actions">
+            <a class="btn secondary small" href="/exams/edit?id=<%= encodeURIComponent(exam.id) %>">Edit exam</a>
+            <a class="btn primary small" href="/exam-plans/new?examId=<%= encodeURIComponent(exam.id) %>">Create plan</a>
+          </div>
+        </article>
+      <% }) %>
+    </div>
+  <% } %>
+</section>
+<%- include('partials/footer') %>

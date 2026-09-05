@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><%= title ? `${title} · Qurio Content Studio` : 'Qurio Content Studio' %></title>
+  <link rel="icon" href="/studio-assets/favicon.ico">
   <link rel="stylesheet" href="/vendor/katex/katex.min.css">
   <link rel="stylesheet" href="/studio-assets/styles.css">
 </head>
@@ -22,6 +23,7 @@
       <a class="<%= currentPath.startsWith('/quizzes') ? 'active' : '' %>" href="/quizzes/new"><span>✓</span> New Quiz</a>
       <a class="<%= currentPath.startsWith('/syllabus') ? 'active' : '' %>" href="/syllabus/new"><span>≡</span> Syllabus</a>
       <a class="<%= currentPath.startsWith('/translations') ? 'active' : '' %>" href="/translations"><span>文</span> Translations</a>
+      <a class="<%= currentPath.startsWith('/exams') ? 'active' : '' %>" href="/exams"><span>◉</span> Exams</a>
       <a class="<%= currentPath.startsWith('/exam-plans') ? 'active' : '' %>" href="/exam-plans"><span>◎</span> Exam Plans</a>
       <a class="<%= currentPath.startsWith('/validate') ? 'active' : '' %>" href="/validate"><span>◇</span> Validate</a>
     </nav>

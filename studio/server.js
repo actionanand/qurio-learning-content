@@ -10,9 +10,10 @@ import { getTranslationEditorData, saveMarkdownTranslation, saveQuizTranslation 
 import { renderMarkdown } from './lib/markdown-preview.js';
 import { validateRepository } from './lib/validation-service.js';
 import { getGitStatus } from './lib/git-status.js';
-import { listCalendarFiles, listExamPlans, loadCalendar, loadExamPlanBundle, saveCalendar, saveExamPlanBundle } from './lib/exam-service.js';
+import { listCalendarFiles, listExamPlans, loadCalendar, loadExamPlanBundle, saveCalendar } from './lib/exam-service.js';
 import { pad2, slugify } from './lib/utils.js';
 import { deleteCurriculum, deleteGrade, deleteLanguage, deleteSubject, getCatalogData, getSubjectCode, saveCurriculum, saveGrade, saveLanguage, saveSubject, supportedLanguages } from './lib/catalog-management.js';
+import { addCalendarMonth, createExamPlan, createPlanTranslation, deleteCalendarMonth, deleteExam, deleteExamPlan, getExam, getExamManagerData, saveExam, updateExamPlan } from './lib/exam-management.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -197,19 +198,78 @@ app.post('/manifest/rebuild', (req, res, next) => {
 
 app.get('/validate', (req, res) => render(res, 'validate', { validation: validateRepository() }));
 
-app.get('/exam-plans', (req, res) => render(res, 'exam-plans', { plans: listExamPlans() }));
+app.get('/exams', (req, res) => render(res, 'exams', getExamManagerData()));
+app.get('/exams/new', (req, res) => render(res, 'exam-form', { ...getExamManagerData(), mode: 'new', exam: null }));
+app.get('/exams/edit', (req, res, next) => {
+  try {
+    const exam = getExam(req.query.id);
+    if (!exam) throw new Error(`Unknown exam: ${req.query.id}`);
+    render(res, 'exam-form', { ...getExamManagerData(), mode: 'edit', exam });
+  } catch (error) { next(error); }
+});
+app.post('/exams/save', (req, res, next) => {
+  try {
+    const value = saveExam(req.body);
+    redirectWithMessage(res, '/exams', `Saved exam ${value.shortName}.`);
+  } catch (error) { next(error); }
+});
+app.post('/exams/delete', (req, res, next) => {
+  try {
+    deleteExam(req.body.id);
+    redirectWithMessage(res, '/exams', `Removed exam ${req.body.id}.`);
+  } catch (error) { next(error); }
+});
+
+app.get('/exam-plans', (req, res) => render(res, 'exam-plans', { plans: listExamPlans(), exams: getExamManagerData().exams }));
+app.get('/exam-plans/new', (req, res) => {
+  const manifest = loadManifest();
+  const exams = getExamManagerData().exams;
+  const exam = req.query.examId ? exams.find((value) => value.id === req.query.examId) : exams[0];
+  const year = new Date().getFullYear() + 1;
+  const defaultLanguage = manifest.defaultLanguage || 'en';
+  render(res, 'exam-plan-form', {
+    mode: 'new',
+    exams,
+    bundle: null,
+    calendars: [],
+    plan: {
+      examId: exam?.id || '', language: defaultLanguage, entryClass: 6, examYear: year,
+      title: exam ? `${exam.shortName || exam.id.toUpperCase()} ${year} — Preparation Plan` : '',
+      subtitle: '', demo: false, officialSchedule: false, planStartDate: '', planEndDate: '', targetDate: '',
+      phases: [{ id: 'phase-1', order: 1, name: 'Foundation', startDate: '', endDate: '' }], version: 1
+    }
+  });
+});
+app.post('/exam-plans/create', (req, res, next) => {
+  try {
+    const result = createExamPlan(req.body);
+    redirectWithMessage(res, `/exam-plans/edit?id=${encodeURIComponent(result.planRef.id)}&lang=${encodeURIComponent(result.plan.language)}`, `Created exam plan ${result.planRef.id}.`);
+  } catch (error) { next(error); }
+});
 app.get('/exam-plans/edit', (req, res, next) => {
   try {
-    const language = req.query.lang || 'en';
+    const language = req.query.lang || loadManifest().defaultLanguage || 'en';
     const bundle = loadExamPlanBundle(req.query.id, language);
     const calendars = listCalendarFiles(req.query.id, language);
-    render(res, 'exam-plan-edit', { bundle, calendars });
+    render(res, 'exam-plan-form', { mode: 'edit', exams: getExamManagerData().exams, bundle, plan: bundle.plan, calendars });
   } catch (error) { next(error); }
 });
 app.post('/exam-plans/save', (req, res, next) => {
   try {
-    saveExamPlanBundle(req.body.id, req.body.language, req.body);
-    redirectWithMessage(res, `/exam-plans/edit?id=${encodeURIComponent(req.body.id)}&lang=${encodeURIComponent(req.body.language)}`, 'Exam plan files saved.');
+    updateExamPlan(req.body);
+    redirectWithMessage(res, `/exam-plans/edit?id=${encodeURIComponent(req.body.id)}&lang=${encodeURIComponent(req.body.language)}`, 'Exam plan saved.');
+  } catch (error) { next(error); }
+});
+app.post('/exam-plans/translation/create', (req, res, next) => {
+  try {
+    createPlanTranslation(req.body.id, req.body.targetLanguage);
+    redirectWithMessage(res, `/exam-plans/edit?id=${encodeURIComponent(req.body.id)}&lang=${encodeURIComponent(req.body.targetLanguage)}`, `Created ${req.body.targetLanguage} plan copy. Translate the visible text before committing.`);
+  } catch (error) { next(error); }
+});
+app.post('/exam-plans/delete', (req, res, next) => {
+  try {
+    deleteExamPlan(req.body.id);
+    redirectWithMessage(res, '/exam-plans', `Deleted exam plan ${req.body.id} and its localized plan folders.`);
   } catch (error) { next(error); }
 });
 app.get('/exam-plans/calendar', (req, res, next) => {
@@ -222,6 +282,18 @@ app.post('/exam-plans/calendar/save', (req, res, next) => {
   try {
     saveCalendar(req.body.id, req.body.language, req.body.month, req.body.calendarJson);
     redirectWithMessage(res, `/exam-plans/calendar?id=${encodeURIComponent(req.body.id)}&lang=${encodeURIComponent(req.body.language)}&month=${encodeURIComponent(req.body.month)}`, 'Calendar saved.');
+  } catch (error) { next(error); }
+});
+app.post('/exam-plans/calendar/create', (req, res, next) => {
+  try {
+    addCalendarMonth(req.body.id, req.body.newMonth);
+    redirectWithMessage(res, `/exam-plans/edit?id=${encodeURIComponent(req.body.id)}&lang=${encodeURIComponent(req.body.language)}`, `Added ${req.body.newMonth} calendar for every plan language.`);
+  } catch (error) { next(error); }
+});
+app.post('/exam-plans/calendar/delete', (req, res, next) => {
+  try {
+    deleteCalendarMonth(req.body.id, req.body.deleteMonth);
+    redirectWithMessage(res, `/exam-plans/edit?id=${encodeURIComponent(req.body.id)}&lang=${encodeURIComponent(req.body.language)}`, `Removed empty ${req.body.deleteMonth} calendar from every plan language.`);
   } catch (error) { next(error); }
 });
 

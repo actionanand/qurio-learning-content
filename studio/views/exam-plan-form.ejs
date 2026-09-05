@@ -1,0 +1,90 @@
+<%
+  const isEdit = mode === 'edit';
+  const planRef = bundle?.planRef || null;
+  const currentLanguage = plan?.language || manifest.defaultLanguage || 'en';
+  const currentExam = exams.find(value => value.id === (planRef?.examId || plan?.examId));
+  const existingLanguages = planRef?.languages || [currentLanguage];
+  const missingLanguages = languages.filter(value => !existingLanguages.includes(value.id));
+%>
+<%- include('partials/header', { title: isEdit ? 'Edit Exam Plan' : 'Create Exam Plan', subtitle: isEdit ? `${planRef.id} · ${currentLanguage.toUpperCase()}` : 'Create plan metadata, phases, supporting Markdown and initial calendar months' }) %>
+
+<% if (isEdit) { %>
+<div class="translation-banner"><span class="lock-icon">◎</span><div><strong>Structured plan editor</strong><p>Stable plan identity, exam, entry class and year remain locked. You can safely edit dates, phases, visible text, Markdown and calendar months without hand-editing plan.json.</p></div></div>
+<% } %>
+
+<form method="post" action="<%= isEdit ? '/exam-plans/save' : '/exam-plans/create' %>" class="stack" id="examPlanForm">
+  <input type="hidden" name="phasesJson" id="phasesJson">
+  <% if (isEdit) { %><input type="hidden" name="id" value="<%= planRef.id %>"><input type="hidden" name="language" value="<%= currentLanguage %>"><% } %>
+
+  <section class="card">
+    <div class="card-head"><div><span class="eyebrow">PLAN IDENTITY</span><h2><%= currentExam?.shortName || plan?.examId || 'Exam' %> preparation plan</h2></div><% if (isEdit) { %><span class="id-chip"><%= planRef.id %></span><% } %></div>
+    <div class="form-grid four">
+      <label>Exam<select name="examId" <%= isEdit ? 'disabled' : '' %> required><option value="">Choose exam</option><% exams.forEach(exam => { %><option value="<%= exam.id %>" <%= (planRef?.examId || plan?.examId) === exam.id ? 'selected' : '' %>><%= exam.shortName %> — <%= exam.label?.en || exam.id %></option><% }) %></select><% if (isEdit) { %><input type="hidden" name="examId" value="<%= planRef.examId %>"><% } %><small>Need another exam? <a class="text-link" href="/exams/new">Add it first →</a></small></label>
+      <label>Entry class<input type="number" min="1" max="99" name="entryClass" value="<%= planRef?.entryClass || plan?.entryClass || 6 %>" <%= isEdit ? 'readonly' : '' %> required></label>
+      <label>Exam year<input type="number" min="2000" max="2200" name="examYear" value="<%= planRef?.examYear || plan?.examYear || '' %>" <%= isEdit ? 'readonly' : '' %> required></label>
+      <% if (!isEdit) { %><label>Authoring language<select name="language"><% languages.forEach(language => { %><option value="<%= language.id %>" <%= currentLanguage === language.id ? 'selected' : '' %>><%= language.nativeName || language.name %></option><% }) %></select><small>Create the canonical plan first; translations can be added later.</small></label><% } else { %><label>Language<input value="<%= languages.find(value => value.id === currentLanguage)?.nativeName || currentLanguage.toUpperCase() %>" readonly></label><% } %>
+    </div>
+    <% if (!isEdit) { %><label>Custom plan ID <input name="id" placeholder="Optional — generated from exam, year and class"><small>Leave empty for an automatic stable ID.</small></label><% } %>
+    <div class="form-grid two">
+      <label>Title<input name="title" value="<%= plan?.title || '' %>" placeholder="AISSEE 2027 — Daily Battle Plan" required></label>
+      <label>Subtitle<input name="subtitle" value="<%= plan?.subtitle || '' %>" placeholder="Class 6 entry · focused preparation"></label>
+    </div>
+    <div class="form-grid four">
+      <label>Plan start<input type="date" name="planStartDate" value="<%= plan?.planStartDate || '' %>" required></label>
+      <label>Plan end<input type="date" name="planEndDate" value="<%= plan?.planEndDate || '' %>" required></label>
+      <label>Target date<input type="date" name="targetDate" value="<%= plan?.targetDate || '' %>"><small>Can be estimated if the official exam date is not published.</small></label>
+      <label>Version<input type="number" min="1" name="version" value="<%= plan?.version || 1 %>"></label>
+    </div>
+    <div class="checks-panel horizontal-checks">
+      <label class="check"><input type="checkbox" name="demo" <%= plan?.demo ? 'checked' : '' %>> Demo/sample plan</label>
+      <label class="check"><input type="checkbox" name="officialSchedule" <%= plan?.officialSchedule ? 'checked' : '' %>> Dates are based on an official published schedule</label>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><div><span class="eyebrow">PHASES</span><h2>Preparation phases</h2><small>Use phases for Foundation, Core Mastery, Revision, Mock Tests or any exam-specific strategy.</small></div><button type="button" class="btn secondary small" id="addPhase">+ Add phase</button></div>
+    <div id="phaseList" class="phase-list"></div>
+    <div class="empty-builder" id="phaseEmpty">No phases yet. Add at least one phase.</div>
+  </section>
+
+  <% if (!isEdit) { %>
+  <section class="card">
+    <div class="card-head"><div><span class="eyebrow">INITIAL CALENDAR</span><h2>Calendar months</h2><small>Optional. Add months now or add them later from the plan editor.</small></div></div>
+    <label>Months<textarea name="calendarMonths" class="short-textarea" placeholder="2026-09&#10;2026-10&#10;2026-11"></textarea><small>One YYYY-MM value per line. Empty calendar JSON files will be generated automatically.</small></label>
+  </section>
+  <% } %>
+
+  <div class="grid two">
+    <section class="card"><div class="card-head"><div><span class="eyebrow">OVERVIEW</span><h2>Overview Markdown</h2></div></div><textarea class="code-editor medium" name="overview" placeholder="# Exam overview"><%= bundle?.overview || '' %></textarea></section>
+    <section class="card"><div class="card-head"><div><span class="eyebrow">STRATEGY</span><h2>Strategy Markdown</h2></div></div><textarea class="code-editor medium" name="strategy" placeholder="# Preparation strategy"><%= bundle?.strategy || '' %></textarea></section>
+  </div>
+  <section class="card"><div class="card-head"><div><span class="eyebrow">FULL SYLLABUS</span><h2>Syllabus Markdown</h2></div></div><textarea class="code-editor medium" name="syllabus" placeholder="# Full syllabus"><%= bundle?.syllabus || '' %></textarea></section>
+
+  <% if (isEdit) { %>
+  <section class="card">
+    <div class="card-head"><div><span class="eyebrow">LANGUAGES</span><h2>Plan translations</h2><small>Language copies preserve plan IDs, dates, phases and calendar structure. Translate the visible names/content after creating a copy.</small></div></div>
+    <div class="language-plan-grid">
+      <% existingLanguages.forEach(lang => { const info = languages.find(value => value.id === lang); %><a class="language-plan-card <%= lang === currentLanguage ? 'active' : '' %>" href="/exam-plans/edit?id=<%= encodeURIComponent(planRef.id) %>&lang=<%= encodeURIComponent(lang) %>"><strong><%= info?.nativeName || info?.name || lang.toUpperCase() %></strong><small><%= lang.toUpperCase() %><%= lang === currentLanguage ? ' · editing' : '' %></small></a><% }) %>
+    </div>
+    <% if (missingLanguages.length) { %>
+      <div class="inline-create"><span><strong>Add language copy</strong><small>Creates a safe copy from the canonical plan. Review and translate it before commit.</small></span><select id="planTranslationLanguage"><% missingLanguages.forEach(language => { %><option value="<%= language.id %>"><%= language.nativeName || language.name %> (<%= language.id.toUpperCase() %>)</option><% }) %></select><button class="btn secondary small" type="submit" formaction="/exam-plans/translation/create" formmethod="post" formnovalidate name="targetLanguage" id="createPlanTranslation">Create copy</button></div>
+    <% } %>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><div><span class="eyebrow">CALENDAR</span><h2>Monthly daily-plan files</h2><small>Add a month once and Studio creates the same empty month in every existing plan language.</small></div></div>
+    <% if (calendars.length) { %><div class="calendar-links"><% calendars.forEach(c => { %><div class="calendar-row"><a href="/exam-plans/calendar?id=<%= encodeURIComponent(planRef.id) %>&lang=<%= currentLanguage %>&month=<%= c.month %>"><span>▦</span><div><strong><%= c.month %></strong><small><%= c.relative %></small></div><span>→</span></a><button class="icon-button danger" type="submit" formaction="/exam-plans/calendar/delete" formmethod="post" formnovalidate name="deleteMonth" value="<%= c.month %>" title="Remove empty month" onclick="return confirm('Remove <%= c.month %> from every plan language? This only works if all copies contain zero days.')">×</button></div><% }) %></div><% } else { %><div class="empty-state compact">No calendar months yet.</div><% } %>
+    <div class="inline-create"><span><strong>Add calendar month</strong><small>Use YYYY-MM, for example 2026-10.</small></span><input type="month" name="newMonth"><button class="btn secondary small" type="submit" formaction="/exam-plans/calendar/create" formmethod="post" formnovalidate>Add month</button></div>
+  </section>
+
+  <section class="card danger-zone">
+    <div><span class="eyebrow">DANGER ZONE</span><h2>Delete this plan</h2><p>This removes the plan reference and the localized plan folders for every plan language. Git history remains your recovery path.</p></div>
+    <button class="btn danger small" type="submit" formaction="/exam-plans/delete" formmethod="post" formnovalidate onclick="return confirm('Delete exam plan <%= planRef.id %> and all of its localized files?')">Delete plan</button>
+  </section>
+  <% } %>
+
+  <div class="sticky-actions"><a class="btn ghost" href="/exam-plans">Cancel</a><button class="btn primary" type="submit"><%= isEdit ? 'Save exam plan' : 'Create exam plan' %></button></div>
+</form>
+<script type="application/json" id="initialPhases"><%- JSON.stringify(plan?.phases || []).replace(/</g, '\\u003c') %></script>
+<% const pageScript = '/studio-assets/exam-plan-builder.js'; %>
+<%- include('partials/footer', { pageScript }) %>
