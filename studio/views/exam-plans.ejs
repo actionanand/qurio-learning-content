@@ -1,4 +1,22 @@
-<%- include('partials/header', { title: 'Exam Plans', subtitle: 'Edit existing multilingual preparation plans and monthly calendars' }) %>
-<div class="hero-panel compact-hero"><div><span class="eyebrow">EXAM PREPARATION</span><h1>Plan content lives beside Qurio learning content.</h1><p>This first Studio version safely edits existing plan JSON, overview, syllabus, strategy and listed monthly calendars. A visual daily-plan builder can be added later.</p></div></div>
-<div class="cards-grid"><% plans.forEach(plan => { const label = plan.exam?.label?.en || plan.examId; %><article class="plan-card"><div class="plan-badge"><%= plan.exam?.shortName || plan.examId.toUpperCase() %></div><h2><%= label %></h2><p>Class <%= plan.entryClass %> · <%= plan.examYear %><%= plan.demo ? ' · Demo' : '' %></p><code><%= plan.id %></code><div class="lang-actions"><% plan.languages.forEach(lang => { %><a class="btn secondary small" href="/exam-plans/edit?id=<%= encodeURIComponent(plan.id) %>&lang=<%= lang %>"><%= lang.toUpperCase() %></a><% }) %></div></article><% }) %></div>
+<%- include('partials/header', { title: 'Exam Plans', subtitle: 'Create and edit multilingual preparation plans, phases, supporting content and monthly calendars' }) %>
+<div class="hero-panel compact-hero">
+  <div><span class="eyebrow">EXAM PREPARATION</span><h1>Build exam plans without hand-editing plan.json.</h1><p>Create plans from the exam catalog, edit dates and phases visually, maintain overview/syllabus/strategy Markdown, add language copies and manage calendar months.</p></div>
+  <div class="hero-actions"><a class="btn primary" href="/exam-plans/new">+ Create exam plan</a><a class="btn secondary" href="/exams">Manage exams</a></div>
+</div>
+
+<% if (!plans.length) { %>
+<section class="card"><div class="empty-state">No exam plans yet. <a class="text-link" href="/exam-plans/new">Create the first preparation plan →</a></div></section>
+<% } else { %>
+<div class="cards-grid">
+  <% plans.forEach(plan => { const label = plan.exam?.label?.en || plan.examId; %>
+    <article class="plan-card">
+      <div class="exam-card-top"><div class="plan-badge"><%= plan.exam?.shortName || plan.examId.toUpperCase() %></div><% if (plan.demo) { %><span class="type-pill">Demo</span><% } %></div>
+      <h2><%= label %></h2>
+      <p>Class <%= plan.entryClass %> · <%= plan.examYear %></p>
+      <code><%= plan.id %></code>
+      <div class="lang-actions"><% plan.languages.forEach(lang => { const language = languages.find(value => value.id === lang); %><a class="btn secondary small" href="/exam-plans/edit?id=<%= encodeURIComponent(plan.id) %>&lang=<%= encodeURIComponent(lang) %>"><%= language?.nativeName || lang.toUpperCase() %></a><% }) %></div>
+    </article>
+  <% }) %>
+</div>
+<% } %>
 <%- include('partials/footer') %>

@@ -253,17 +253,63 @@ Current checks include:
 
 A validation error exits the CLI with a non-zero exit code, so the same command can later be used in GitHub Actions.
 
-### Existing exam-plan editor
+### Exam catalog
 
-Studio also lists the current exam plans (AISSEE/JNVST/RMS CET demo content) and lets you edit:
+Studio has a dedicated **Exams** screen for maintaining reusable exam definitions in `manifest.json`. You can:
 
-- localized `plan.json`
-- `overview.md`
-- `syllabus.md`
-- `strategy.md`
-- calendar JSON files already listed by the plan
+- add a new exam without hand-editing JSON
+- edit short name, category and official information URL
+- maintain localized display names and full names for every configured language
+- see how many preparation plans reference each exam
+- delete an exam only when no plan references it
 
-The calendar editor is intentionally JSON-based in this first version. A future Studio version can add a visual day/week/timetable editor on top of the same schema without changing Qurio's content API.
+Example exam IDs remain stable machine keys such as:
+
+```text
+aissee
+jnvst
+rms-cet
+```
+
+### Structured exam-plan editor
+
+The **Exam Plans** screen now supports creation and structured editing instead of requiring manual `plan.json` editing.
+
+When creating a plan you choose:
+
+- exam
+- entry class
+- exam year
+- authoring language
+- plan title/subtitle
+- plan start/end date
+- target date
+- demo/official-schedule flags
+- one or more preparation phases
+- optional initial calendar months
+- overview Markdown
+- strategy Markdown
+- full-syllabus Markdown
+
+Studio creates the correct folder and plan reference automatically, for example:
+
+```text
+en/exams/aissee/class-06/2027/plan.json
+en/exams/aissee/class-06/2027/overview.md
+en/exams/aissee/class-06/2027/strategy.md
+en/exams/aissee/class-06/2027/syllabus.md
+en/exams/aissee/class-06/2027/calendar/2026-09.json
+```
+
+For existing plans, stable identity fields (`id`, `examId`, `entryClass`, `examYear` and path) stay locked while visible content, dates, phases and version can be edited safely.
+
+Plan translations can be created from any configured language. Studio clones the canonical structure, keeps the same IDs/dates/calendar references and lets you translate the visible plan/Markdown content.
+
+Calendar months can be added from the plan editor. Adding a month creates the same empty month file for every existing plan language so multilingual structure stays aligned. Empty months can also be removed safely.
+
+The individual monthly calendar editor is still JSON-based for detailed daily topics/revision/timetable data. A future improvement can add a visual day planner on top of the same schema.
+
+The Studio also uses `studio/public/favicon.ico` as its browser favicon.
 
 ## Repository layout with Studio
 
@@ -412,8 +458,7 @@ No database is needed. The Git repository itself is the content store.
 
 Good next additions are:
 
-- visual exam-plan/day editor instead of raw calendar JSON
-- add-new-exam wizard
+- visual day/week/timetable editor instead of raw monthly calendar JSON
 - content search
 - duplicate/clone quiz set action
 - automatic next quiz set creation

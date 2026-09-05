@@ -1,0 +1,37 @@
+<%- include('partials/header', { title: mode === 'edit' ? 'Edit Exam' : 'Add Exam', subtitle: 'Exam definitions are reusable across years, entry classes and preparation plans' }) %>
+<form method="post" action="/exams/save" class="stack">
+  <input type="hidden" name="mode" value="<%= mode %>">
+  <section class="card">
+    <div class="card-head"><div><span class="eyebrow">IDENTITY</span><h2>Exam details</h2></div><% if (exam?.id) { %><span class="id-chip"><%= exam.id %></span><% } %></div>
+    <div class="form-grid four">
+      <label>Exam ID<input name="id" value="<%= exam?.id || '' %>" placeholder="aissee" <%= mode === 'edit' ? 'readonly' : '' %> required><small>Stable kebab-case ID. It cannot be changed after creation.</small></label>
+      <label>Short name<input name="shortName" value="<%= exam?.shortName || '' %>" placeholder="AISSEE" required></label>
+      <label>Category<input name="category" value="<%= exam?.category || 'school-entrance' %>" placeholder="school-entrance"><small>Machine category such as school-entrance or competitive.</small></label>
+      <label>Official information URL<input type="url" name="officialInfoUrl" value="<%= exam?.officialInfoUrl || '' %>" placeholder="https://..."></label>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><div><span class="eyebrow">LOCALIZED NAMES</span><h2>Names shown in Qurio</h2><small>Missing translations fall back to the English/canonical value so the manifest stays renderable.</small></div></div>
+    <div class="localized-editor-list">
+      <% languages.forEach(language => { %>
+        <div class="localized-editor-row">
+          <div class="language-badge"><strong><%= language.nativeName || language.name %></strong><small><%= language.id.toUpperCase() %></small></div>
+          <label>Display name<input name="label_<%= language.id %>" value="<%= exam?.label?.[language.id] || '' %>" placeholder="<%= language.id === 'en' ? 'Sainik School Entrance' : '' %>" <%= language.id === (manifest.defaultLanguage || 'en') ? 'required' : '' %>></label>
+          <label>Full name<input name="fullName_<%= language.id %>" value="<%= exam?.fullName?.[language.id] || '' %>" placeholder="<%= language.id === 'en' ? 'All India Sainik Schools Entrance Examination' : '' %>" <%= language.id === (manifest.defaultLanguage || 'en') ? 'required' : '' %>></label>
+        </div>
+      <% }) %>
+    </div>
+  </section>
+
+  <% if (mode === 'edit') { const current = exams.find(value => value.id === exam.id); %>
+    <section class="card danger-zone">
+      <div><span class="eyebrow">SAFETY</span><h2>Delete exam</h2><p>An exam can only be deleted when no preparation plan references it.</p></div>
+      <button class="btn danger small" type="submit" formaction="/exams/delete" formmethod="post" formnovalidate onclick="return confirm('Delete exam <%= exam.id %>? This is only allowed when it has no plans.')">Delete exam</button>
+      <% if (current?.planCount) { %><small class="muted"><%= current.planCount %> plan(s) currently reference this exam.</small><% } %>
+    </section>
+  <% } %>
+
+  <div class="sticky-actions"><a class="btn ghost" href="/exams">Cancel</a><button class="btn primary" type="submit"><%= mode === 'edit' ? 'Save exam' : 'Add exam' %></button></div>
+</form>
+<%- include('partials/footer') %>

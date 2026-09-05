@@ -149,6 +149,12 @@ export function saveLanguage(input) {
     subject.label ||= {};
     if (!subject.label[id]) subject.label[id] = subject.label.en || titleCaseFromSlug(subject.id);
   }
+  for (const exam of manifest.exams || []) {
+    exam.label ||= {};
+    exam.fullName ||= {};
+    if (!exam.label[id]) exam.label[id] = exam.label.en || exam.shortName || titleCaseFromSlug(exam.id);
+    if (!exam.fullName[id]) exam.fullName[id] = exam.fullName.en || exam.label.en || exam.shortName || titleCaseFromSlug(exam.id);
+  }
   fs.mkdirSync(safeRepoPath(config.rootDir, id), { recursive: true });
   save(manifest);
   return value;
