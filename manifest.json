@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "contentVersion": "2026.09.05-demo.2",
-  "generatedAt": "2026-09-05T16:00:00Z",
+  "contentVersion": "2026.09.06-studio.085529",
+  "generatedAt": "2026-09-06T08:55:29.958799Z",
   "defaultLanguage": "en",
   "fallbackLanguage": "en",
   "supportedLanguages": [
@@ -187,104 +187,6 @@
   ],
   "items": [
     {
-      "id": "syllabus-general-05-mathematics",
-      "type": "syllabus",
-      "path": "grade-05/mathematics/syllabus.md",
-      "languages": [
-        "en",
-        "ta",
-        "hi"
-      ],
-      "optional": true,
-      "curriculum": "general",
-      "grade": 5,
-      "subject": "mathematics"
-    },
-    {
-      "id": "math-05-equivalent-fractions",
-      "type": "note",
-      "path": "grade-05/mathematics/notes/fractions/equivalent-fractions.md",
-      "languages": [
-        "en",
-        "ta",
-        "hi"
-      ],
-      "curriculum": "general",
-      "grade": 5,
-      "subject": "mathematics",
-      "chapter": "fractions",
-      "topic": "equivalent-fractions"
-    },
-    {
-      "id": "math-05-equivalent-fractions-01",
-      "type": "quiz",
-      "path": "grade-05/mathematics/quizzes/equivalent-fractions-01.json",
-      "languages": [
-        "en",
-        "ta",
-        "hi"
-      ],
-      "curriculum": "general",
-      "grade": 5,
-      "subject": "mathematics",
-      "chapter": "fractions",
-      "topic": "equivalent-fractions",
-      "seriesId": "math-05-equivalent-fractions-practice",
-      "setNumber": 1,
-      "sourceNoteIds": [
-        "math-05-equivalent-fractions"
-      ]
-    },
-    {
-      "id": "syllabus-general-05-science",
-      "type": "syllabus",
-      "path": "grade-05/science/syllabus.md",
-      "languages": [
-        "en",
-        "ta",
-        "hi"
-      ],
-      "optional": true,
-      "curriculum": "general",
-      "grade": 5,
-      "subject": "science"
-    },
-    {
-      "id": "sci-05-photosynthesis",
-      "type": "note",
-      "path": "grade-05/science/notes/plants/photosynthesis.md",
-      "languages": [
-        "en",
-        "ta",
-        "hi"
-      ],
-      "curriculum": "general",
-      "grade": 5,
-      "subject": "science",
-      "chapter": "plants",
-      "topic": "photosynthesis"
-    },
-    {
-      "id": "sci-05-photosynthesis-01",
-      "type": "quiz",
-      "path": "grade-05/science/quizzes/photosynthesis-01.json",
-      "languages": [
-        "en",
-        "ta",
-        "hi"
-      ],
-      "curriculum": "general",
-      "grade": 5,
-      "subject": "science",
-      "chapter": "plants",
-      "topic": "photosynthesis",
-      "seriesId": "sci-05-photosynthesis-practice",
-      "setNumber": 1,
-      "sourceNoteIds": [
-        "sci-05-photosynthesis"
-      ]
-    },
-    {
       "id": "syllabus-general-05-english",
       "type": "syllabus",
       "path": "grade-05/english/syllabus.md",
@@ -293,10 +195,15 @@
         "ta",
         "hi"
       ],
-      "optional": true,
+      "title": {
+        "en": "English — Grade 5 Syllabus",
+        "ta": "ஆங்கிலம் — 5ஆம் வகுப்பு பாடத்திட்டம்",
+        "hi": "अंग्रेज़ी — कक्षा 5 पाठ्यक्रम"
+      },
       "curriculum": "general",
       "grade": 5,
-      "subject": "english"
+      "subject": "english",
+      "optional": true
     },
     {
       "id": "eng-05-nouns",
@@ -307,11 +214,22 @@
         "ta",
         "hi"
       ],
+      "title": {
+        "en": "Nouns",
+        "ta": "பெயர்ச்சொற்கள்",
+        "hi": "संज्ञा"
+      },
       "curriculum": "general",
       "grade": 5,
       "subject": "english",
       "chapter": "grammar",
-      "topic": "nouns"
+      "topic": "nouns",
+      "order": 1,
+      "difficulty": "beginner",
+      "estimatedMinutes": 10,
+      "quizIds": [
+        "eng-05-nouns-01"
+      ]
     },
     {
       "id": "eng-05-nouns-01",
@@ -322,64 +240,29 @@
         "ta",
         "hi"
       ],
+      "title": {
+        "en": "Nouns — Practice",
+        "ta": "பெயர்ச்சொற்கள் — பயிற்சி",
+        "hi": "संज्ञा — अभ्यास"
+      },
+      "setLabel": {
+        "en": "Practice Set 1",
+        "ta": "பயிற்சி தொகுப்பு 1",
+        "hi": "अभ्यास सेट 1"
+      },
       "curriculum": "general",
       "grade": 5,
       "subject": "english",
       "chapter": "grammar",
       "topic": "nouns",
+      "difficulty": "beginner",
+      "timeLimitSeconds": 180,
+      "passingPercentage": 70,
+      "questionCount": 3,
       "seriesId": "eng-05-nouns-practice",
       "setNumber": 1,
       "sourceNoteIds": [
         "eng-05-nouns"
-      ]
-    },
-    {
-      "id": "syllabus-general-05-social-studies",
-      "type": "syllabus",
-      "path": "grade-05/social-studies/syllabus.md",
-      "languages": [
-        "en",
-        "ta",
-        "hi"
-      ],
-      "optional": true,
-      "curriculum": "general",
-      "grade": 5,
-      "subject": "social-studies"
-    },
-    {
-      "id": "sst-05-directions-and-maps",
-      "type": "note",
-      "path": "grade-05/social-studies/notes/geography/directions-and-maps.md",
-      "languages": [
-        "en",
-        "ta",
-        "hi"
-      ],
-      "curriculum": "general",
-      "grade": 5,
-      "subject": "social-studies",
-      "chapter": "geography",
-      "topic": "directions-and-maps"
-    },
-    {
-      "id": "sst-05-directions-and-maps-01",
-      "type": "quiz",
-      "path": "grade-05/social-studies/quizzes/directions-and-maps-01.json",
-      "languages": [
-        "en",
-        "ta",
-        "hi"
-      ],
-      "curriculum": "general",
-      "grade": 5,
-      "subject": "social-studies",
-      "chapter": "geography",
-      "topic": "directions-and-maps",
-      "seriesId": "sst-05-directions-and-maps-practice",
-      "setNumber": 1,
-      "sourceNoteIds": [
-        "sst-05-directions-and-maps"
       ]
     },
     {
@@ -391,10 +274,15 @@
         "ta",
         "hi"
       ],
-      "optional": true,
+      "title": {
+        "en": "Intelligence — Grade 5 Syllabus",
+        "ta": "நுண்ணறிவு — 5ஆம் வகுப்பு பாடத்திட்டம்",
+        "hi": "तार्किक क्षमता — कक्षा 5 पाठ्यक्रम"
+      },
       "curriculum": "general",
       "grade": 5,
-      "subject": "intelligence"
+      "subject": "intelligence",
+      "optional": true
     },
     {
       "id": "int-05-number-patterns",
@@ -405,11 +293,22 @@
         "ta",
         "hi"
       ],
+      "title": {
+        "en": "Number Patterns",
+        "ta": "எண் வடிவமைப்புகள்",
+        "hi": "संख्या पैटर्न"
+      },
       "curriculum": "general",
       "grade": 5,
       "subject": "intelligence",
       "chapter": "patterns",
-      "topic": "number-patterns"
+      "topic": "number-patterns",
+      "order": 1,
+      "difficulty": "beginner",
+      "estimatedMinutes": 10,
+      "quizIds": [
+        "int-05-number-patterns-01"
+      ]
     },
     {
       "id": "int-05-number-patterns-01",
@@ -420,15 +319,110 @@
         "ta",
         "hi"
       ],
+      "title": {
+        "en": "Number Patterns — Practice",
+        "ta": "எண் வடிவமைப்புகள் — பயிற்சி",
+        "hi": "संख्या पैटर्न — अभ्यास"
+      },
+      "setLabel": {
+        "en": "Practice Set 1",
+        "ta": "பயிற்சி தொகுப்பு 1",
+        "hi": "अभ्यास सेट 1"
+      },
       "curriculum": "general",
       "grade": 5,
       "subject": "intelligence",
       "chapter": "patterns",
       "topic": "number-patterns",
+      "difficulty": "beginner",
+      "timeLimitSeconds": 180,
+      "passingPercentage": 70,
+      "questionCount": 3,
       "seriesId": "int-05-number-patterns-practice",
       "setNumber": 1,
       "sourceNoteIds": [
         "int-05-number-patterns"
+      ]
+    },
+    {
+      "id": "syllabus-general-05-mathematics",
+      "type": "syllabus",
+      "path": "grade-05/mathematics/syllabus.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Mathematics — Grade 5 Syllabus",
+        "ta": "கணிதம் — 5ஆம் வகுப்பு பாடத்திட்டம்",
+        "hi": "गणित — कक्षा 5 पाठ्यक्रम"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "optional": true
+    },
+    {
+      "id": "math-05-equivalent-fractions",
+      "type": "note",
+      "path": "grade-05/mathematics/notes/fractions/equivalent-fractions.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Equivalent Fractions",
+        "ta": "சமமான பின்னங்கள்",
+        "hi": "समतुल्य भिन्न"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "fractions",
+      "topic": "equivalent-fractions",
+      "order": 1,
+      "difficulty": "beginner",
+      "estimatedMinutes": 10,
+      "quizIds": [
+        "math-05-equivalent-fractions-01",
+        "math-05-equivalent-fractions-02",
+        "math-05-equivalent-fractions-03"
+      ]
+    },
+    {
+      "id": "math-05-equivalent-fractions-01",
+      "type": "quiz",
+      "path": "grade-05/mathematics/quizzes/equivalent-fractions-01.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Equivalent Fractions — Practice",
+        "ta": "சமமான பின்னங்கள் — பயிற்சி",
+        "hi": "समतुल्य भिन्न — अभ्यास"
+      },
+      "setLabel": {
+        "en": "Practice Set 1",
+        "ta": "பயிற்சி தொகுப்பு 1",
+        "hi": "अभ्यास सेट 1"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "fractions",
+      "topic": "equivalent-fractions",
+      "difficulty": "beginner",
+      "timeLimitSeconds": 180,
+      "passingPercentage": 70,
+      "questionCount": 3,
+      "seriesId": "math-05-equivalent-fractions-practice",
+      "setNumber": 1,
+      "sourceNoteIds": [
+        "math-05-equivalent-fractions"
       ]
     },
     {
@@ -440,11 +434,25 @@
         "ta",
         "hi"
       ],
+      "title": {
+        "en": "Equivalent Fractions — Practice Set 2",
+        "ta": "சமமான பின்னங்கள் — பயிற்சி தொகுப்பு 2",
+        "hi": "समतुल्य भिन्न — अभ्यास सेट 2"
+      },
+      "setLabel": {
+        "en": "Practice Set 2",
+        "ta": "பயிற்சி தொகுப்பு 2",
+        "hi": "अभ्यास सेट 2"
+      },
       "curriculum": "general",
       "grade": 5,
       "subject": "mathematics",
       "chapter": "fractions",
       "topic": "equivalent-fractions",
+      "difficulty": "intermediate",
+      "timeLimitSeconds": 300,
+      "passingPercentage": 70,
+      "questionCount": 5,
       "seriesId": "math-05-equivalent-fractions-practice",
       "setNumber": 2,
       "sourceNoteIds": [
@@ -460,15 +468,187 @@
         "ta",
         "hi"
       ],
+      "title": {
+        "en": "Equivalent Fractions — Challenge Set 3",
+        "ta": "சமமான பின்னங்கள் — சவால் தொகுப்பு 3",
+        "hi": "समतुल्य भिन्न — चैलेंज सेट 3"
+      },
+      "setLabel": {
+        "en": "Challenge Set 3",
+        "ta": "சவால் தொகுப்பு 3",
+        "hi": "चैलेंज सेट 3"
+      },
       "curriculum": "general",
       "grade": 5,
       "subject": "mathematics",
       "chapter": "fractions",
       "topic": "equivalent-fractions",
+      "difficulty": "advanced",
+      "timeLimitSeconds": 360,
+      "passingPercentage": 70,
+      "questionCount": 5,
       "seriesId": "math-05-equivalent-fractions-practice",
       "setNumber": 3,
       "sourceNoteIds": [
         "math-05-equivalent-fractions"
+      ]
+    },
+    {
+      "id": "syllabus-general-05-science",
+      "type": "syllabus",
+      "path": "grade-05/science/syllabus.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Science — Grade 5 Syllabus",
+        "ta": "அறிவியல் — 5ஆம் வகுப்பு பாடத்திட்டம்",
+        "hi": "विज्ञान — कक्षा 5 पाठ्यक्रम"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "science",
+      "optional": true
+    },
+    {
+      "id": "sci-05-photosynthesis",
+      "type": "note",
+      "path": "grade-05/science/notes/plants/photosynthesis.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Photosynthesis",
+        "ta": "ஒளிச்சேர்க்கை",
+        "hi": "प्रकाश संश्लेषण"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "science",
+      "chapter": "plants",
+      "topic": "photosynthesis",
+      "order": 1,
+      "difficulty": "beginner",
+      "estimatedMinutes": 10,
+      "quizIds": [
+        "sci-05-photosynthesis-01"
+      ]
+    },
+    {
+      "id": "sci-05-photosynthesis-01",
+      "type": "quiz",
+      "path": "grade-05/science/quizzes/photosynthesis-01.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Photosynthesis — Practice",
+        "ta": "ஒளிச்சேர்க்கை — பயிற்சி",
+        "hi": "प्रकाश संश्लेषण — अभ्यास"
+      },
+      "setLabel": {
+        "en": "Practice Set 1",
+        "ta": "பயிற்சி தொகுப்பு 1",
+        "hi": "अभ्यास सेट 1"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "science",
+      "chapter": "plants",
+      "topic": "photosynthesis",
+      "difficulty": "beginner",
+      "timeLimitSeconds": 180,
+      "passingPercentage": 70,
+      "questionCount": 3,
+      "seriesId": "sci-05-photosynthesis-practice",
+      "setNumber": 1,
+      "sourceNoteIds": [
+        "sci-05-photosynthesis"
+      ]
+    },
+    {
+      "id": "syllabus-general-05-social-studies",
+      "type": "syllabus",
+      "path": "grade-05/social-studies/syllabus.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Social Studies — Grade 5 Syllabus",
+        "ta": "சமூக அறிவியல் — 5ஆம் வகுப்பு பாடத்திட்டம்",
+        "hi": "सामाजिक अध्ययन — कक्षा 5 पाठ्यक्रम"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "social-studies",
+      "optional": true
+    },
+    {
+      "id": "sst-05-directions-and-maps",
+      "type": "note",
+      "path": "grade-05/social-studies/notes/geography/directions-and-maps.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Directions and Maps",
+        "ta": "திசைகளும் வரைபடங்களும்",
+        "hi": "दिशाएँ और मानचित्र"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "social-studies",
+      "chapter": "geography",
+      "topic": "directions-and-maps",
+      "order": 1,
+      "difficulty": "beginner",
+      "estimatedMinutes": 10,
+      "quizIds": [
+        "sst-05-directions-and-maps-01"
+      ]
+    },
+    {
+      "id": "sst-05-directions-and-maps-01",
+      "type": "quiz",
+      "path": "grade-05/social-studies/quizzes/directions-and-maps-01.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Directions and Maps — Practice",
+        "ta": "திசைகளும் வரைபடங்களும் — பயிற்சி",
+        "hi": "दिशाएँ और मानचित्र — अभ्यास"
+      },
+      "setLabel": {
+        "en": "Practice Set 1",
+        "ta": "பயிற்சி தொகுப்பு 1",
+        "hi": "अभ्यास सेट 1"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "social-studies",
+      "chapter": "geography",
+      "topic": "directions-and-maps",
+      "difficulty": "beginner",
+      "timeLimitSeconds": 180,
+      "passingPercentage": 70,
+      "questionCount": 3,
+      "seriesId": "sst-05-directions-and-maps-practice",
+      "setNumber": 1,
+      "sourceNoteIds": [
+        "sst-05-directions-and-maps"
       ]
     }
   ]

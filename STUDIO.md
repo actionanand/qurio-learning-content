@@ -203,6 +203,38 @@ You translate:
 
 This protects Qurio's rule that progress remains language-independent.
 
+
+### Client display metadata sync
+
+The Studio now generates lightweight, localized display metadata in `manifest.json` so the Qurio client can render readable cards without downloading every note/quiz just to discover its title.
+
+Generated metadata includes:
+
+- localized `title` for notes, syllabi and quizzes
+- localized quiz `setLabel`
+- note `difficulty` and `estimatedMinutes`
+- quiz `difficulty`, `timeLimitSeconds`, `passingPercentage` and `questionCount`
+
+For example, an exam-plan reference such as:
+
+```json
+"studyMaterialIds": ["sci-05-photosynthesis"]
+```
+
+remains normalized as an ID, while the client can resolve the readable title directly from the manifest:
+
+```json
+"title": {
+  "en": "Photosynthesis",
+  "ta": "ஒளிச்சேர்க்கை",
+  "hi": "प्रकाश संश्लेषण"
+}
+```
+
+This metadata is refreshed **automatically** whenever a Note, Quiz, Syllabus or Translation is saved from the Studio UI. The Dashboard also provides **Sync client metadata** for an explicit rebuild after files were edited manually outside Studio. `Validate → Rebuild & sync metadata` performs the same operation.
+
+The calendar continues to store stable IDs only; titles are not duplicated into exam-calendar JSON.
+
 ### Manifest regeneration
 
 After creating/saving normal learning content or translations, Studio automatically rebuilds `manifest.json` from the English canonical files and checks which identical relative paths exist in every configured language.

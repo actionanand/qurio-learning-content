@@ -33,7 +33,7 @@
     </div>
   </section>
   <section class="card">
-    <div class="card-head"><div><span class="eyebrow">REPOSITORY</span><h2>Health & Git</h2></div><a href="/validate" class="text-link">Run validation →</a></div>
+    <div class="card-head"><div><span class="eyebrow">REPOSITORY</span><h2>Health & Client Metadata</h2></div><a href="/validate" class="text-link">Run validation →</a></div>
     <dl class="detail-list">
       <div><dt>Schema</dt><dd>v<%= stats.manifest.schemaVersion %></dd></div>
       <div><dt>Languages</dt><dd><%= stats.manifest.supportedLanguages.map(l => l.id.toUpperCase()).join(' · ') %></dd></div>
@@ -41,6 +41,13 @@
       <div><dt>Exams</dt><dd><%= stats.exams %></dd></div>
       <div><dt>Git</dt><dd><%= git.available ? `${git.changes.length} changed file(s)` : 'Run inside your cloned repository' %></dd></div>
     </dl>
+    <div class="manifest-sync-panel">
+      <div>
+        <strong>Client display metadata</strong>
+        <small>Titles, quiz labels, difficulty, timing and question counts are generated from localized source files whenever content is saved.</small>
+      </div>
+      <form method="post" action="/manifest/sync-client-metadata"><button class="btn secondary small" type="submit">Sync client metadata</button></form>
+    </div>
     <% if (git.available && git.changes.length) { %>
       <div class="git-changes"><% git.changes.slice(0,8).forEach(line => { %><code><%= line %></code><% }) %><% if (git.changes.length > 8) { %><small>+ <%= git.changes.length - 8 %> more</small><% } %></div>
     <% } %>

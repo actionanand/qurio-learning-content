@@ -75,6 +75,7 @@ export function validateRepository() {
     if (item.curriculum && !curriculumIds.includes(item.curriculum)) issues.push(issue('error', 'UNKNOWN_CURRICULUM', `${item.id} uses unknown curriculum ${item.curriculum}.`, 'manifest.json'));
     if (item.grade != null && !gradeIds.includes(String(item.grade))) issues.push(issue('error', 'UNKNOWN_GRADE', `${item.id} uses unknown grade ${item.grade}.`, 'manifest.json'));
     if (item.subject && !subjectIds.includes(item.subject)) issues.push(issue('error', 'UNKNOWN_SUBJECT', `${item.id} uses unknown subject ${item.subject}.`, 'manifest.json'));
+    if (!item.title?.[manifest.defaultLanguage]) issues.push(issue('warning', 'CLIENT_TITLE_METADATA', `${item.id} has no ${manifest.defaultLanguage} client display title. Rebuild/sync the manifest.`, 'manifest.json'));
     for (const lang of item.languages || []) {
       if (!languageIds.includes(lang)) issues.push(issue('error', 'UNKNOWN_LANGUAGE', `${item.id} declares unsupported language ${lang}.`, 'manifest.json'));
       const relative = `${lang}/${item.path}`;

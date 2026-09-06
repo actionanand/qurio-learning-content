@@ -26,23 +26,65 @@ function detectLanguages(relativePath, languages) {
   return languages.filter((lang) => fs.existsSync(safeRepoPath(config.rootDir, lang, relativePath)));
 }
 
+function cleanLocalizedMap(entries) {
+  return Object.fromEntries(
+    entries
+      .map(([language, value]) => [language, typeof value === 'string' ? value.trim() : ''])
+      .filter(([, value]) => value)
+  );
+}
+
+function localizedMarkdownField(relativePath, languages, field) {
+  return cleanLocalizedMap(languages.map((language) => {
+    const file = safeRepoPath(config.rootDir, language, relativePath);
+    if (!fs.existsSync(file)) return [language, ''];
+    try {
+      const { attributes } = parseFrontmatter(fs.readFileSync(file, 'utf8'));
+      return [language, attributes?.[field] || ''];
+    } catch {
+      return [language, ''];
+    }
+  }));
+}
+
+function localizedQuizField(relativePath, languages, field) {
+  return cleanLocalizedMap(languages.map((language) => {
+    const file = safeRepoPath(config.rootDir, language, relativePath);
+    if (!fs.existsSync(file)) return [language, ''];
+    try {
+      const quiz = readJson(file);
+      return [language, quiz?.[field] || ''];
+    } catch {
+      return [language, ''];
+    }
+  }));
+}
+
 function itemFromMarkdown(filePath, languages) {
   const raw = fs.readFileSync(filePath, 'utf8');
   const { attributes } = parseFrontmatter(raw);
   const { path: relativePath } = relativeWithoutLanguage(filePath);
   if (!attributes.id || !attributes.type) return null;
+
+  const availableLanguages = detectLanguages(relativePath, languages);
+  const title = localizedMarkdownField(relativePath, availableLanguages, 'title');
   const base = {
     id: attributes.id,
     type: attributes.type,
     path: relativePath,
-    languages: detectLanguages(relativePath, languages),
+    languages: availableLanguages,
+    ...(Object.keys(title).length ? { title } : {}),
     curriculum: attributes.curriculum || 'general',
     grade: Number(attributes.grade),
     subject: attributes.subject
   };
+
   if (attributes.type === 'note') {
     base.chapter = attributes.chapter;
     base.topic = attributes.topic;
+    if (attributes.order != null) base.order = Number(attributes.order);
+    if (attributes.difficulty) base.difficulty = attributes.difficulty;
+    if (attributes.estimatedMinutes != null) base.estimatedMinutes = Number(attributes.estimatedMinutes);
     if (Array.isArray(attributes.quizIds) && attributes.quizIds.length) base.quizIds = attributes.quizIds;
   }
   if (attributes.type === 'syllabus') base.optional = attributes.optional !== false;
@@ -53,16 +95,26 @@ function itemFromQuiz(filePath, languages) {
   const quiz = readJson(filePath);
   const { path: relativePath } = relativeWithoutLanguage(filePath);
   if (!quiz.id || quiz.type !== 'quiz') return null;
+
+  const availableLanguages = detectLanguages(relativePath, languages);
+  const title = localizedQuizField(relativePath, availableLanguages, 'title');
+  const setLabel = localizedQuizField(relativePath, availableLanguages, 'setLabel');
   return {
     id: quiz.id,
     type: 'quiz',
     path: relativePath,
-    languages: detectLanguages(relativePath, languages),
+    languages: availableLanguages,
+    ...(Object.keys(title).length ? { title } : {}),
+    ...(Object.keys(setLabel).length ? { setLabel } : {}),
     curriculum: quiz.curriculum || 'general',
     grade: Number(quiz.grade),
     subject: quiz.subject,
     chapter: quiz.chapter,
     topic: quiz.topic,
+    ...(quiz.difficulty ? { difficulty: quiz.difficulty } : {}),
+    ...(quiz.timeLimitSeconds != null ? { timeLimitSeconds: Number(quiz.timeLimitSeconds) } : {}),
+    ...(quiz.passingPercentage != null ? { passingPercentage: Number(quiz.passingPercentage) } : {}),
+    questionCount: Array.isArray(quiz.questions) ? quiz.questions.length : 0,
     ...(quiz.seriesId ? { seriesId: quiz.seriesId } : {}),
     ...(quiz.setNumber ? { setNumber: Number(quiz.setNumber) } : {}),
     ...(Array.isArray(quiz.sourceNoteIds) && quiz.sourceNoteIds.length ? { sourceNoteIds: quiz.sourceNoteIds } : {})
