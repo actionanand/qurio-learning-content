@@ -374,3 +374,10 @@ td small { display: block; color: var(--muted); margin-top: 4px; }
 @media (max-width: 680px) {
   .exam-grid, .form-grid.five { grid-template-columns: 1fr; }
 }
+
+.manifest-sync-panel { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 16px; padding: 14px 15px; border: 1px solid color-mix(in srgb, var(--primary) 22%, var(--border)); border-radius: 13px; background: var(--primary-soft); }
+.manifest-sync-panel > div { display: grid; gap: 4px; min-width: 0; }
+.manifest-sync-panel strong { color: var(--text); }
+.manifest-sync-panel small { color: var(--muted); line-height: 1.45; }
+.manifest-sync-panel form { flex: 0 0 auto; }
+@media (max-width: 680px) { .manifest-sync-panel { align-items: stretch; flex-direction: column; } .manifest-sync-panel .btn { width: 100%; } }

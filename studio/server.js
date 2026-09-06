@@ -112,7 +112,7 @@ app.post('/notes/save', (req, res, next) => {
   try {
     const result = saveNote(req.body);
     rebuildManifest();
-    redirectWithMessage(res, '/content?type=note', `Saved ${result.relative} and rebuilt manifest.json.`);
+    redirectWithMessage(res, '/content?type=note', `Saved ${result.relative}; client display metadata and manifest.json were updated automatically.`);
   } catch (error) { next(error); }
 });
 
@@ -128,7 +128,7 @@ app.post('/syllabus/save', (req, res, next) => {
   try {
     const result = saveSyllabus(req.body);
     rebuildManifest();
-    redirectWithMessage(res, '/content?type=syllabus', `Saved ${result.relative} and rebuilt manifest.json.`);
+    redirectWithMessage(res, '/content?type=syllabus', `Saved ${result.relative}; client display metadata and manifest.json were updated automatically.`);
   } catch (error) { next(error); }
 });
 
@@ -152,7 +152,7 @@ app.post('/quizzes/save', (req, res, next) => {
   try {
     const result = saveQuiz(req.body);
     rebuildManifest();
-    redirectWithMessage(res, '/content?type=quiz', `Saved ${result.relative} and rebuilt manifest.json.`);
+    redirectWithMessage(res, '/content?type=quiz', `Saved ${result.relative}; client display metadata and manifest.json were updated automatically.`);
   } catch (error) { next(error); }
 });
 
@@ -192,7 +192,14 @@ app.post('/api/preview/markdown', (req, res, next) => {
 app.post('/manifest/rebuild', (req, res, next) => {
   try {
     const nextManifest = rebuildManifest();
-    redirectWithMessage(res, '/validate', `Rebuilt manifest.json as ${nextManifest.contentVersion}.`);
+    redirectWithMessage(res, '/validate', `Rebuilt manifest.json and synced client display metadata as ${nextManifest.contentVersion}.`);
+  } catch (error) { next(error); }
+});
+
+app.post('/manifest/sync-client-metadata', (req, res, next) => {
+  try {
+    const nextManifest = rebuildManifest();
+    redirectWithMessage(res, '/', `Client display metadata synced from content files. Manifest ${nextManifest.contentVersion}.`);
   } catch (error) { next(error); }
 });
 
