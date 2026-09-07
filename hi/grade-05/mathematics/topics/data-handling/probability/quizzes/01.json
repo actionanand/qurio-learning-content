@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "id": "math-05-probability-01",
+  "type": "quiz",
+  "language": "hi",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "mathematics",
+  "chapter": "data-handling",
+  "topic": "probability",
+  "seriesId": "math-05-probability-practice",
+  "setNumber": 1,
+  "setLabel": "अभ्यास सेट 1",
+  "title": "प्रायिकता — अभ्यास सेट 1",
+  "description": "सिक्के और सरल परिणामों के साथ मूल प्रायिकता।",
+  "difficulty": "beginner",
+  "timeLimitSeconds": 180,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "math-05-probability"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-07",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "एक निष्पक्ष सिक्का एक बार उछाला जाता है। चित आने की प्रायिकता क्या है?",
+      "hint": "दो समान रूप से संभावित परिणाम हैं।",
+      "options": [
+        {
+          "id": "A",
+          "text": "1/4",
+          "feedback": "केवल दो परिणाम हैं।"
+        },
+        {
+          "id": "B",
+          "text": "1/2",
+          "feedback": "सही। दो परिणामों में एक अनुकूल है।"
+        },
+        {
+          "id": "C",
+          "text": "1",
+          "feedback": "चित निश्चित नहीं है।"
+        },
+        {
+          "id": "D",
+          "text": "0",
+          "feedback": "चित आ सकता है।"
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "कुल 2 परिणामों में चित का 1 अनुकूल परिणाम है।"
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "इनमें से कौन-सा मान प्रायिकता हो सकता है?",
+      "hint": "प्रायिकता 0 और 1 के बीच होती है।",
+      "options": [
+        {
+          "id": "A",
+          "text": "-1",
+          "feedback": "प्रायिकता ऋणात्मक नहीं हो सकती।"
+        },
+        {
+          "id": "B",
+          "text": "3/2",
+          "feedback": "यह 1 से बड़ा है।"
+        },
+        {
+          "id": "C",
+          "text": "3/4",
+          "feedback": "सही। 3/4, 0 और 1 के बीच है।"
+        },
+        {
+          "id": "D",
+          "text": "2",
+          "feedback": "यह 1 से बड़ा है।"
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "प्रायिकता 0 से 1 के बीच होनी चाहिए।"
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "एक थैले में 3 लाल और 1 नीली गेंद है। नीली गेंद चुनने की प्रायिकता क्या है?",
+      "hint": "कुल 4 गेंदें हैं।",
+      "options": [
+        {
+          "id": "A",
+          "text": "1/4",
+          "feedback": "सही। चार में एक नीली गेंद।"
+        },
+        {
+          "id": "B",
+          "text": "1/3",
+          "feedback": "कुल 4 है, 3 नहीं।"
+        },
+        {
+          "id": "C",
+          "text": "3/4",
+          "feedback": "यह लाल गेंद की प्रायिकता है।"
+        },
+        {
+          "id": "D",
+          "text": "1",
+          "feedback": "नीला निश्चित नहीं है।"
+        }
+      ],
+      "correctOption": "A",
+      "explanation": "4 कुल गेंदों में 1 नीली गेंद है।"
+    }
+  ]
+}

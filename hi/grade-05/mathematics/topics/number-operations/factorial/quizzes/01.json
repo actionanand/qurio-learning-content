@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "id": "math-05-factorial-01",
+  "type": "quiz",
+  "language": "hi",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "mathematics",
+  "chapter": "number-operations",
+  "topic": "factorial",
+  "seriesId": "math-05-factorial-practice",
+  "setNumber": 1,
+  "setLabel": "अभ्यास सेट 1",
+  "title": "फैक्टोरियल — अभ्यास सेट 1",
+  "description": "छोटे फैक्टोरियल मानों का अभ्यास।",
+  "difficulty": "beginner",
+  "timeLimitSeconds": 180,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "math-05-factorial"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-07",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "3! का मान क्या है?",
+      "hint": "3! को 3 × 2 × 1 के रूप में लिखें।",
+      "options": [
+        {
+          "id": "A",
+          "text": "3",
+          "feedback": "1 तक सभी संख्याओं को गुणा करें।"
+        },
+        {
+          "id": "B",
+          "text": "6",
+          "feedback": "सही।"
+        },
+        {
+          "id": "C",
+          "text": "9",
+          "feedback": "यह 3 × 3 है।"
+        },
+        {
+          "id": "D",
+          "text": "12",
+          "feedback": "यह बहुत बड़ा है।"
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "3! = 3 × 2 × 1 = 6."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "4! का अर्थ क्या है?",
+      "hint": "फैक्टोरियल में 1 तक गुणा करते हैं।",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 + 3 + 2 + 1",
+          "feedback": "फैक्टोरियल में गुणा होता है।"
+        },
+        {
+          "id": "B",
+          "text": "4 × 3 × 2 × 1",
+          "feedback": "सही।"
+        },
+        {
+          "id": "C",
+          "text": "4 × 4",
+          "feedback": "यह वर्ग है।"
+        },
+        {
+          "id": "D",
+          "text": "4 + 4",
+          "feedback": "यह फैक्टोरियल नहीं है।"
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "4! = 4 × 3 × 2 × 1."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "0! का मान क्या है?",
+      "hint": "0! का विशेष परिभाषित मान है।",
+      "options": [
+        {
+          "id": "A",
+          "text": "0",
+          "feedback": "परिभाषा के अनुसार 0! शून्य नहीं है।"
+        },
+        {
+          "id": "B",
+          "text": "1",
+          "feedback": "सही।"
+        },
+        {
+          "id": "C",
+          "text": "2",
+          "feedback": "नहीं।"
+        },
+        {
+          "id": "D",
+          "text": "अपरिभाषित",
+          "feedback": "0! परिभाषित है।"
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "परिभाषा के अनुसार 0! = 1."
+    }
+  ]
+}

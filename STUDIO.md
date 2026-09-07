@@ -93,7 +93,7 @@ Studio generates the stable ID, correct language/grade/subject/chapter folder, Y
 Example generated path:
 
 ```text
-en/grade-05/mathematics/notes/fractions/equivalent-fractions.md
+en/grade-05/mathematics/topics/fractions/equivalent-fractions/study.md
 ```
 
 ### Markdown preview
@@ -501,3 +501,8 @@ Good next additions are:
 - optional AI-generated translation draft followed by human review
 
 These can be added without changing the current Qurio learner content contract.
+
+
+## Topic-scoped output layout
+
+Studio v2.5 writes each study topic under `topics/{chapter}/{topic}/`, with `study.md` and nested `quizzes/{setNumber}.json`. This prevents large subjects from accumulating hundreds of unrelated files in one quiz directory.

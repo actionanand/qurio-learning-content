@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "id": "math-05-factorial-01",
+  "type": "quiz",
+  "language": "en",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "mathematics",
+  "chapter": "number-operations",
+  "topic": "factorial",
+  "seriesId": "math-05-factorial-practice",
+  "setNumber": 1,
+  "setLabel": "Practice Set 1",
+  "title": "Factorial — Practice Set 1",
+  "description": "Read and evaluate small factorials.",
+  "difficulty": "beginner",
+  "timeLimitSeconds": 180,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "math-05-factorial"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-07",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "What is 3!?",
+      "hint": "Expand 3! as 3 × 2 × 1.",
+      "options": [
+        {
+          "id": "A",
+          "text": "3",
+          "feedback": "Multiply all numbers down to 1."
+        },
+        {
+          "id": "B",
+          "text": "6",
+          "feedback": "Correct."
+        },
+        {
+          "id": "C",
+          "text": "9",
+          "feedback": "That is 3 × 3."
+        },
+        {
+          "id": "D",
+          "text": "12",
+          "feedback": "Too large."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "3! = 3 × 2 × 1 = 6."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "What does 4! mean?",
+      "hint": "Factorial multiplies down to 1.",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 + 3 + 2 + 1",
+          "feedback": "Factorial uses multiplication."
+        },
+        {
+          "id": "B",
+          "text": "4 × 3 × 2 × 1",
+          "feedback": "Correct."
+        },
+        {
+          "id": "C",
+          "text": "4 × 4",
+          "feedback": "That is a square."
+        },
+        {
+          "id": "D",
+          "text": "4 + 4",
+          "feedback": "Not factorial."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "4! expands to 4 × 3 × 2 × 1."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "What is 0!?",
+      "hint": "0! has a special defined value.",
+      "options": [
+        {
+          "id": "A",
+          "text": "0",
+          "feedback": "By definition 0! is not 0."
+        },
+        {
+          "id": "B",
+          "text": "1",
+          "feedback": "Correct."
+        },
+        {
+          "id": "C",
+          "text": "2",
+          "feedback": "No."
+        },
+        {
+          "id": "D",
+          "text": "Undefined",
+          "feedback": "0! is defined."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "By definition, 0! = 1."
+    }
+  ]
+}

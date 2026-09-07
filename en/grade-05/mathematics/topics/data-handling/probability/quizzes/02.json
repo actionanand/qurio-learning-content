@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "id": "math-05-probability-02",
+  "type": "quiz",
+  "language": "en",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "mathematics",
+  "chapter": "data-handling",
+  "topic": "probability",
+  "seriesId": "math-05-probability-practice",
+  "setNumber": 2,
+  "setLabel": "Practice Set 2",
+  "title": "Probability — Practice Set 2",
+  "description": "Probability with dice and complements.",
+  "difficulty": "intermediate",
+  "timeLimitSeconds": 240,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "math-05-probability"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-07",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "What is the probability of rolling a 6 on a fair six-sided die?",
+      "hint": "There are six equally likely faces.",
+      "options": [
+        {
+          "id": "A",
+          "text": "1/6",
+          "feedback": "Correct."
+        },
+        {
+          "id": "B",
+          "text": "1/3",
+          "feedback": "Only one face is a 6."
+        },
+        {
+          "id": "C",
+          "text": "1/2",
+          "feedback": "Three faces would be needed."
+        },
+        {
+          "id": "D",
+          "text": "1",
+          "feedback": "A 6 is not certain."
+        }
+      ],
+      "correctOption": "A",
+      "explanation": "One favourable face out of six gives 1/6."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "What is the probability of rolling an odd number on a fair die?",
+      "hint": "Odd faces are 1, 3 and 5.",
+      "options": [
+        {
+          "id": "A",
+          "text": "1/6",
+          "feedback": "There are three odd faces."
+        },
+        {
+          "id": "B",
+          "text": "2/3",
+          "feedback": "There are not four odd faces."
+        },
+        {
+          "id": "C",
+          "text": "1/2",
+          "feedback": "Correct. 3 out of 6."
+        },
+        {
+          "id": "D",
+          "text": "1",
+          "feedback": "Odd is not certain."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "3 of 6 faces are odd, so 3/6 = 1/2."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "If an event is certain, its probability is...",
+      "hint": "Think of the maximum possible probability.",
+      "options": [
+        {
+          "id": "A",
+          "text": "0",
+          "feedback": "0 means impossible."
+        },
+        {
+          "id": "B",
+          "text": "1/2",
+          "feedback": "This is not certain."
+        },
+        {
+          "id": "C",
+          "text": "1",
+          "feedback": "Correct."
+        },
+        {
+          "id": "D",
+          "text": "2",
+          "feedback": "Probability cannot exceed 1."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "A certain event has probability 1."
+    }
+  ]
+}

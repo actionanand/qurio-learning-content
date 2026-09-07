@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "contentVersion": "2026.09.06-studio.143746",
-  "generatedAt": "2026-09-06T09:07:46.656Z",
+  "contentVersion": "2026.09.08-studio.002125",
+  "generatedAt": "2026-09-07T18:51:25.655Z",
   "defaultLanguage": "en",
   "fallbackLanguage": "en",
   "supportedLanguages": [
@@ -232,6 +232,32 @@
       ]
     },
     {
+      "id": "eng-05-nouns",
+      "type": "note",
+      "path": "grade-05/english/topics/grammar/nouns/study.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Nouns",
+        "ta": "பெயர்ச்சொற்கள்",
+        "hi": "संज्ञा"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "english",
+      "chapter": "grammar",
+      "topic": "nouns",
+      "order": 1,
+      "difficulty": "beginner",
+      "estimatedMinutes": 10,
+      "quizIds": [
+        "eng-05-nouns-01"
+      ]
+    },
+    {
       "id": "eng-05-nouns-01",
       "type": "quiz",
       "path": "grade-05/english/quizzes/nouns-01.json",
@@ -263,6 +289,119 @@
       "setNumber": 1,
       "sourceNoteIds": [
         "eng-05-nouns"
+      ]
+    },
+    {
+      "id": "eng-05-nouns-01",
+      "type": "quiz",
+      "path": "grade-05/english/topics/grammar/nouns/quizzes/01.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Nouns — Practice",
+        "ta": "பெயர்ச்சொற்கள் — பயிற்சி",
+        "hi": "संज्ञा — अभ्यास"
+      },
+      "setLabel": {
+        "en": "Practice Set 1",
+        "ta": "பயிற்சி தொகுப்பு 1",
+        "hi": "अभ्यास सेट 1"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "english",
+      "chapter": "grammar",
+      "topic": "nouns",
+      "difficulty": "beginner",
+      "timeLimitSeconds": 180,
+      "passingPercentage": 70,
+      "questionCount": 3,
+      "seriesId": "eng-05-nouns-practice",
+      "setNumber": 1,
+      "sourceNoteIds": [
+        "eng-05-nouns"
+      ]
+    },
+    {
+      "id": "syllabus-general-05-general-knowledge",
+      "type": "syllabus",
+      "path": "grade-05/general-knowledge/syllabus.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "General Knowledge — Grade 5 Syllabus",
+        "ta": "பொது அறிவு — 5ஆம் வகுப்பு பாடத்திட்டம்",
+        "hi": "सामान्य ज्ञान — कक्षा 5 पाठ्यक्रम"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "general-knowledge",
+      "optional": true
+    },
+    {
+      "id": "gk-05-continents-and-oceans",
+      "type": "note",
+      "path": "grade-05/general-knowledge/topics/world/continents-and-oceans/study.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Continents and Oceans",
+        "ta": "கண்டங்களும் பெருங்கடல்களும்",
+        "hi": "महाद्वीप और महासागर"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "general-knowledge",
+      "chapter": "world",
+      "topic": "continents-and-oceans",
+      "order": 1,
+      "difficulty": "beginner",
+      "estimatedMinutes": 10,
+      "quizIds": [
+        "gk-05-continents-and-oceans-01"
+      ]
+    },
+    {
+      "id": "gk-05-continents-and-oceans-01",
+      "type": "quiz",
+      "path": "grade-05/general-knowledge/topics/world/continents-and-oceans/quizzes/01.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Continents and Oceans — Practice",
+        "ta": "கண்டங்களும் பெருங்கடல்களும் — பயிற்சி",
+        "hi": "महाद्वीप और महासागर — अभ्यास"
+      },
+      "setLabel": {
+        "en": "Practice Set 1",
+        "ta": "பயிற்சி தொகுப்பு 1",
+        "hi": "अभ्यास सेट 1"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "general-knowledge",
+      "chapter": "world",
+      "topic": "continents-and-oceans",
+      "difficulty": "beginner",
+      "timeLimitSeconds": 180,
+      "passingPercentage": 70,
+      "questionCount": 3,
+      "seriesId": "gk-05-continents-and-oceans-practice",
+      "setNumber": 1,
+      "sourceNoteIds": [
+        "gk-05-continents-and-oceans"
       ]
     },
     {
@@ -311,9 +450,69 @@
       ]
     },
     {
+      "id": "int-05-number-patterns",
+      "type": "note",
+      "path": "grade-05/intelligence/topics/patterns/number-patterns/study.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Number Patterns",
+        "ta": "எண் வடிவமைப்புகள்",
+        "hi": "संख्या पैटर्न"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "intelligence",
+      "chapter": "patterns",
+      "topic": "number-patterns",
+      "order": 1,
+      "difficulty": "beginner",
+      "estimatedMinutes": 10,
+      "quizIds": [
+        "int-05-number-patterns-01"
+      ]
+    },
+    {
       "id": "int-05-number-patterns-01",
       "type": "quiz",
       "path": "grade-05/intelligence/quizzes/number-patterns-01.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Number Patterns — Practice",
+        "ta": "எண் வடிவமைப்புகள் — பயிற்சி",
+        "hi": "संख्या पैटर्न — अभ्यास"
+      },
+      "setLabel": {
+        "en": "Practice Set 1",
+        "ta": "பயிற்சி தொகுப்பு 1",
+        "hi": "अभ्यास सेट 1"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "intelligence",
+      "chapter": "patterns",
+      "topic": "number-patterns",
+      "difficulty": "beginner",
+      "timeLimitSeconds": 180,
+      "passingPercentage": 70,
+      "questionCount": 3,
+      "seriesId": "int-05-number-patterns-practice",
+      "setNumber": 1,
+      "sourceNoteIds": [
+        "int-05-number-patterns"
+      ]
+    },
+    {
+      "id": "int-05-number-patterns-01",
+      "type": "quiz",
+      "path": "grade-05/intelligence/topics/patterns/number-patterns/quizzes/01.json",
       "languages": [
         "en",
         "ta",
@@ -392,9 +591,220 @@
       ]
     },
     {
+      "id": "math-05-equivalent-fractions",
+      "type": "note",
+      "path": "grade-05/mathematics/topics/fractions/equivalent-fractions/study.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Equivalent Fractions",
+        "ta": "சமமான பின்னங்கள்",
+        "hi": "समतुल्य भिन्न"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "fractions",
+      "topic": "equivalent-fractions",
+      "order": 1,
+      "difficulty": "beginner",
+      "estimatedMinutes": 10,
+      "quizIds": [
+        "math-05-equivalent-fractions-01",
+        "math-05-equivalent-fractions-02",
+        "math-05-equivalent-fractions-03"
+      ]
+    },
+    {
+      "id": "math-05-probability",
+      "type": "note",
+      "path": "grade-05/mathematics/topics/data-handling/probability/study.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Probability",
+        "ta": "நிகழ்தகவு",
+        "hi": "प्रायिकता"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "data-handling",
+      "topic": "probability",
+      "order": 2,
+      "difficulty": "beginner",
+      "estimatedMinutes": 12,
+      "quizIds": [
+        "math-05-probability-01",
+        "math-05-probability-02"
+      ]
+    },
+    {
+      "id": "math-05-factorial",
+      "type": "note",
+      "path": "grade-05/mathematics/topics/number-operations/factorial/study.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Factorial",
+        "ta": "Factorial (தொடர் பெருக்கல்)",
+        "hi": "फैक्टोरियल"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "number-operations",
+      "topic": "factorial",
+      "order": 3,
+      "difficulty": "intermediate",
+      "estimatedMinutes": 12,
+      "quizIds": [
+        "math-05-factorial-01",
+        "math-05-factorial-02"
+      ]
+    },
+    {
+      "id": "math-05-prime-numbers",
+      "type": "note",
+      "path": "grade-05/mathematics/topics/numbers/prime-numbers/study.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Prime Numbers",
+        "ta": "பகா எண்கள்",
+        "hi": "अभाज्य संख्याएँ"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "numbers",
+      "topic": "prime-numbers",
+      "order": 4,
+      "difficulty": "beginner",
+      "estimatedMinutes": 10,
+      "quizIds": [
+        "math-05-prime-numbers-01",
+        "math-05-prime-numbers-02"
+      ]
+    },
+    {
+      "id": "math-05-probability-01",
+      "type": "quiz",
+      "path": "grade-05/mathematics/topics/data-handling/probability/quizzes/01.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Probability — Practice Set 1",
+        "ta": "நிகழ்தகவு — பயிற்சி தொகுப்பு 1",
+        "hi": "प्रायिकता — अभ्यास सेट 1"
+      },
+      "setLabel": {
+        "en": "Practice Set 1",
+        "ta": "பயிற்சி தொகுப்பு 1",
+        "hi": "अभ्यास सेट 1"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "data-handling",
+      "topic": "probability",
+      "difficulty": "beginner",
+      "timeLimitSeconds": 180,
+      "passingPercentage": 70,
+      "questionCount": 3,
+      "seriesId": "math-05-probability-practice",
+      "setNumber": 1,
+      "sourceNoteIds": [
+        "math-05-probability"
+      ]
+    },
+    {
+      "id": "math-05-probability-02",
+      "type": "quiz",
+      "path": "grade-05/mathematics/topics/data-handling/probability/quizzes/02.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Probability — Practice Set 2",
+        "ta": "நிகழ்தகவு — பயிற்சி தொகுப்பு 2",
+        "hi": "प्रायिकता — अभ्यास सेट 2"
+      },
+      "setLabel": {
+        "en": "Practice Set 2",
+        "ta": "பயிற்சி தொகுப்பு 2",
+        "hi": "अभ्यास सेट 2"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "data-handling",
+      "topic": "probability",
+      "difficulty": "intermediate",
+      "timeLimitSeconds": 240,
+      "passingPercentage": 70,
+      "questionCount": 3,
+      "seriesId": "math-05-probability-practice",
+      "setNumber": 2,
+      "sourceNoteIds": [
+        "math-05-probability"
+      ]
+    },
+    {
       "id": "math-05-equivalent-fractions-01",
       "type": "quiz",
       "path": "grade-05/mathematics/quizzes/equivalent-fractions-01.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Equivalent Fractions — Practice",
+        "ta": "சமமான பின்னங்கள் — பயிற்சி",
+        "hi": "समतुल्य भिन्न — अभ्यास"
+      },
+      "setLabel": {
+        "en": "Practice Set 1",
+        "ta": "பயிற்சி தொகுப்பு 1",
+        "hi": "अभ्यास सेट 1"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "fractions",
+      "topic": "equivalent-fractions",
+      "difficulty": "beginner",
+      "timeLimitSeconds": 180,
+      "passingPercentage": 70,
+      "questionCount": 3,
+      "seriesId": "math-05-equivalent-fractions-practice",
+      "setNumber": 1,
+      "sourceNoteIds": [
+        "math-05-equivalent-fractions"
+      ]
+    },
+    {
+      "id": "math-05-equivalent-fractions-01",
+      "type": "quiz",
+      "path": "grade-05/mathematics/topics/fractions/equivalent-fractions/quizzes/01.json",
       "languages": [
         "en",
         "ta",
@@ -460,6 +870,40 @@
       ]
     },
     {
+      "id": "math-05-equivalent-fractions-02",
+      "type": "quiz",
+      "path": "grade-05/mathematics/topics/fractions/equivalent-fractions/quizzes/02.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Equivalent Fractions — Practice Set 2",
+        "ta": "சமமான பின்னங்கள் — பயிற்சி தொகுப்பு 2",
+        "hi": "समतुल्य भिन्न — अभ्यास सेट 2"
+      },
+      "setLabel": {
+        "en": "Practice Set 2",
+        "ta": "பயிற்சி தொகுப்பு 2",
+        "hi": "अभ्यास सेट 2"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "fractions",
+      "topic": "equivalent-fractions",
+      "difficulty": "intermediate",
+      "timeLimitSeconds": 300,
+      "passingPercentage": 70,
+      "questionCount": 5,
+      "seriesId": "math-05-equivalent-fractions-practice",
+      "setNumber": 2,
+      "sourceNoteIds": [
+        "math-05-equivalent-fractions"
+      ]
+    },
+    {
       "id": "math-05-equivalent-fractions-03",
       "type": "quiz",
       "path": "grade-05/mathematics/quizzes/equivalent-fractions-03.json",
@@ -491,6 +935,176 @@
       "setNumber": 3,
       "sourceNoteIds": [
         "math-05-equivalent-fractions"
+      ]
+    },
+    {
+      "id": "math-05-equivalent-fractions-03",
+      "type": "quiz",
+      "path": "grade-05/mathematics/topics/fractions/equivalent-fractions/quizzes/03.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Equivalent Fractions — Challenge Set 3",
+        "ta": "சமமான பின்னங்கள் — சவால் தொகுப்பு 3",
+        "hi": "समतुल्य भिन्न — चैलेंज सेट 3"
+      },
+      "setLabel": {
+        "en": "Challenge Set 3",
+        "ta": "சவால் தொகுப்பு 3",
+        "hi": "चैलेंज सेट 3"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "fractions",
+      "topic": "equivalent-fractions",
+      "difficulty": "advanced",
+      "timeLimitSeconds": 360,
+      "passingPercentage": 70,
+      "questionCount": 5,
+      "seriesId": "math-05-equivalent-fractions-practice",
+      "setNumber": 3,
+      "sourceNoteIds": [
+        "math-05-equivalent-fractions"
+      ]
+    },
+    {
+      "id": "math-05-factorial-01",
+      "type": "quiz",
+      "path": "grade-05/mathematics/topics/number-operations/factorial/quizzes/01.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Factorial — Practice Set 1",
+        "ta": "Factorial — பயிற்சி தொகுப்பு 1",
+        "hi": "फैक्टोरियल — अभ्यास सेट 1"
+      },
+      "setLabel": {
+        "en": "Practice Set 1",
+        "ta": "பயிற்சி தொகுப்பு 1",
+        "hi": "अभ्यास सेट 1"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "number-operations",
+      "topic": "factorial",
+      "difficulty": "beginner",
+      "timeLimitSeconds": 180,
+      "passingPercentage": 70,
+      "questionCount": 3,
+      "seriesId": "math-05-factorial-practice",
+      "setNumber": 1,
+      "sourceNoteIds": [
+        "math-05-factorial"
+      ]
+    },
+    {
+      "id": "math-05-factorial-02",
+      "type": "quiz",
+      "path": "grade-05/mathematics/topics/number-operations/factorial/quizzes/02.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Factorial — Practice Set 2",
+        "ta": "Factorial — பயிற்சி தொகுப்பு 2",
+        "hi": "फैक्टोरियल — अभ्यास सेट 2"
+      },
+      "setLabel": {
+        "en": "Practice Set 2",
+        "ta": "பயிற்சி தொகுப்பு 2",
+        "hi": "अभ्यास सेट 2"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "number-operations",
+      "topic": "factorial",
+      "difficulty": "intermediate",
+      "timeLimitSeconds": 240,
+      "passingPercentage": 70,
+      "questionCount": 3,
+      "seriesId": "math-05-factorial-practice",
+      "setNumber": 2,
+      "sourceNoteIds": [
+        "math-05-factorial"
+      ]
+    },
+    {
+      "id": "math-05-prime-numbers-01",
+      "type": "quiz",
+      "path": "grade-05/mathematics/topics/numbers/prime-numbers/quizzes/01.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Prime Numbers — Practice Set 1",
+        "ta": "பகா எண்கள் — பயிற்சி தொகுப்பு 1",
+        "hi": "अभाज्य संख्याएँ — अभ्यास सेट 1"
+      },
+      "setLabel": {
+        "en": "Practice Set 1",
+        "ta": "பயிற்சி தொகுப்பு 1",
+        "hi": "अभ्यास सेट 1"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "numbers",
+      "topic": "prime-numbers",
+      "difficulty": "beginner",
+      "timeLimitSeconds": 180,
+      "passingPercentage": 70,
+      "questionCount": 3,
+      "seriesId": "math-05-prime-numbers-practice",
+      "setNumber": 1,
+      "sourceNoteIds": [
+        "math-05-prime-numbers"
+      ]
+    },
+    {
+      "id": "math-05-prime-numbers-02",
+      "type": "quiz",
+      "path": "grade-05/mathematics/topics/numbers/prime-numbers/quizzes/02.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Prime Numbers — Practice Set 2",
+        "ta": "பகா எண்கள் — பயிற்சி தொகுப்பு 2",
+        "hi": "अभाज्य संख्याएँ — अभ्यास सेट 2"
+      },
+      "setLabel": {
+        "en": "Practice Set 2",
+        "ta": "பயிற்சி தொகுப்பு 2",
+        "hi": "अभ्यास सेट 2"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "mathematics",
+      "chapter": "numbers",
+      "topic": "prime-numbers",
+      "difficulty": "intermediate",
+      "timeLimitSeconds": 240,
+      "passingPercentage": 70,
+      "questionCount": 3,
+      "seriesId": "math-05-prime-numbers-practice",
+      "setNumber": 2,
+      "sourceNoteIds": [
+        "math-05-prime-numbers"
       ]
     },
     {
@@ -539,9 +1153,69 @@
       ]
     },
     {
+      "id": "sci-05-photosynthesis",
+      "type": "note",
+      "path": "grade-05/science/topics/plants/photosynthesis/study.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Photosynthesis",
+        "ta": "ஒளிச்சேர்க்கை",
+        "hi": "प्रकाश संश्लेषण"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "science",
+      "chapter": "plants",
+      "topic": "photosynthesis",
+      "order": 1,
+      "difficulty": "beginner",
+      "estimatedMinutes": 10,
+      "quizIds": [
+        "sci-05-photosynthesis-01"
+      ]
+    },
+    {
       "id": "sci-05-photosynthesis-01",
       "type": "quiz",
       "path": "grade-05/science/quizzes/photosynthesis-01.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Photosynthesis — Practice",
+        "ta": "ஒளிச்சேர்க்கை — பயிற்சி",
+        "hi": "प्रकाश संश्लेषण — अभ्यास"
+      },
+      "setLabel": {
+        "en": "Practice Set 1",
+        "ta": "பயிற்சி தொகுப்பு 1",
+        "hi": "अभ्यास सेट 1"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "science",
+      "chapter": "plants",
+      "topic": "photosynthesis",
+      "difficulty": "beginner",
+      "timeLimitSeconds": 180,
+      "passingPercentage": 70,
+      "questionCount": 3,
+      "seriesId": "sci-05-photosynthesis-practice",
+      "setNumber": 1,
+      "sourceNoteIds": [
+        "sci-05-photosynthesis"
+      ]
+    },
+    {
+      "id": "sci-05-photosynthesis-01",
+      "type": "quiz",
+      "path": "grade-05/science/topics/plants/photosynthesis/quizzes/01.json",
       "languages": [
         "en",
         "ta",
@@ -618,9 +1292,69 @@
       ]
     },
     {
+      "id": "sst-05-directions-and-maps",
+      "type": "note",
+      "path": "grade-05/social-studies/topics/geography/directions-and-maps/study.md",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Directions and Maps",
+        "ta": "திசைகளும் வரைபடங்களும்",
+        "hi": "दिशाएँ और मानचित्र"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "social-studies",
+      "chapter": "geography",
+      "topic": "directions-and-maps",
+      "order": 1,
+      "difficulty": "beginner",
+      "estimatedMinutes": 10,
+      "quizIds": [
+        "sst-05-directions-and-maps-01"
+      ]
+    },
+    {
       "id": "sst-05-directions-and-maps-01",
       "type": "quiz",
       "path": "grade-05/social-studies/quizzes/directions-and-maps-01.json",
+      "languages": [
+        "en",
+        "ta",
+        "hi"
+      ],
+      "title": {
+        "en": "Directions and Maps — Practice",
+        "ta": "திசைகளும் வரைபடங்களும் — பயிற்சி",
+        "hi": "दिशाएँ और मानचित्र — अभ्यास"
+      },
+      "setLabel": {
+        "en": "Practice Set 1",
+        "ta": "பயிற்சி தொகுப்பு 1",
+        "hi": "अभ्यास सेट 1"
+      },
+      "curriculum": "general",
+      "grade": 5,
+      "subject": "social-studies",
+      "chapter": "geography",
+      "topic": "directions-and-maps",
+      "difficulty": "beginner",
+      "timeLimitSeconds": 180,
+      "passingPercentage": 70,
+      "questionCount": 3,
+      "seriesId": "sst-05-directions-and-maps-practice",
+      "setNumber": 1,
+      "sourceNoteIds": [
+        "sst-05-directions-and-maps"
+      ]
+    },
+    {
+      "id": "sst-05-directions-and-maps-01",
+      "type": "quiz",
+      "path": "grade-05/social-studies/topics/geography/directions-and-maps/quizzes/01.json",
       "languages": [
         "en",
         "ta",

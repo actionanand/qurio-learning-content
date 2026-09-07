@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "id": "gk-05-continents-and-oceans-01",
+  "type": "quiz",
+  "language": "hi",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "general-knowledge",
+  "chapter": "world",
+  "topic": "continents-and-oceans",
+  "seriesId": "gk-05-continents-and-oceans-practice",
+  "setNumber": 1,
+  "setLabel": "अभ्यास सेट 1",
+  "title": "महाद्वीप और महासागर — अभ्यास",
+  "description": "महाद्वीपों और महासागरों पर एक छोटा सामान्य-ज्ञान quiz.",
+  "difficulty": "beginner",
+  "timeLimitSeconds": 180,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "gk-05-continents-and-oceans"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-08",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "सामान्यतः कितने महाद्वीप माने जाते हैं?",
+      "hint": "एशिया, अफ्रीका, यूरोप और अन्य को याद करें।",
+      "options": [
+        {
+          "id": "A",
+          "text": "5",
+          "feedback": "पाँच से अधिक हैं।"
+        },
+        {
+          "id": "B",
+          "text": "6",
+          "feedback": "सात हैं।"
+        },
+        {
+          "id": "C",
+          "text": "7",
+          "feedback": "सही।"
+        },
+        {
+          "id": "D",
+          "text": "8",
+          "feedback": "स्कूलों में सामान्यतः सात महाद्वीपों की सूची पढ़ाई जाती है।"
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "सामान्यतः सात महाद्वीप माने जाते हैं।"
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "सबसे बड़ा महासागर कौन-सा है?",
+      "hint": "यह एशिया/ऑस्ट्रेलिया और अमेरिका के बीच है।",
+      "options": [
+        {
+          "id": "A",
+          "text": "हिंद महासागर",
+          "feedback": "यह छोटा है।"
+        },
+        {
+          "id": "B",
+          "text": "प्रशांत महासागर",
+          "feedback": "सही।"
+        },
+        {
+          "id": "C",
+          "text": "आर्कटिक महासागर",
+          "feedback": "यह बहुत छोटा है।"
+        },
+        {
+          "id": "D",
+          "text": "अटलांटिक महासागर",
+          "feedback": "अटलांटिक दूसरा सबसे बड़ा है।"
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "प्रशांत महासागर दुनिया का सबसे बड़ा महासागर है।"
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "भूमि क्षेत्र के अनुसार सबसे बड़ा महाद्वीप कौन-सा है?",
+      "hint": "भारत, चीन और जापान इसमें हैं।",
+      "options": [
+        {
+          "id": "A",
+          "text": "एशिया",
+          "feedback": "सही।"
+        },
+        {
+          "id": "B",
+          "text": "यूरोप",
+          "feedback": "यूरोप छोटा है।"
+        },
+        {
+          "id": "C",
+          "text": "ऑस्ट्रेलिया",
+          "feedback": "सामान्य सात-महाद्वीप मॉडल में ऑस्ट्रेलिया सबसे छोटा है।"
+        },
+        {
+          "id": "D",
+          "text": "अंटार्कटिका",
+          "feedback": "अंटार्कटिका सबसे बड़ा नहीं है।"
+        }
+      ],
+      "correctOption": "A",
+      "explanation": "भूमि क्षेत्र के अनुसार एशिया सबसे बड़ा महाद्वीप है।"
+    }
+  ]
+}

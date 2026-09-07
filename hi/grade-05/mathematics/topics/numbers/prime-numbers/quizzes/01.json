@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "id": "math-05-prime-numbers-01",
+  "type": "quiz",
+  "language": "hi",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "mathematics",
+  "chapter": "numbers",
+  "topic": "prime-numbers",
+  "seriesId": "math-05-prime-numbers-practice",
+  "setNumber": 1,
+  "setLabel": "अभ्यास सेट 1",
+  "title": "अभाज्य संख्याएँ — अभ्यास सेट 1",
+  "description": "अभाज्य और संयोजित संख्याओं की पहचान।",
+  "difficulty": "beginner",
+  "timeLimitSeconds": 180,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "math-05-prime-numbers"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-07",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "इनमें से कौन-सी संख्या अभाज्य है?",
+      "hint": "अभाज्य संख्या के ठीक दो धनात्मक गुणनखंड होते हैं।",
+      "options": [
+        {
+          "id": "A",
+          "text": "4",
+          "feedback": "4 के गुणनखंड 1, 2, 4 हैं।"
+        },
+        {
+          "id": "B",
+          "text": "7",
+          "feedback": "सही।"
+        },
+        {
+          "id": "C",
+          "text": "9",
+          "feedback": "9 के गुणनखंड 1, 3, 9 हैं।"
+        },
+        {
+          "id": "D",
+          "text": "12",
+          "feedback": "12 के कई गुणनखंड हैं।"
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "7 के धनात्मक गुणनखंड केवल 1 और 7 हैं।"
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "एकमात्र सम अभाज्य संख्या कौन-सी है?",
+      "hint": "अन्य सभी सम संख्याएँ 2 से विभाजित होती हैं।",
+      "options": [
+        {
+          "id": "A",
+          "text": "1",
+          "feedback": "1 अभाज्य नहीं है।"
+        },
+        {
+          "id": "B",
+          "text": "2",
+          "feedback": "सही।"
+        },
+        {
+          "id": "C",
+          "text": "4",
+          "feedback": "4 संयोजित है।"
+        },
+        {
+          "id": "D",
+          "text": "6",
+          "feedback": "6 संयोजित है।"
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "2 के ठीक दो गुणनखंड 1 और 2 हैं।"
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "एक अभाज्य संख्या के कितने धनात्मक गुणनखंड होते हैं?",
+      "hint": "अभाज्य की परिभाषा याद करें।",
+      "options": [
+        {
+          "id": "A",
+          "text": "1",
+          "feedback": "अभाज्य के दो होते हैं।"
+        },
+        {
+          "id": "B",
+          "text": "2",
+          "feedback": "सही।"
+        },
+        {
+          "id": "C",
+          "text": "3",
+          "feedback": "तब वह अभाज्य नहीं होगी।"
+        },
+        {
+          "id": "D",
+          "text": "बहुत से",
+          "feedback": "अभाज्य का अर्थ ठीक दो है।"
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "एक अभाज्य संख्या के ठीक दो धनात्मक गुणनखंड होते हैं।"
+    }
+  ]
+}

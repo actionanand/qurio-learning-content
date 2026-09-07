@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "id": "math-05-factorial-02",
+  "type": "quiz",
+  "language": "hi",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "mathematics",
+  "chapter": "number-operations",
+  "topic": "factorial",
+  "seriesId": "math-05-factorial-practice",
+  "setNumber": 2,
+  "setLabel": "अभ्यास सेट 2",
+  "title": "फैक्टोरियल — अभ्यास सेट 2",
+  "description": "छोटे फैक्टोरियल व्यंजकों की तुलना और सरलीकरण।",
+  "difficulty": "intermediate",
+  "timeLimitSeconds": 240,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "math-05-factorial"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-07",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "5! का मान क्या है?",
+      "hint": "5 × 4 × 3 × 2 × 1 का गुणा करें।",
+      "options": [
+        {
+          "id": "A",
+          "text": "25",
+          "feedback": "यह 5 का वर्ग है।"
+        },
+        {
+          "id": "B",
+          "text": "60",
+          "feedback": "आपने जल्दी रोक दिया।"
+        },
+        {
+          "id": "C",
+          "text": "120",
+          "feedback": "सही।"
+        },
+        {
+          "id": "D",
+          "text": "240",
+          "feedback": "यह दुगुना है।"
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "5! = 120."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "कौन बड़ा है?",
+      "hint": "दोनों मान निकालें।",
+      "options": [
+        {
+          "id": "A",
+          "text": "3!",
+          "feedback": "3! = 6."
+        },
+        {
+          "id": "B",
+          "text": "4!",
+          "feedback": "सही। 4! = 24."
+        },
+        {
+          "id": "C",
+          "text": "दोनों बराबर",
+          "feedback": "6 और 24 बराबर नहीं हैं।"
+        },
+        {
+          "id": "D",
+          "text": "नहीं बता सकते",
+          "feedback": "दोनों का मान निकाला जा सकता है।"
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "4! = 24, 3! = 6 से बड़ा है।"
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "4! ÷ 3! क्या है?",
+      "hint": "4! = 4 × 3! लिखें।",
+      "options": [
+        {
+          "id": "A",
+          "text": "1",
+          "feedback": "पर्याप्त नहीं।"
+        },
+        {
+          "id": "B",
+          "text": "3",
+          "feedback": "रद्द करने की जाँच करें।"
+        },
+        {
+          "id": "C",
+          "text": "4",
+          "feedback": "सही।"
+        },
+        {
+          "id": "D",
+          "text": "24",
+          "feedback": "आपने भाग नहीं किया।"
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "4! / 3! = (4 × 3!) / 3! = 4."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "name": "qurio-learning-content",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "private": true,
   "description": "Multilingual learning content for Qurio with a local content authoring studio.",
   "type": "module",

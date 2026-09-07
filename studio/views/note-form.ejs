@@ -12,7 +12,7 @@
     </div>
     <div class="form-grid three">
       <label>Chapter ID<input name="chapter" value="<%= note?.chapter || '' %>" placeholder="fractions" required><small>Machine ID, e.g. fractions</small></label>
-      <label>Topic ID<input name="topic" value="<%= note?.topic || '' %>" placeholder="equivalent-fractions" required><small>Used in path and stable content ID</small></label>
+      <label>Topic ID<input name="topic" value="<%= note?.topic || '' %>" placeholder="equivalent-fractions" required><small>Stable topic ID; quizzes with the same topic are grouped under this study material</small></label>
       <label>Title<input name="title" value="<%= note?.title || '' %>" placeholder="Equivalent Fractions" required></label>
     </div>
     <div class="form-grid four">
@@ -22,7 +22,7 @@
       <label>Version<input type="number" min="1" name="version" value="<%= note?.version || 1 %>"></label>
     </div>
     <div class="form-grid two">
-      <label>Related quiz IDs<textarea name="quizIds" class="short-textarea" placeholder="one ID per line"><%= (note?.quizIds || []).join('\n') %></textarea></label>
+      <label>Related quiz IDs<textarea name="quizIds" class="short-textarea" placeholder="optional; one ID per line"><%= (note?.quizIds || []).join('\n') %></textarea><small>Optional. Manifest rebuild also auto-links quizzes with matching curriculum, grade, subject, chapter and topic.</small></label>
       <label>Tags<textarea name="tags" class="short-textarea" placeholder="fractions, equivalent-fractions"><%= (note?.tags || []).join('\n') %></textarea></label>
     </div>
     <% if (mode === 'new') { %><label class="check"><input type="checkbox" name="overwrite"> Allow overwrite if the generated file already exists</label><% } %>

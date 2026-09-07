@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "id": "math-05-prime-numbers-02",
+  "type": "quiz",
+  "language": "ta",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "mathematics",
+  "chapter": "numbers",
+  "topic": "prime-numbers",
+  "seriesId": "math-05-prime-numbers-practice",
+  "setNumber": 2,
+  "setLabel": "பயிற்சி தொகுப்பு 2",
+  "title": "பகா எண்கள் — பயிற்சி தொகுப்பு 2",
+  "description": "வகுத்திகளை பயன்படுத்தி பகா எண்களைப் புரிந்துகொள்ளுதல்.",
+  "difficulty": "intermediate",
+  "timeLimitSeconds": 240,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "math-05-prime-numbers"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-07",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "21 பகா எண்ணா?",
+      "hint": "3-ஆல் வகுத்துப் பாருங்கள்.",
+      "options": [
+        {
+          "id": "A",
+          "text": "ஆம்",
+          "feedback": "21-க்கு இரண்டுக்கும் மேற்பட்ட வகுத்திகள் உள்ளன."
+        },
+        {
+          "id": "B",
+          "text": "இல்லை",
+          "feedback": "சரி. 21 = 3 × 7."
+        },
+        {
+          "id": "C",
+          "text": "ஒற்றை எண் என்றால் மட்டும்",
+          "feedback": "ஒற்றை எண் எல்லாம் பகா அல்ல."
+        },
+        {
+          "id": "D",
+          "text": "தெரியாது",
+          "feedback": "வகுத்திகளை சரிபார்க்கலாம்."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "21 என்பது 3 மற்றும் 7-ஆல் வகுபடும்; எனவே அது கூட்டு எண்."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "எந்த ஜோடியில் இரண்டும் பகா எண்கள்?",
+      "hint": "ஒவ்வொரு எண்ணின் வகுத்திகளை சரிபாருங்கள்.",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 மற்றும் 5",
+          "feedback": "சரி."
+        },
+        {
+          "id": "B",
+          "text": "3 மற்றும் 9",
+          "feedback": "9 கூட்டு எண்."
+        },
+        {
+          "id": "C",
+          "text": "5 மற்றும் 10",
+          "feedback": "10 கூட்டு எண்."
+        },
+        {
+          "id": "D",
+          "text": "7 மற்றும் 21",
+          "feedback": "21 கூட்டு எண்."
+        }
+      ],
+      "correctOption": "A",
+      "explanation": "2 மற்றும் 5 இரண்டிற்கும் இரண்டு நேர்ம வகுத்திகள் மட்டுமே உள்ளன."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "1 ஏன் பகா எண் அல்ல?",
+      "hint": "1-ன் நேர்ம வகுத்திகளை எண்ணுங்கள்.",
+      "options": [
+        {
+          "id": "A",
+          "text": "அது ஒற்றை எண்",
+          "feedback": "ஒற்றை எண்கள் பகா ஆகலாம்."
+        },
+        {
+          "id": "B",
+          "text": "அதற்கு ஒரு நேர்ம வகுத்தி மட்டுமே உள்ளது",
+          "feedback": "சரி."
+        },
+        {
+          "id": "C",
+          "text": "அது மிகவும் சிறியது",
+          "feedback": "அளவு வரையறை அல்ல."
+        },
+        {
+          "id": "D",
+          "text": "அது சம எண்",
+          "feedback": "1 ஒற்றை எண்."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "1-க்கு ஒரு நேர்ம வகுத்தி மட்டுமே உள்ளது; பகா எண்ணுக்கு இரண்டு தேவை."
+    }
+  ]
+}

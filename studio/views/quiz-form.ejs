@@ -12,8 +12,8 @@
       <label>Subject<select name="subject" id="quizSubject"><% subjects.forEach(s => { %><option value="<%= s.id %>" <%= (quiz?.subject || subjects[0]?.id)===s.id?'selected':'' %>><%= s.label.en %></option><% }) %></select></label>
     </div>
     <div class="form-grid four">
-      <label>Chapter ID<input name="chapter" value="<%= quiz?.chapter || '' %>" placeholder="fractions" required></label>
-      <label>Topic ID<input name="topic" id="quizTopic" value="<%= quiz?.topic || '' %>" placeholder="equivalent-fractions" required></label>
+      <label>Chapter ID<input name="chapter" value="<%= quiz?.chapter || '' %>" placeholder="fractions" required><small>Must match the study material chapter.</small></label>
+      <label>Topic ID<input name="topic" id="quizTopic" value="<%= quiz?.topic || '' %>" placeholder="equivalent-fractions" required><small>Same topic groups this set under the selected study material.</small></label>
       <label>Set number<input type="number" min="1" name="setNumber" id="quizSetNumber" value="<%= quiz?.setNumber || 1 %>" required></label>
       <label>Set label<input name="setLabel" value="<%= quiz?.setLabel || '' %>" placeholder="Practice Set 1"></label>
     </div>
@@ -29,7 +29,7 @@
       <label>Version<input type="number" min="1" name="version" value="<%= quiz?.version || 1 %>"></label>
     </div>
     <div class="form-grid two">
-      <label>Related study-note IDs<textarea name="sourceNoteIds" class="short-textarea" placeholder="one ID per line"><%= (quiz?.sourceNoteIds || []).join('\n') %></textarea></label>
+      <label>Related study-note IDs<textarea name="sourceNoteIds" class="short-textarea" placeholder="optional; one ID per line"><%= (quiz?.sourceNoteIds || []).join('\n') %></textarea><small>Optional. If blank, Studio uses the generated note ID for this topic.</small></label>
       <div class="checks-panel"><label class="check"><input type="checkbox" name="shuffleQuestions" <%= quiz?.shuffleQuestions !== false ? 'checked' : '' %>> Shuffle questions</label><label class="check"><input type="checkbox" name="shuffleOptions" <%= quiz?.shuffleOptions !== false ? 'checked' : '' %>> Shuffle options</label><% if (mode==='new') { %><label class="check"><input type="checkbox" name="overwrite"> Allow overwrite if generated file exists</label><% } %></div>
     </div>
     <div class="generated-preview" id="idPreview"><span>Generated IDs update as you edit grade, subject, topic and set number.</span></div>

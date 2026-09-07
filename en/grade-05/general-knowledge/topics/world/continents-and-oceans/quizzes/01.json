@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "id": "gk-05-continents-and-oceans-01",
+  "type": "quiz",
+  "language": "en",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "general-knowledge",
+  "chapter": "world",
+  "topic": "continents-and-oceans",
+  "seriesId": "gk-05-continents-and-oceans-practice",
+  "setNumber": 1,
+  "setLabel": "Practice Set 1",
+  "title": "Continents and Oceans — Practice",
+  "description": "A short general-knowledge quiz about continents and oceans.",
+  "difficulty": "beginner",
+  "timeLimitSeconds": 180,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "gk-05-continents-and-oceans"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-08",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "How many continents are commonly recognized?",
+      "hint": "Think of Asia, Africa, Europe and the others.",
+      "options": [
+        {
+          "id": "A",
+          "text": "5",
+          "feedback": "There are more than five."
+        },
+        {
+          "id": "B",
+          "text": "6",
+          "feedback": "There are seven."
+        },
+        {
+          "id": "C",
+          "text": "7",
+          "feedback": "Correct."
+        },
+        {
+          "id": "D",
+          "text": "8",
+          "feedback": "The standard school list has seven."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "Seven continents are commonly recognized."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "Which is the largest ocean?",
+      "hint": "It lies between Asia/Australia and the Americas.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Indian Ocean",
+          "feedback": "The Indian Ocean is smaller."
+        },
+        {
+          "id": "B",
+          "text": "Pacific Ocean",
+          "feedback": "Correct."
+        },
+        {
+          "id": "C",
+          "text": "Arctic Ocean",
+          "feedback": "The Arctic is much smaller."
+        },
+        {
+          "id": "D",
+          "text": "Atlantic Ocean",
+          "feedback": "The Atlantic is the second largest."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "The Pacific Ocean is the largest ocean."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "Which is the largest continent by land area?",
+      "hint": "It includes India, China and Japan.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Asia",
+          "feedback": "Correct."
+        },
+        {
+          "id": "B",
+          "text": "Europe",
+          "feedback": "Europe is smaller."
+        },
+        {
+          "id": "C",
+          "text": "Australia",
+          "feedback": "Australia is the smallest continent in the common seven-continent model."
+        },
+        {
+          "id": "D",
+          "text": "Antarctica",
+          "feedback": "Antarctica is not the largest."
+        }
+      ],
+      "correctOption": "A",
+      "explanation": "Asia is the largest continent by land area."
+    }
+  ]
+}

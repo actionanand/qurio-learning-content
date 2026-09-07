@@ -1,5 +1,8 @@
 # Qurio Learning Content
 
+
+> **v2.5 folder layout:** learning content is now topic-scoped (`topics/{chapter}/{topic}/study.md` with a nested `quizzes/` folder). This keeps subjects clean when hundreds of quiz sets are added. See [`STRUCTURE.md`](STRUCTURE.md).
+
 Multilingual static learning content for **Qurio**.
 
 This repository is the content/data source for the Qurio client. It contains class-wise study material, optional subject syllabi, timed practice quizzes, and reusable preparation-plan templates for competitive/school entrance exams.
@@ -83,7 +86,7 @@ Manifest:
 
 ```json
 {
-  "path": "grade-05/mathematics/notes/fractions/equivalent-fractions.md",
+  "path": "grade-05/mathematics/topics/fractions/equivalent-fractions/study.md",
   "languages": ["en", "ta", "hi"]
 }
 ```
@@ -216,7 +219,7 @@ Example note:
 {
   "id": "math-05-equivalent-fractions",
   "type": "note",
-  "path": "grade-05/mathematics/notes/fractions/equivalent-fractions.md",
+  "path": "grade-05/mathematics/topics/fractions/equivalent-fractions/study.md",
   "languages": ["en", "ta", "hi"],
   "curriculum": "general",
   "grade": 5,
@@ -232,7 +235,7 @@ Example quiz set:
 {
   "id": "math-05-equivalent-fractions-02",
   "type": "quiz",
-  "path": "grade-05/mathematics/quizzes/equivalent-fractions-02.json",
+  "path": "grade-05/mathematics/topics/fractions/equivalent-fractions/quizzes/02.json",
   "languages": ["en", "ta", "hi"],
   "grade": 5,
   "subject": "mathematics",
@@ -253,16 +256,17 @@ Use lowercase kebab-case.
 ```text
 {language}/grade-05/{subject}/
 ├── syllabus.md
-├── notes/{chapter}/{topic}.md
-└── quizzes/{topic}-{setNumber}.json
+└── topics/{chapter}/{topic}/
+    ├── study.md
+    └── quizzes/{setNumber}.json
 ```
 
 Examples:
 
 ```text
-en/grade-05/mathematics/notes/fractions/equivalent-fractions.md
-ta/grade-05/mathematics/notes/fractions/equivalent-fractions.md
-hi/grade-05/mathematics/notes/fractions/equivalent-fractions.md
+en/grade-05/mathematics/topics/fractions/equivalent-fractions/study.md
+ta/grade-05/mathematics/topics/fractions/equivalent-fractions/study.md
+hi/grade-05/mathematics/topics/fractions/equivalent-fractions/study.md
 ```
 
 ---
@@ -852,9 +856,9 @@ Not every future examination needs `entryClass`. If Qurio later targets exams su
 For a fourth Equivalent Fractions set:
 
 ```text
-en/grade-05/mathematics/quizzes/equivalent-fractions-04.json
-ta/grade-05/mathematics/quizzes/equivalent-fractions-04.json
-hi/grade-05/mathematics/quizzes/equivalent-fractions-04.json
+en/grade-05/mathematics/topics/fractions/equivalent-fractions/quizzes/04.json
+ta/grade-05/mathematics/topics/fractions/equivalent-fractions/quizzes/04.json
+hi/grade-05/mathematics/topics/fractions/equivalent-fractions/quizzes/04.json
 ```
 
 Use:
@@ -1048,9 +1052,9 @@ User progress remains a separate layer.
 ## Multiple quiz sets
 
 ```text
-en/grade-05/mathematics/quizzes/equivalent-fractions-01.json
-en/grade-05/mathematics/quizzes/equivalent-fractions-02.json
-en/grade-05/mathematics/quizzes/equivalent-fractions-03.json
+en/grade-05/mathematics/topics/fractions/equivalent-fractions/quizzes/01.json
+en/grade-05/mathematics/topics/fractions/equivalent-fractions/quizzes/02.json
+en/grade-05/mathematics/topics/fractions/equivalent-fractions/quizzes/03.json
 ```
 
 Equivalent `ta` and `hi` files are included.
