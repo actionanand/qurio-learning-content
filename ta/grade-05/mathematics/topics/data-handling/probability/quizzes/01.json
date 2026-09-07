@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "id": "math-05-probability-01",
+  "type": "quiz",
+  "language": "ta",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "mathematics",
+  "chapter": "data-handling",
+  "topic": "probability",
+  "seriesId": "math-05-probability-practice",
+  "setNumber": 1,
+  "setLabel": "பயிற்சி தொகுப்பு 1",
+  "title": "நிகழ்தகவு — பயிற்சி தொகுப்பு 1",
+  "description": "நாணயம் மற்றும் எளிய முடிவுகளுடன் அடிப்படை நிகழ்தகவு.",
+  "difficulty": "beginner",
+  "timeLimitSeconds": 180,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "math-05-probability"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-07",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "ஒரு நியாயமான நாணயம் ஒருமுறை சுண்டப்படுகிறது. தலை வருவதற்கான நிகழ்தகவு என்ன?",
+      "hint": "இரண்டு சம வாய்ப்புள்ள முடிவுகள் உள்ளன.",
+      "options": [
+        {
+          "id": "A",
+          "text": "1/4",
+          "feedback": "இரண்டு முடிவுகள் மட்டுமே உள்ளன."
+        },
+        {
+          "id": "B",
+          "text": "1/2",
+          "feedback": "சரி. இரண்டு முடிவுகளில் ஒன்று தலை."
+        },
+        {
+          "id": "C",
+          "text": "1",
+          "feedback": "தலை உறுதி அல்ல."
+        },
+        {
+          "id": "D",
+          "text": "0",
+          "feedback": "தலை வர முடியும்."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "மொத்தம் 2 முடிவுகளில் தலை என்ற 1 சாதகமான முடிவு உள்ளது."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "பின்வருவனவற்றில் எது நிகழ்தகவு மதிப்பாக இருக்க முடியும்?",
+      "hint": "நிகழ்தகவு 0 முதல் 1 வரை இருக்கும்.",
+      "options": [
+        {
+          "id": "A",
+          "text": "-1",
+          "feedback": "நிகழ்தகவு எதிர்மறையாக இருக்க முடியாது."
+        },
+        {
+          "id": "B",
+          "text": "3/2",
+          "feedback": "இது 1-ஐ விட பெரியது."
+        },
+        {
+          "id": "C",
+          "text": "3/4",
+          "feedback": "சரி. 3/4 என்பது 0 மற்றும் 1 இடையில் உள்ளது."
+        },
+        {
+          "id": "D",
+          "text": "2",
+          "feedback": "இது 1-ஐ விட பெரியது."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "நிகழ்தகவு 0 முதல் 1 வரை இருக்க வேண்டும்."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "ஒரு பையில் 3 சிவப்பு மற்றும் 1 நீல பந்து உள்ளது. நீல பந்தை எடுக்கும் நிகழ்தகவு என்ன?",
+      "hint": "மொத்தம் 4 பந்துகள் உள்ளன.",
+      "options": [
+        {
+          "id": "A",
+          "text": "1/4",
+          "feedback": "சரி. நான்கில் ஒரு நீல பந்து."
+        },
+        {
+          "id": "B",
+          "text": "1/3",
+          "feedback": "மொத்தம் 4, 3 அல்ல."
+        },
+        {
+          "id": "C",
+          "text": "3/4",
+          "feedback": "அது சிவப்பு பந்தின் நிகழ்தகவு."
+        },
+        {
+          "id": "D",
+          "text": "1",
+          "feedback": "நீலம் உறுதி அல்ல."
+        }
+      ],
+      "correctOption": "A",
+      "explanation": "4 பந்துகளில் 1 நீல பந்து உள்ளது."
+    }
+  ]
+}

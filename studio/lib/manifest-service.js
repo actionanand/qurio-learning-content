@@ -121,12 +121,53 @@ function itemFromQuiz(filePath, languages) {
   };
 }
 
+function relationshipKey(item) {
+  if (!item || !item.subject || !item.chapter || !item.topic || !item.grade) return null;
+  return [
+    item.curriculum || 'general',
+    Number(item.grade),
+    item.subject,
+    item.chapter,
+    item.topic
+  ].join('|');
+}
+
+function linkStudyMaterialsAndQuizzes(items) {
+  const notes = new Map();
+  const quizzes = new Map();
+
+  for (const item of items) {
+    const key = relationshipKey(item);
+    if (!key) continue;
+    if (item.type === 'note') notes.set(key, [...(notes.get(key) || []), item]);
+    if (item.type === 'quiz') quizzes.set(key, [...(quizzes.get(key) || []), item]);
+  }
+
+  for (const [key, topicNotes] of notes.entries()) {
+    const topicQuizzes = [...(quizzes.get(key) || [])]
+      .sort((a, b) => Number(a.setNumber || 0) - Number(b.setNumber || 0) || a.id.localeCompare(b.id));
+    const quizIds = topicQuizzes.map((quiz) => quiz.id);
+
+    for (const note of topicNotes) {
+      note.quizIds = unique([...(note.quizIds || []), ...quizIds]);
+    }
+
+    const noteIds = topicNotes.map((note) => note.id);
+    for (const quiz of topicQuizzes) {
+      quiz.sourceNoteIds = unique([...(quiz.sourceNoteIds || []), ...noteIds]);
+    }
+  }
+
+  return items;
+}
+
 function sortItems(items) {
   const order = { syllabus: 0, note: 1, quiz: 2 };
   return items.sort((a, b) => {
     return (a.grade - b.grade)
       || String(a.subject).localeCompare(String(b.subject))
       || (order[a.type] ?? 9) - (order[b.type] ?? 9)
+      || Number(a.order || 0) - Number(b.order || 0)
       || String(a.chapter || '').localeCompare(String(b.chapter || ''))
       || String(a.topic || '').localeCompare(String(b.topic || ''))
       || Number(a.setNumber || 0) - Number(b.setNumber || 0)
@@ -177,6 +218,9 @@ export function rebuildManifest() {
       if (item) items.push(item);
     }
   }
+
+  linkStudyMaterialsAndQuizzes(items);
+
   const next = {
     ...current,
     schemaVersion: 2,

@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "sst-05-directions-and-maps-01",
+  "type": "quiz",
+  "language": "ta",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "social-studies",
+  "chapter": "geography",
+  "topic": "directions-and-maps",
+  "title": "திசைகளும் வரைபடங்களும் — பயிற்சி",
+  "description": "குறிப்புகள் மற்றும் விடை விளக்கங்களுடன் கூடிய குறுகிய நேரமிட்ட பயிற்சி வினாடி வினா.",
+  "difficulty": "beginner",
+  "timeLimitSeconds": 180,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "sst-05-directions-and-maps"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-05",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "வடக்கிற்கு எதிர்திசை எது?",
+      "hint": "நான்கு முக்கிய திசைகளை நினைவில் கொள்ளுங்கள்.",
+      "options": [
+        {
+          "id": "A",
+          "text": "கிழக்கு",
+          "feedback": "கிழக்கு வடக்கிற்கு செங்குத்தான திசை."
+        },
+        {
+          "id": "B",
+          "text": "தெற்கு",
+          "feedback": "சரி."
+        },
+        {
+          "id": "C",
+          "text": "மேற்கு",
+          "feedback": "மேற்கு வடக்கிற்கு செங்குத்தான திசை."
+        },
+        {
+          "id": "D",
+          "text": "வடகிழக்கு",
+          "feedback": "இது இடைத் திசை."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "வடக்கிற்கு எதிர்திசை தெற்கு."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "வரைபடத்தின் legend/key எதை விளக்குகிறது?",
+      "hint": "வரைபடக் குறியீடுகளைப் புரிந்துகொள்ள இது உதவும்.",
+      "options": [
+        {
+          "id": "A",
+          "text": "வரைபடத்தின் வயது",
+          "feedback": "பொதுவாக இது அதன் நோக்கம் அல்ல."
+        },
+        {
+          "id": "B",
+          "text": "வரைபடத்தின் உரிமையாளர்",
+          "feedback": "அது முக்கிய நோக்கம் அல்ல."
+        },
+        {
+          "id": "C",
+          "text": "குறியீடுகளின் பொருள்",
+          "feedback": "சரி."
+        },
+        {
+          "id": "D",
+          "text": "வானிலை மட்டும்",
+          "feedback": "Legend பலவகை குறியீடுகளை விளக்கலாம்."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "Legend/Key வரைபடத்தில் உள்ள குறியீடுகள் மற்றும் நிறங்கள் எதை குறிக்கின்றன என்பதைச் சொல்கிறது."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "வரைபடத்தில் 1 செ.மீ. = 5 கி.மீ. என்றால் 4 செ.மீ. எவ்வளவு?",
+      "hint": "4-ஐ 5-ஆல் பெருக்குங்கள்.",
+      "options": [
+        {
+          "id": "A",
+          "text": "9 கி.மீ.",
+          "feedback": "இங்கு கூட்டல் செய்யப்பட்டுள்ளது."
+        },
+        {
+          "id": "B",
+          "text": "10 கி.மீ.",
+          "feedback": "இது குறைவாக உள்ளது."
+        },
+        {
+          "id": "C",
+          "text": "20 கி.மீ.",
+          "feedback": "சரி. 4×5 = 20."
+        },
+        {
+          "id": "D",
+          "text": "25 கி.மீ.",
+          "feedback": "அது 5 செ.மீ.க்கு பொருந்தும்."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "இந்த அளவுகோலில் 4 செ.மீ. = 20 கி.மீ."
+    }
+  ],
+  "seriesId": "sst-05-directions-and-maps-practice",
+  "setNumber": 1,
+  "setLabel": "பயிற்சி தொகுப்பு 1"
+}

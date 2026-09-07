@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 2,
+  "id": "math-05-equivalent-fractions-02",
+  "type": "quiz",
+  "language": "en",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "mathematics",
+  "chapter": "fractions",
+  "topic": "equivalent-fractions",
+  "seriesId": "math-05-equivalent-fractions-practice",
+  "setNumber": 2,
+  "setLabel": "Practice Set 2",
+  "title": "Equivalent Fractions — Practice Set 2",
+  "description": "A second timed set focused on missing values, simplification, and equivalence checks.",
+  "difficulty": "intermediate",
+  "timeLimitSeconds": 300,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "math-05-equivalent-fractions"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-05",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "Which fraction is equivalent to 2/3?",
+      "hint": "Compare by multiplying the numerator and denominator by the same number.",
+      "options": [
+        {
+          "id": "A",
+          "text": "4/9",
+          "feedback": "4/9 is not equal to 2/3; cross-products are 12 and 18."
+        },
+        {
+          "id": "B",
+          "text": "6/9",
+          "feedback": "6/9 simplifies to 2/3 by dividing numerator and denominator by 3."
+        },
+        {
+          "id": "C",
+          "text": "8/15",
+          "feedback": "8/15 does not equal 2/3; cross-products are 24 and 30."
+        },
+        {
+          "id": "D",
+          "text": "10/12",
+          "feedback": "10/12 simplifies to 5/6, not 2/3."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "6/9 is equivalent to 2/3 because 2×3 = 6 and 3×3 = 9."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "Complete the equivalent fraction: 3/5 = ?/20",
+      "hint": "Find the factor that changes 5 into 20, then use the same factor on 3.",
+      "options": [
+        {
+          "id": "A",
+          "text": "8",
+          "feedback": "8/20 simplifies to 2/5."
+        },
+        {
+          "id": "B",
+          "text": "10",
+          "feedback": "10/20 simplifies to 1/2."
+        },
+        {
+          "id": "C",
+          "text": "12",
+          "feedback": "The denominator is multiplied by 4, so 3×4 = 12."
+        },
+        {
+          "id": "D",
+          "text": "15",
+          "feedback": "15/20 simplifies to 3/4."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "Since 5×4 = 20, multiply 3 by 4 as well: 3/5 = 12/20."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "Which fraction is NOT equivalent to 3/4?",
+      "hint": "Reduce each fraction or compare cross-products with 3/4.",
+      "options": [
+        {
+          "id": "A",
+          "text": "6/8",
+          "feedback": "6/8 reduces to 3/4."
+        },
+        {
+          "id": "B",
+          "text": "9/12",
+          "feedback": "9/12 reduces to 3/4."
+        },
+        {
+          "id": "C",
+          "text": "12/16",
+          "feedback": "12/16 reduces to 3/4."
+        },
+        {
+          "id": "D",
+          "text": "15/24",
+          "feedback": "15/24 reduces to 5/8, so it is not equivalent to 3/4."
+        }
+      ],
+      "correctOption": "D",
+      "explanation": "15/24 simplifies to 5/8, while the other three fractions simplify to 3/4."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "question": "What is 18/24 in simplest form?",
+      "hint": "Divide numerator and denominator by their greatest common factor.",
+      "options": [
+        {
+          "id": "A",
+          "text": "2/3",
+          "feedback": "18/24 does not reduce to 2/3; 18×3 = 54 while 24×2 = 48."
+        },
+        {
+          "id": "B",
+          "text": "3/4",
+          "feedback": "Dividing both 18 and 24 by 6 gives 3/4."
+        },
+        {
+          "id": "C",
+          "text": "6/8",
+          "feedback": "6/8 is equivalent but is not in simplest form."
+        },
+        {
+          "id": "D",
+          "text": "9/12",
+          "feedback": "9/12 is equivalent but is not in simplest form."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "The greatest common factor of 18 and 24 is 6, so 18/24 = 3/4."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "question": "Are 4/7 and 12/21 equivalent?",
+      "hint": "Check whether the same multiplier changes both numerator and denominator.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yes, because both parts are multiplied by 3",
+          "feedback": "4×3 = 12 and 7×3 = 21, so the fractions are equivalent."
+        },
+        {
+          "id": "B",
+          "text": "Yes, because both parts are multiplied by 4",
+          "feedback": "Multiplying 4/7 by 4 gives 16/28, not 12/21."
+        },
+        {
+          "id": "C",
+          "text": "No, because the numerators are different",
+          "feedback": "Equivalent fractions can have different numerators."
+        },
+        {
+          "id": "D",
+          "text": "No, because 12 is larger than 4",
+          "feedback": "Equivalent fractions may use larger numerator and denominator values while representing the same value."
+        }
+      ],
+      "correctOption": "A",
+      "explanation": "4/7 and 12/21 are equivalent because numerator and denominator are both multiplied by 3."
+    }
+  ]
+}

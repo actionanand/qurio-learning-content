@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "sst-05-directions-and-maps-01",
+  "type": "quiz",
+  "language": "hi",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "social-studies",
+  "chapter": "geography",
+  "topic": "directions-and-maps",
+  "title": "दिशाएँ और मानचित्र — अभ्यास",
+  "description": "संकेत और उत्तर व्याख्या के साथ छोटा समयबद्ध अभ्यास क्विज़.",
+  "difficulty": "beginner",
+  "timeLimitSeconds": 180,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "sst-05-directions-and-maps"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-05",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "उत्तर के विपरीत दिशा कौन-सी है?",
+      "hint": "चार मुख्य दिशाएँ याद करें.",
+      "options": [
+        {
+          "id": "A",
+          "text": "पूर्व",
+          "feedback": "पूर्व, उत्तर के लंबवत है."
+        },
+        {
+          "id": "B",
+          "text": "दक्षिण",
+          "feedback": "सही."
+        },
+        {
+          "id": "C",
+          "text": "पश्चिम",
+          "feedback": "पश्चिम, उत्तर के लंबवत है."
+        },
+        {
+          "id": "D",
+          "text": "उत्तर-पूर्व",
+          "feedback": "यह मध्यवर्ती दिशा है."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "उत्तर के विपरीत दिशा दक्षिण है."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "मानचित्र का legend/key क्या समझाता है?",
+      "hint": "यह मानचित्र के प्रतीकों को समझने में मदद करता है.",
+      "options": [
+        {
+          "id": "A",
+          "text": "मानचित्र की उम्र",
+          "feedback": "आमतौर पर नहीं."
+        },
+        {
+          "id": "B",
+          "text": "मानचित्र का मालिक",
+          "feedback": "यह मुख्य उद्देश्य नहीं है."
+        },
+        {
+          "id": "C",
+          "text": "प्रतीकों का अर्थ",
+          "feedback": "सही."
+        },
+        {
+          "id": "D",
+          "text": "केवल मौसम",
+          "feedback": "Legend कई प्रकार के प्रतीकों को समझा सकता है."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "Legend/Key बताता है कि मानचित्र के प्रतीक और रंग क्या दर्शाते हैं."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "यदि मानचित्र पर 1 सेमी = 5 किमी है, तो 4 सेमी कितनी दूरी दर्शाएगा?",
+      "hint": "4 को 5 से गुणा करें.",
+      "options": [
+        {
+          "id": "A",
+          "text": "9 किमी",
+          "feedback": "यह जोड़ है, गुणा नहीं."
+        },
+        {
+          "id": "B",
+          "text": "10 किमी",
+          "feedback": "यह कम है."
+        },
+        {
+          "id": "C",
+          "text": "20 किमी",
+          "feedback": "सही। 4×5 = 20."
+        },
+        {
+          "id": "D",
+          "text": "25 किमी",
+          "feedback": "यह 5 सेमी के लिए होगा."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "इस मापनी पर 4 सेमी वास्तविक दूरी के 20 किमी को दर्शाता है."
+    }
+  ],
+  "seriesId": "sst-05-directions-and-maps-practice",
+  "setNumber": 1,
+  "setLabel": "अभ्यास सेट 1"
+}

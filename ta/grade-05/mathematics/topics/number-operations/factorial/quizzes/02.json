@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "id": "math-05-factorial-02",
+  "type": "quiz",
+  "language": "ta",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "mathematics",
+  "chapter": "number-operations",
+  "topic": "factorial",
+  "seriesId": "math-05-factorial-practice",
+  "setNumber": 2,
+  "setLabel": "பயிற்சி தொகுப்பு 2",
+  "title": "Factorial — பயிற்சி தொகுப்பு 2",
+  "description": "சிறிய factorial வெளிப்பாடுகளை ஒப்பிட்டு எளிமைப்படுத்துதல்.",
+  "difficulty": "intermediate",
+  "timeLimitSeconds": 240,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "math-05-factorial"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-07",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "5! இன் மதிப்பு என்ன?",
+      "hint": "5 × 4 × 3 × 2 × 1 ஐ பெருக்குங்கள்.",
+      "options": [
+        {
+          "id": "A",
+          "text": "25",
+          "feedback": "அது 5-ன் வர்க்கம்."
+        },
+        {
+          "id": "B",
+          "text": "60",
+          "feedback": "நீங்கள் முன்னதாக நிறுத்திவிட்டீர்கள்."
+        },
+        {
+          "id": "C",
+          "text": "120",
+          "feedback": "சரி."
+        },
+        {
+          "id": "D",
+          "text": "240",
+          "feedback": "அது இரட்டிப்பு."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "5! = 120."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "எது பெரியது?",
+      "hint": "இரண்டு மதிப்புகளையும் கணக்கிடுங்கள்.",
+      "options": [
+        {
+          "id": "A",
+          "text": "3!",
+          "feedback": "3! = 6."
+        },
+        {
+          "id": "B",
+          "text": "4!",
+          "feedback": "சரி. 4! = 24."
+        },
+        {
+          "id": "C",
+          "text": "இரண்டும் சமம்",
+          "feedback": "6 மற்றும் 24 சமமல்ல."
+        },
+        {
+          "id": "D",
+          "text": "தெரியாது",
+          "feedback": "இரண்டையும் கணக்கிடலாம்."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "4! = 24 என்பது 3! = 6-ஐ விட பெரியது."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "4! ÷ 3! என்ன?",
+      "hint": "4! = 4 × 3! என எழுதுங்கள்.",
+      "options": [
+        {
+          "id": "A",
+          "text": "1",
+          "feedback": "போதாது."
+        },
+        {
+          "id": "B",
+          "text": "3",
+          "feedback": "ரத்து செய்வதை சரிபாருங்கள்."
+        },
+        {
+          "id": "C",
+          "text": "4",
+          "feedback": "சரி."
+        },
+        {
+          "id": "D",
+          "text": "24",
+          "feedback": "வகுக்கவில்லை."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "4! / 3! = (4 × 3!) / 3! = 4."
+    }
+  ]
+}

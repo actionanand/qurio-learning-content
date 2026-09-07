@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "math-05-equivalent-fractions-01",
+  "type": "quiz",
+  "language": "hi",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "mathematics",
+  "chapter": "fractions",
+  "topic": "equivalent-fractions",
+  "seriesId": "math-05-equivalent-fractions-practice",
+  "setNumber": 1,
+  "setLabel": "अभ्यास सेट 1",
+  "title": "समतुल्य भिन्न — अभ्यास",
+  "description": "संकेत और उत्तर व्याख्या के साथ छोटा समयबद्ध अभ्यास क्विज़.",
+  "difficulty": "beginner",
+  "timeLimitSeconds": 180,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "math-05-equivalent-fractions"
+  ],
+  "version": 2,
+  "updatedAt": "2026-09-05",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "1/2 के समतुल्य कौन-सा भिन्न है?",
+      "hint": "अंश और हर को एक ही संख्या से गुणा करें.",
+      "options": [
+        {
+          "id": "A",
+          "text": "2/3",
+          "feedback": "2/3, 1/2 से बड़ा है."
+        },
+        {
+          "id": "B",
+          "text": "2/4",
+          "feedback": "सही। 1×2 / 2×2 = 2/4."
+        },
+        {
+          "id": "C",
+          "text": "3/4",
+          "feedback": "3/4, 1/2 से बड़ा है."
+        },
+        {
+          "id": "D",
+          "text": "1/4",
+          "feedback": "1/4, 1/2 से छोटा है."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "अंश और हर दोनों को 2 से गुणा करने पर 2/4 मिलता है, जो 1/2 के बराबर है."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "कौन-सी जोड़ी समतुल्य है?",
+      "hint": "क्रॉस-गुणन का उपयोग करें.",
+      "options": [
+        {
+          "id": "A",
+          "text": "2/3 और 4/6",
+          "feedback": "सही। 2×6 = 3×4 = 12."
+        },
+        {
+          "id": "B",
+          "text": "1/2 और 2/5",
+          "feedback": "क्रॉस-प्रोडक्ट 5 और 4 हैं; समान नहीं."
+        },
+        {
+          "id": "C",
+          "text": "3/4 और 6/10",
+          "feedback": "क्रॉस-प्रोडक्ट 30 और 24 हैं."
+        },
+        {
+          "id": "D",
+          "text": "1/3 और 3/6",
+          "feedback": "1/3 = 2/6 होता है, 3/6 नहीं."
+        }
+      ],
+      "correctOption": "A",
+      "explanation": "2/3 और 4/6 के दोनों क्रॉस-प्रोडक्ट 12 हैं."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "3/5 के अंश और हर दोनों को 3 से गुणा करने पर कौन-सा समतुल्य भिन्न मिलता है?",
+      "hint": "3×3 और 5×3 की गणना करें.",
+      "options": [
+        {
+          "id": "A",
+          "text": "6/10",
+          "feedback": "यह समतुल्य है, लेकिन ×2 से मिलता है."
+        },
+        {
+          "id": "B",
+          "text": "9/15",
+          "feedback": "सही। 3×3 = 9 और 5×3 = 15."
+        },
+        {
+          "id": "C",
+          "text": "8/15",
+          "feedback": "अंश गलत है."
+        },
+        {
+          "id": "D",
+          "text": "9/10",
+          "feedback": "हर को भी 3 से गुणा करना होगा."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "3/5 के अंश और हर को 3 से गुणा करने पर 9/15 मिलता है."
+    }
+  ]
+}

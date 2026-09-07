@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "id": "math-05-probability-02",
+  "type": "quiz",
+  "language": "ta",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "mathematics",
+  "chapter": "data-handling",
+  "topic": "probability",
+  "seriesId": "math-05-probability-practice",
+  "setNumber": 2,
+  "setLabel": "பயிற்சி தொகுப்பு 2",
+  "title": "நிகழ்தகவு — பயிற்சி தொகுப்பு 2",
+  "description": "காய் மற்றும் எதிர் நிகழ்வுகளுடன் நிகழ்தகவு.",
+  "difficulty": "intermediate",
+  "timeLimitSeconds": 240,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "math-05-probability"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-07",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "ஆறு முகங்கள் கொண்ட நியாயமான காயில் 6 வருவதற்கான நிகழ்தகவு என்ன?",
+      "hint": "ஆறு சம வாய்ப்புள்ள முகங்கள் உள்ளன.",
+      "options": [
+        {
+          "id": "A",
+          "text": "1/6",
+          "feedback": "சரி."
+        },
+        {
+          "id": "B",
+          "text": "1/3",
+          "feedback": "6 உள்ள முகம் ஒன்று மட்டுமே."
+        },
+        {
+          "id": "C",
+          "text": "1/2",
+          "feedback": "மூன்று சாதகமான முகங்கள் தேவைப்படும்."
+        },
+        {
+          "id": "D",
+          "text": "1",
+          "feedback": "6 உறுதி அல்ல."
+        }
+      ],
+      "correctOption": "A",
+      "explanation": "ஆறு முகங்களில் ஒன்று மட்டும் 6; எனவே 1/6."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "ஒரு நியாயமான காயில் ஒற்றை எண் வருவதற்கான நிகழ்தகவு என்ன?",
+      "hint": "ஒற்றை முகங்கள் 1, 3, 5.",
+      "options": [
+        {
+          "id": "A",
+          "text": "1/6",
+          "feedback": "மூன்று ஒற்றை முகங்கள் உள்ளன."
+        },
+        {
+          "id": "B",
+          "text": "2/3",
+          "feedback": "நான்கு ஒற்றை முகங்கள் இல்லை."
+        },
+        {
+          "id": "C",
+          "text": "1/2",
+          "feedback": "சரி. 6-ல் 3."
+        },
+        {
+          "id": "D",
+          "text": "1",
+          "feedback": "ஒற்றை எண் உறுதி அல்ல."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "6 முகங்களில் 3 ஒற்றை; 3/6 = 1/2."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "ஒரு நிகழ்வு உறுதியாக நடந்தால் அதன் நிகழ்தகவு...",
+      "hint": "அதிகபட்ச நிகழ்தகவை நினைவில் கொள்ளுங்கள்.",
+      "options": [
+        {
+          "id": "A",
+          "text": "0",
+          "feedback": "0 என்பது முடியாதது."
+        },
+        {
+          "id": "B",
+          "text": "1/2",
+          "feedback": "இது உறுதி அல்ல."
+        },
+        {
+          "id": "C",
+          "text": "1",
+          "feedback": "சரி."
+        },
+        {
+          "id": "D",
+          "text": "2",
+          "feedback": "நிகழ்தகவு 1-ஐ மீறாது."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "உறுதியான நிகழ்வின் நிகழ்தகவு 1."
+    }
+  ]
+}

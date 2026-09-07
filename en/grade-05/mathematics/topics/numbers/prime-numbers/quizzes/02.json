@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "id": "math-05-prime-numbers-02",
+  "type": "quiz",
+  "language": "en",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "mathematics",
+  "chapter": "numbers",
+  "topic": "prime-numbers",
+  "seriesId": "math-05-prime-numbers-practice",
+  "setNumber": 2,
+  "setLabel": "Practice Set 2",
+  "title": "Prime Numbers — Practice Set 2",
+  "description": "Use factors to reason about prime numbers.",
+  "difficulty": "intermediate",
+  "timeLimitSeconds": 240,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "math-05-prime-numbers"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-07",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "Is 21 prime?",
+      "hint": "Try dividing by 3.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yes",
+          "feedback": "21 has more than two factors."
+        },
+        {
+          "id": "B",
+          "text": "No",
+          "feedback": "Correct. 21 = 3 × 7."
+        },
+        {
+          "id": "C",
+          "text": "Only if odd",
+          "feedback": "Odd does not always mean prime."
+        },
+        {
+          "id": "D",
+          "text": "Cannot tell",
+          "feedback": "Its factors can be checked."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "21 is divisible by 3 and 7, so it is composite."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "Which pair contains only prime numbers?",
+      "hint": "Check the factors of each number.",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 and 5",
+          "feedback": "Correct."
+        },
+        {
+          "id": "B",
+          "text": "3 and 9",
+          "feedback": "9 is composite."
+        },
+        {
+          "id": "C",
+          "text": "5 and 10",
+          "feedback": "10 is composite."
+        },
+        {
+          "id": "D",
+          "text": "7 and 21",
+          "feedback": "21 is composite."
+        }
+      ],
+      "correctOption": "A",
+      "explanation": "Both 2 and 5 have exactly two positive factors."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "Why is 1 not prime?",
+      "hint": "Count the positive factors of 1.",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is odd",
+          "feedback": "Odd numbers can be prime."
+        },
+        {
+          "id": "B",
+          "text": "It has only one positive factor",
+          "feedback": "Correct."
+        },
+        {
+          "id": "C",
+          "text": "It is too small",
+          "feedback": "Size is not the definition."
+        },
+        {
+          "id": "D",
+          "text": "It is even",
+          "feedback": "1 is odd."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "1 has only one positive factor, but a prime needs exactly two."
+    }
+  ]
+}

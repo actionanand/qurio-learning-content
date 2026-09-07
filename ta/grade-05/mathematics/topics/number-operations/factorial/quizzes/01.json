@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "id": "math-05-factorial-01",
+  "type": "quiz",
+  "language": "ta",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "mathematics",
+  "chapter": "number-operations",
+  "topic": "factorial",
+  "seriesId": "math-05-factorial-practice",
+  "setNumber": 1,
+  "setLabel": "பயிற்சி தொகுப்பு 1",
+  "title": "Factorial — பயிற்சி தொகுப்பு 1",
+  "description": "சிறிய factorial மதிப்புகளை கணக்கிடும் பயிற்சி.",
+  "difficulty": "beginner",
+  "timeLimitSeconds": 180,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "math-05-factorial"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-07",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "3! இன் மதிப்பு என்ன?",
+      "hint": "3! = 3 × 2 × 1 என விரிவாக்குங்கள்.",
+      "options": [
+        {
+          "id": "A",
+          "text": "3",
+          "feedback": "1 வரை உள்ள எண்களை பெருக்க வேண்டும்."
+        },
+        {
+          "id": "B",
+          "text": "6",
+          "feedback": "சரி."
+        },
+        {
+          "id": "C",
+          "text": "9",
+          "feedback": "அது 3 × 3."
+        },
+        {
+          "id": "D",
+          "text": "12",
+          "feedback": "அதிகமான மதிப்பு."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "3! = 3 × 2 × 1 = 6."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "4! என்பதன் பொருள் என்ன?",
+      "hint": "Factorial-ல் 1 வரை தொடர்ந்து பெருக்க வேண்டும்.",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 + 3 + 2 + 1",
+          "feedback": "Factorial கூட்டல் அல்ல."
+        },
+        {
+          "id": "B",
+          "text": "4 × 3 × 2 × 1",
+          "feedback": "சரி."
+        },
+        {
+          "id": "C",
+          "text": "4 × 4",
+          "feedback": "அது வர்க்கம்."
+        },
+        {
+          "id": "D",
+          "text": "4 + 4",
+          "feedback": "Factorial அல்ல."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "4! = 4 × 3 × 2 × 1."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "0! இன் மதிப்பு என்ன?",
+      "hint": "0! க்கு தனிப்பட்ட வரையறை உள்ளது.",
+      "options": [
+        {
+          "id": "A",
+          "text": "0",
+          "feedback": "வரையறைப்படி 0! என்பது 0 அல்ல."
+        },
+        {
+          "id": "B",
+          "text": "1",
+          "feedback": "சரி."
+        },
+        {
+          "id": "C",
+          "text": "2",
+          "feedback": "இல்லை."
+        },
+        {
+          "id": "D",
+          "text": "வரையறுக்கப்படவில்லை",
+          "feedback": "0! வரையறுக்கப்பட்டுள்ளது."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "வரையறைப்படி 0! = 1."
+    }
+  ]
+}

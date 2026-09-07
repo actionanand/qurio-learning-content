@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "id": "math-05-prime-numbers-02",
+  "type": "quiz",
+  "language": "hi",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "mathematics",
+  "chapter": "numbers",
+  "topic": "prime-numbers",
+  "seriesId": "math-05-prime-numbers-practice",
+  "setNumber": 2,
+  "setLabel": "अभ्यास सेट 2",
+  "title": "अभाज्य संख्याएँ — अभ्यास सेट 2",
+  "description": "गुणनखंडों से अभाज्य संख्याओं पर तर्क।",
+  "difficulty": "intermediate",
+  "timeLimitSeconds": 240,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "math-05-prime-numbers"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-07",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "क्या 21 अभाज्य है?",
+      "hint": "3 से भाग देकर देखें।",
+      "options": [
+        {
+          "id": "A",
+          "text": "हाँ",
+          "feedback": "21 के दो से अधिक गुणनखंड हैं।"
+        },
+        {
+          "id": "B",
+          "text": "नहीं",
+          "feedback": "सही। 21 = 3 × 7."
+        },
+        {
+          "id": "C",
+          "text": "यदि विषम हो तभी",
+          "feedback": "हर विषम संख्या अभाज्य नहीं होती।"
+        },
+        {
+          "id": "D",
+          "text": "नहीं बता सकते",
+          "feedback": "इसके गुणनखंड जाँचे जा सकते हैं।"
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "21, 3 और 7 से विभाजित होता है, इसलिए संयोजित है।"
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "किस जोड़ी में दोनों संख्याएँ अभाज्य हैं?",
+      "hint": "हर संख्या के गुणनखंड जाँचें।",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 और 5",
+          "feedback": "सही।"
+        },
+        {
+          "id": "B",
+          "text": "3 और 9",
+          "feedback": "9 संयोजित है।"
+        },
+        {
+          "id": "C",
+          "text": "5 और 10",
+          "feedback": "10 संयोजित है।"
+        },
+        {
+          "id": "D",
+          "text": "7 और 21",
+          "feedback": "21 संयोजित है।"
+        }
+      ],
+      "correctOption": "A",
+      "explanation": "2 और 5 दोनों के ठीक दो धनात्मक गुणनखंड हैं।"
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "1 अभाज्य क्यों नहीं है?",
+      "hint": "1 के धनात्मक गुणनखंड गिनें।",
+      "options": [
+        {
+          "id": "A",
+          "text": "यह विषम है",
+          "feedback": "विषम संख्याएँ अभाज्य हो सकती हैं।"
+        },
+        {
+          "id": "B",
+          "text": "इसका केवल एक धनात्मक गुणनखंड है",
+          "feedback": "सही।"
+        },
+        {
+          "id": "C",
+          "text": "यह बहुत छोटी है",
+          "feedback": "आकार परिभाषा नहीं है।"
+        },
+        {
+          "id": "D",
+          "text": "यह सम है",
+          "feedback": "1 विषम है।"
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "1 का केवल एक धनात्मक गुणनखंड है, जबकि अभाज्य के ठीक दो चाहिए।"
+    }
+  ]
+}

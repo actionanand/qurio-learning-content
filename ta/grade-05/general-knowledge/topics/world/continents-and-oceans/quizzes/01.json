@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "id": "gk-05-continents-and-oceans-01",
+  "type": "quiz",
+  "language": "ta",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "general-knowledge",
+  "chapter": "world",
+  "topic": "continents-and-oceans",
+  "seriesId": "gk-05-continents-and-oceans-practice",
+  "setNumber": 1,
+  "setLabel": "பயிற்சி தொகுப்பு 1",
+  "title": "கண்டங்களும் பெருங்கடல்களும் — பயிற்சி",
+  "description": "கண்டங்கள் மற்றும் பெருங்கடல்கள் பற்றிய குறும் பொது அறிவு quiz.",
+  "difficulty": "beginner",
+  "timeLimitSeconds": 180,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "gk-05-continents-and-oceans"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-08",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "பொதுவாக எத்தனை கண்டங்கள் அங்கீகரிக்கப்படுகின்றன?",
+      "hint": "ஆசியா, ஆப்பிரிக்கா, ஐரோப்பா உள்ளிட்டவற்றை நினைவில் கொள்ளுங்கள்.",
+      "options": [
+        {
+          "id": "A",
+          "text": "5",
+          "feedback": "ஐந்துக்கும் மேல் உள்ளன."
+        },
+        {
+          "id": "B",
+          "text": "6",
+          "feedback": "ஏழு உள்ளன."
+        },
+        {
+          "id": "C",
+          "text": "7",
+          "feedback": "சரி."
+        },
+        {
+          "id": "D",
+          "text": "8",
+          "feedback": "பள்ளிப் பாடங்களில் பொதுவாக ஏழு கண்டங்கள் பயன்படுத்தப்படுகின்றன."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "பொதுவாக ஏழு கண்டங்கள் அங்கீகரிக்கப்படுகின்றன."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "மிகப்பெரிய பெருங்கடல் எது?",
+      "hint": "இது ஆசியா/ஆஸ்திரேலியா மற்றும் அமெரிக்காவுக்கு இடையில் உள்ளது.",
+      "options": [
+        {
+          "id": "A",
+          "text": "இந்தியப் பெருங்கடல்",
+          "feedback": "இது சிறியது."
+        },
+        {
+          "id": "B",
+          "text": "பசிபிக் பெருங்கடல்",
+          "feedback": "சரி."
+        },
+        {
+          "id": "C",
+          "text": "ஆர்க்டிக் பெருங்கடல்",
+          "feedback": "இது மிகவும் சிறியது."
+        },
+        {
+          "id": "D",
+          "text": "அட்லாண்டிக் பெருங்கடல்",
+          "feedback": "அட்லாண்டிக் இரண்டாவது பெரியது."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "பசிபிக் பெருங்கடல் உலகின் மிகப்பெரிய பெருங்கடல்."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "நிலப்பரப்பில் மிகப்பெரிய கண்டம் எது?",
+      "hint": "இந்தியா, சீனா, ஜப்பான் ஆகியவை இதில் உள்ளன.",
+      "options": [
+        {
+          "id": "A",
+          "text": "ஆசியா",
+          "feedback": "சரி."
+        },
+        {
+          "id": "B",
+          "text": "ஐரோப்பா",
+          "feedback": "ஐரோப்பா சிறியது."
+        },
+        {
+          "id": "C",
+          "text": "ஆஸ்திரேலியா",
+          "feedback": "பொதுவான ஏழு கண்ட முறையில் ஆஸ்திரேலியா மிகச்சிறியது."
+        },
+        {
+          "id": "D",
+          "text": "அண்டார்டிகா",
+          "feedback": "அண்டார்டிகா மிகப்பெரியது அல்ல."
+        }
+      ],
+      "correctOption": "A",
+      "explanation": "நிலப்பரப்பில் ஆசியா மிகப்பெரிய கண்டம்."
+    }
+  ]
+}

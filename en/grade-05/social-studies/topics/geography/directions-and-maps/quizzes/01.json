@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "sst-05-directions-and-maps-01",
+  "type": "quiz",
+  "language": "en",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "social-studies",
+  "chapter": "geography",
+  "topic": "directions-and-maps",
+  "title": "Directions and Maps — Practice",
+  "description": "A short timed practice quiz with hints and answer explanations.",
+  "difficulty": "beginner",
+  "timeLimitSeconds": 180,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "sst-05-directions-and-maps"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-05",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "Which direction is opposite to North?",
+      "hint": "Think of the four main directions.",
+      "options": [
+        {
+          "id": "A",
+          "text": "East",
+          "feedback": "East is perpendicular to North."
+        },
+        {
+          "id": "B",
+          "text": "South",
+          "feedback": "Correct."
+        },
+        {
+          "id": "C",
+          "text": "West",
+          "feedback": "West is perpendicular to North."
+        },
+        {
+          "id": "D",
+          "text": "North-East",
+          "feedback": "This is an intermediate direction."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "South is opposite to North."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "What does a map legend/key explain?",
+      "hint": "It helps you understand map symbols.",
+      "options": [
+        {
+          "id": "A",
+          "text": "The age of the map",
+          "feedback": "Not usually."
+        },
+        {
+          "id": "B",
+          "text": "Who owns the map",
+          "feedback": "That is not its main purpose."
+        },
+        {
+          "id": "C",
+          "text": "The meaning of symbols",
+          "feedback": "Correct."
+        },
+        {
+          "id": "D",
+          "text": "Only the weather",
+          "feedback": "A legend can include many kinds of symbols."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "The legend/key tells the reader what symbols and colours on a map represent."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "If 1 cm on a map equals 5 km, what does 4 cm represent?",
+      "hint": "Multiply 4 by 5.",
+      "options": [
+        {
+          "id": "A",
+          "text": "9 km",
+          "feedback": "This adds instead of multiplying."
+        },
+        {
+          "id": "B",
+          "text": "10 km",
+          "feedback": "Too small."
+        },
+        {
+          "id": "C",
+          "text": "20 km",
+          "feedback": "Correct. 4×5 = 20."
+        },
+        {
+          "id": "D",
+          "text": "25 km",
+          "feedback": "That would be 5 cm."
+        }
+      ],
+      "correctOption": "C",
+      "explanation": "At this scale, 4 cm represents 20 km."
+    }
+  ],
+  "seriesId": "sst-05-directions-and-maps-practice",
+  "setNumber": 1,
+  "setLabel": "Practice Set 1"
+}

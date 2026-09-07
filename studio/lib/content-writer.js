@@ -39,7 +39,7 @@ export function saveNote(input) {
   if (!grade || !subject || !chapter || !topic || !input.title) throw new Error('Grade, subject, chapter, topic and title are required.');
   const curriculum = slugify(input.curriculum || defaultCurriculumId());
   const id = input.id || logicalBaseId(curriculum, subject, grade, topic);
-  const relative = `${language}/${learningRoot(curriculum, grade, subject)}/notes/${chapter}/${topic}.md`;
+  const relative = `${language}/${learningRoot(curriculum, grade, subject)}/topics/${chapter}/${topic}/study.md`;
   const filePath = safeRepoPath(config.rootDir, relative);
   if (fs.existsSync(filePath) && input.mode !== 'edit' && input.overwrite !== 'on') {
     throw new Error(`File already exists: ${relative}. Open it from Content Browser to edit, or enable overwrite.`);
@@ -114,8 +114,7 @@ export function saveQuiz(input) {
   const baseId = logicalBaseId(curriculum, subject, grade, topic);
   const id = input.id || `${baseId}-${pad2(setNumber)}`;
   const seriesId = input.seriesId || `${baseId}-practice`;
-  const filename = `${topic}-${pad2(setNumber)}.json`;
-  const relative = `${language}/${learningRoot(curriculum, grade, subject)}/quizzes/${filename}`;
+  const relative = `${language}/${learningRoot(curriculum, grade, subject)}/topics/${chapter}/${topic}/quizzes/${pad2(setNumber)}.json`;
   const filePath = safeRepoPath(config.rootDir, relative);
   if (fs.existsSync(filePath) && input.mode !== 'edit' && input.overwrite !== 'on') {
     throw new Error(`File already exists: ${relative}. Open it from Content Browser to edit, or enable overwrite.`);
@@ -140,7 +139,7 @@ export function saveQuiz(input) {
     passingPercentage: Number(input.passingPercentage || 70),
     shuffleQuestions: input.shuffleQuestions === 'on' || input.shuffleQuestions === true,
     shuffleOptions: input.shuffleOptions === 'on' || input.shuffleOptions === true,
-    sourceNoteIds: splitList(input.sourceNoteIds),
+    sourceNoteIds: splitList(input.sourceNoteIds).length ? splitList(input.sourceNoteIds) : [baseId],
     version: Number(input.version || 1),
     updatedAt: todayIso(),
     questions

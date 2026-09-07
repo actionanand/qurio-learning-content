@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "int-05-number-patterns-01",
+  "type": "quiz",
+  "language": "en",
+  "curriculum": "general",
+  "grade": 5,
+  "subject": "intelligence",
+  "chapter": "patterns",
+  "topic": "number-patterns",
+  "title": "Number Patterns — Practice",
+  "description": "A short timed practice quiz with hints and answer explanations.",
+  "difficulty": "beginner",
+  "timeLimitSeconds": 180,
+  "passingPercentage": 70,
+  "shuffleQuestions": true,
+  "shuffleOptions": true,
+  "sourceNoteIds": [
+    "int-05-number-patterns"
+  ],
+  "version": 1,
+  "updatedAt": "2026-09-05",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "question": "What comes next: 2, 4, 6, 8, ?",
+      "hint": "Look at the difference between consecutive numbers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "9",
+          "feedback": "The sequence increases by 2, not 1."
+        },
+        {
+          "id": "B",
+          "text": "10",
+          "feedback": "Correct. Add 2."
+        },
+        {
+          "id": "C",
+          "text": "12",
+          "feedback": "That skips one term."
+        },
+        {
+          "id": "D",
+          "text": "16",
+          "feedback": "That follows a different rule."
+        }
+      ],
+      "correctOption": "B",
+      "explanation": "The rule is +2, so 8 + 2 = 10."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "question": "What comes next: 3, 6, 12, 24, ?",
+      "hint": "Check whether each term is multiplied.",
+      "options": [
+        {
+          "id": "A",
+          "text": "27",
+          "feedback": "Adding 3 is not the pattern."
+        },
+        {
+          "id": "B",
+          "text": "30",
+          "feedback": "Adding 6 is not consistent."
+        },
+        {
+          "id": "C",
+          "text": "36",
+          "feedback": "This is ×1.5 from 24, not the rule."
+        },
+        {
+          "id": "D",
+          "text": "48",
+          "feedback": "Correct. Each term is ×2."
+        }
+      ],
+      "correctOption": "D",
+      "explanation": "Each number is twice the previous number, so 24×2 = 48."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "question": "Which rule matches 5, 10, 15, 20?",
+      "hint": "Compare consecutive terms.",
+      "options": [
+        {
+          "id": "A",
+          "text": "+5",
+          "feedback": "Correct."
+        },
+        {
+          "id": "B",
+          "text": "×2",
+          "feedback": "5×2 = 10, but 10×2 is 20, not 15."
+        },
+        {
+          "id": "C",
+          "text": "-5",
+          "feedback": "The values are increasing."
+        },
+        {
+          "id": "D",
+          "text": "+10",
+          "feedback": "That would give 5, 15, 25..."
+        }
+      ],
+      "correctOption": "A",
+      "explanation": "Each term increases by 5."
+    }
+  ],
+  "seriesId": "int-05-number-patterns-practice",
+  "setNumber": 1,
+  "setLabel": "Practice Set 1"
+}
